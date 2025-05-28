@@ -1,0 +1,37 @@
+/* Fondo  */
+AnchorPane {
+    
+
+    AnchorPane {
+        -fx-background-image: url("recursos/carreraCamellos.jpeg");
+        -fx-background-size: cover;   /* Hace que la imagen cubra todo el espacio */
+        -fx-background-position: center center;  /* Centra la imagen */
+        -fx-background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    }
+    
+    }
+
+/* Título */
+.label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Texto */
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #34c2db;
+    -fx-border-radius: 5;
+    -fx-padding: 4px;
+}
+
+/* Botón */
+.button {
+    -fx-background-color: hsla(42, 70%, 53%, 0.809);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-radius: 5;
+    -fx-padding: 8 16;
+}

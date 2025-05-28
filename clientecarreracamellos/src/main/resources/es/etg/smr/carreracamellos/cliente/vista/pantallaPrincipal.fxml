@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="308.0" prefWidth="509.0" stylesheets="@estilo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.etg.smr.carreracamellos.cliente.mvc.vista.ControladorVista">
+   <children>
+      <Button fx:id="btnConectar" contentDisplay="RIGHT" layoutX="391.0" layoutY="253.0" mnemonicParsing="false" onAction="#iniciarPartida" text="Conectar" textAlignment="RIGHT" />
+      <Label id="lblTitulo" contentDisplay="CENTER" layoutX="123.0" layoutY="14.0" text="Carrera de Camellos" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNombreCliente" layoutX="147.0" layoutY="60.0" prefHeight="27.0" prefWidth="278.0" />
+      <Label id="txtNombre" layoutX="28.0" layoutY="56.0" text="Nombre" />
+      <ImageView fx:id="imgCamello1" fitHeight="27.0" fitWidth="38.0" layoutX="15.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@camello.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgCamello2" fitHeight="27.0" fitWidth="38.0" layoutX="15.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@camelloJugador.png.jpeg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtNombreCamello1" layoutX="50.0" layoutY="120.0" prefHeight="27.0" prefWidth="68.0" />
+      <TextField fx:id="txtNombreCamello2" layoutX="55.0" layoutY="184.0" prefHeight="27.0" prefWidth="68.0" />
+      <TextArea fx:id="taCamello1" layoutX="147.0" layoutY="107.0" prefHeight="0.0" prefWidth="68.0" />
+      <TextArea fx:id="taCamello2" layoutX="147.0" layoutY="167.0" prefHeight="0.0" prefWidth="68.0" />
+   </children>
+</AnchorPane>

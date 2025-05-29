@@ -4,7 +4,7 @@ package es.etg.smr.carreracamellos.cliente.mvc.vista;
 import java.io.IOException;
 
 import es.etg.smr.carreracamellos.cliente.mvc.controlador.ControladorCliente;
-import es.etg.smr.carreracamellos.cliente.mvc.modelo.Cliente;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,6 +32,9 @@ public class ControladorVista {
     private TextArea taCamello2;
 
     @FXML
+    private TextArea taMensajes;
+
+    @FXML
     private ImageView imgCamello1;
 
     @FXML
@@ -45,21 +48,29 @@ public class ControladorVista {
     public void setControladorCliente(ControladorCliente controladorCliente) {
         this.controladorCliente = controladorCliente;
     }
+  
+    public void setNombreJugadores(String nombre1, String nombre2) {
+        Platform.runLater(() -> {
+            txtNombreCamello1.setText("Camello de " + nombre1);
+            txtNombreCamello2.setText("Camello de " + nombre2);
+        });
+       
+    }
+    @FXML
+public void mostrarMensaje(String mensaje) {
+    Platform.runLater(() -> {
+        taMensajes.appendText(mensaje + "\n");
+        System.out.println("Servidor: " + mensaje);
+    });
+}
+    
 
     @FXML
     public void iniciarPartida(ActionEvent event)throws IOException{
-  
+  System.out.println("BOTON CONECTAR correctamente.");
+  System.out.println("[DEBUG] controladorCliente = " + controladorCliente);
         nombre = txtNombreCliente.getText().trim();
-
-       Cliente cliente = new Cliente();
-       cliente.conectar();
-       cliente.enviarNombre(nombre);
-
-       String respuesta = cliente.recibirMensaje(); // Esperamos la respuesta del servidor
-      
-            
-        txtNombreCamello1.setText(nombre + "'s Camello 1");
-        txtNombreCamello2.setText(nombre + "'s Camello 2");
+        controladorCliente.conectarConServidor(nombre);
 
     }
     @FXML

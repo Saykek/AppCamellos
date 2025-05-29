@@ -9,11 +9,11 @@ public class Jugador implements Jugable {
 
     private String nombre;
     private int puntos = 0;
-    private  Socket conexion;
+    private  Socket socket;
 
-    public Jugador(String nombre, Socket conexion) {
+    public Jugador(String nombre, Socket socket) {
         this.nombre = nombre;
-        this.conexion = conexion;
+        this.socket = socket;
     }
     @Override
     public String getNombre() {
@@ -32,19 +32,19 @@ public class Jugador implements Jugable {
     }
     @Override
     public void terminarConexion() {
-        if (conexion != null && !conexion.isClosed()) {
+        if (socket != null && !socket.isClosed()) {
             try {
-                conexion.close();
+                socket.close();
             } catch (Exception e) {
                 System.out.println("Error al cerrar la conexión: " + e.getMessage()); ////////
             }
         }
     }
-    public Socket getConexion() {
-        return conexion;
+    public Socket getSocket() {
+        return socket;
     }
-    public void setConexion(Socket conexion) {
-        this.conexion = conexion;
+    public void setSocket(Socket socket) {
+        this.socket = socket;
     }
     
     @Override

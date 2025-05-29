@@ -38,7 +38,19 @@ public class Servidor {
 
                     // Enviamos un mensaje al cliente
                     salida.println("Bienvenido " + nombreJugador + ". Esperando a que se unan más jugadores..."); // envío un mensaje de bienvenida al jugador
+                    salida.println(nombreJugador);    
                 }
+
+                // Después de que ambos jugadores estén conectados
+                Jugador jugador1 = (Jugador) partida.getJugadores()[0];
+                Jugador jugador2 = (Jugador) partida.getJugadores()[1];
+
+// Enviamos a cada cliente los nombres de ambos jugadores
+                PrintWriter salida1 = new PrintWriter(jugador1.getSocket().getOutputStream(), true);
+                PrintWriter salida2 = new PrintWriter(jugador2.getSocket().getOutputStream(), true);
+
+                salida1.println(jugador1.getNombre() + ";" + jugador2.getNombre());
+                salida2.println(jugador2.getNombre() + ";" + jugador1.getNombre());
 
                 // Crear un hilo para ejecutar la partida
                 Thread hiloPartida = new Thread(partida);

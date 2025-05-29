@@ -15,6 +15,8 @@ public class ControladorCliente extends Application {
 
     private final static String VISTA = "/es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml";
     private static Scene scene;
+    private Cliente cliente;
+    private ControladorVista controladorVista;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -35,11 +37,13 @@ public class ControladorCliente extends Application {
         //Obtengo el controlador de la vista para pasarle una referencia al controlador - MVC:
         ControladorVista controladorVista = fxmlLoader.<ControladorVista>getController();
         controladorVista.setControladorCliente(this);
+        this.controladorVista = controladorVista;
+        cliente.setControladorVista(controladorVista);
         Scene scene = new Scene(root); 
         
         return scene;
     }
-    private Cliente cliente;
+    
 
     // Constructor con valores por defecto (localhost:3009)
     public ControladorCliente() throws IOException {
@@ -54,7 +58,7 @@ public class ControladorCliente extends Application {
     // Método para conectar con el servidor y enviar el nombre del jugador
     public String conectarConServidor(String nombreJugador) {
         try {
-            cliente.conectar();
+            cliente.conectar(nombreJugador);
             cliente.enviarNombre(nombreJugador);
             return cliente.recibirMensaje();  // Recibimos la respuesta del servidor (ej: "Bienvenido")
         } catch (IOException e) {

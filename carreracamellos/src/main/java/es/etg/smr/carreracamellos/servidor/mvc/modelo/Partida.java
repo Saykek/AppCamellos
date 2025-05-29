@@ -4,9 +4,9 @@ package es.etg.smr.carreracamellos.servidor.mvc.modelo;
 import java.io.IOException;
 import java.util.Random;
 
+import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorDocumentos;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorTxt;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
-import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorDocumentos;
 
 public class Partida implements Runnable {
 
@@ -18,6 +18,10 @@ public class Partida implements Runnable {
 
     private int puntosCamello = 0;
     public boolean partidaTerminada = false; // Variable para indicar si la partida ha terminado
+
+    public Jugable[] getJugadores() {
+        return jugadores;
+    }
 
     public Partida(int MAX_JUGADORES) {
         jugadores = new Jugador[MAX_JUGADORES];

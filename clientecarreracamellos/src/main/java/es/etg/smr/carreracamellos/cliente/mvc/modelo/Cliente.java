@@ -36,19 +36,19 @@ public class Cliente {
     entrada = new BufferedReader(new java.io.InputStreamReader(socket.getInputStream()));
     salida = new PrintWriter(socket.getOutputStream(), true);
 
-    // Enviar nombre del jugador justo después de conectarse
+    // Envio nombre del jugador justo después de conectarse
     salida.println(nombreJugador);
 
-    // Lanzar un hilo para escuchar respuestas del servidor
+    // Lanzo un hilo para escuchar respuestas del servidor
     new Thread(() -> {
         try {
-            // Leer bienvenida (ej: "Bienvenido Ana...")
-            String bienvenida = entrada.readLine();
+            // Leo bienvenida
+            String bienvenida = recibirMensaje();
             System.out.println("Servidor: " + bienvenida);
             Platform.runLater(() -> controladorVista.mostrarMensaje(bienvenida));
 
-            // Leer nombres de jugadores (ej: "Ana;Pedro")
-            String nombreJugadores = entrada.readLine();
+            // Leo nombres de jugadores
+            String nombreJugadores = recibirMensaje();
             System.out.println("Servidor: " + nombreJugadores);
             Platform.runLater(() -> controladorVista.mostrarMensaje("Jugadores conectados: " + nombreJugadores));
 
@@ -56,13 +56,26 @@ public class Cliente {
                 String[] nombres = nombreJugadores.split(";");
                 Platform.runLater(() -> controladorVista.setNombreJugadores(nombres[0], nombres[1]));
             }
-
-            // Leer otros mensajes (si decides enviar más cosas desde el servidor)
+            
+            // Leo otros mensajes 
             String mensaje;
-            while ((mensaje = entrada.readLine()) != null) {
-                String finalMensaje = mensaje;
+            while ((mensaje = recibirMensaje()) != null) {
+                final String finalMensaje = mensaje;
+             
+            if(mensaje.startsWith("PROGRESO: ")) {
+                String [] partes = mensaje.substring(9).split(";");
+                String nombre = partes[0];
+                int puntos = Integer.parseInt(partes[1]);
+
+                Platform.runLater(() -> 
+                    controladorVista.actualizarProgresoCamello(nombre, puntos));
+                    controladorVista.actualizarProgreso(nombre, puntos);
+                   
+            }else {
                 Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
             }
+            }
+            
 
         } catch (IOException e) {
             Platform.runLater(() -> controladorVista.mostrarMensaje("Error al recibir datos del servidor."));

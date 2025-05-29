@@ -2,6 +2,7 @@ package es.etg.smr.carreracamellos.servidor.mvc.modelo;
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Random;
 
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorDocumentos;
@@ -47,6 +48,7 @@ public class Partida implements Runnable {
 
     @Override
     public void run() {
+        
         Random random = new Random();
         // imprimimos un mensaje indicando que la partida ha comenzado.
         System.out.println("Iniciando partida con los jugadores: " + jugadores[0].getNombre() + " y " + jugadores[1].getNombre());
@@ -59,12 +61,28 @@ public class Partida implements Runnable {
                 LogCamellos.log(jugador.getNombre() + " avanza " + puntosCamello +
                         " puntos. Total acumulado: " + jugador.getPuntos());
 
-                if (jugador.esGanador()) {
-                    System.out.println("El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
-                    partidaTerminada = true;
-                    //guardarResultadoPartida(); // Me da error IO
-                    break;
+                try {        
+                PrintWriter salida = new PrintWriter(jugador.getSocket().getOutputStream(), true);
+                salida.println("PROGRESO: " + jugador.getNombre() + ";" + jugador.getPuntos());
+                salida.println(); // VER COMO COMO PUEDO DEJAR UN SALTO DE LINEA
+                
+                } catch (IOException e) {
+                    System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());
                 }
+                try {
+                    LogCamellos.log("Enviando progreso al jugador " + jugador.getNombre() + ": " + jugador.getPuntos());
+                
+                    if (jugador.esGanador()) {
+                        PrintWriter salida = new PrintWriter(jugador.getSocket().getOutputStream(), true);
+                        salida.print("El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
+                        partidaTerminada = true;
+                        //guardarResultadoPartida(); // Me da error IO
+                        break;
+                }
+                } catch (Exception e) {
+                    System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());
+                }
+
                 try {
                     Thread.sleep(TIEMPO_ESPERA); // Espera 3 segundos antes de continuar
                 } catch (InterruptedException e) {

@@ -40,6 +40,7 @@ public class Jugador implements Jugable {
             }
         }
     }
+    @Override
     public Socket getSocket() {
         return socket;
     }

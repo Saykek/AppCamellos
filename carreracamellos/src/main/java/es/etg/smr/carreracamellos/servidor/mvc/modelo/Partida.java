@@ -64,7 +64,7 @@ public class Partida implements Runnable {
                 try {        
                 PrintWriter salida = new PrintWriter(jugador.getSocket().getOutputStream(), true);
                 salida.println("PROGRESO: " + jugador.getNombre() + ";" + jugador.getPuntos());
-                salida.println(); // VER COMO COMO PUEDO DEJAR UN SALTO DE LINEA
+                salida.println(); // VER COMO COMO PUEDO DEJAR UN SALTO DE
                 
                 } catch (IOException e) {
                     System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());

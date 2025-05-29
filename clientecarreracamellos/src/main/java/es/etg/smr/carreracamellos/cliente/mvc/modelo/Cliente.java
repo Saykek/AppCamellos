@@ -2,6 +2,7 @@ package es.etg.smr.carreracamellos.cliente.mvc.modelo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -33,55 +34,43 @@ public class Cliente {
     }
     public void conectar(String nombreJugador) throws IOException {
     socket = new Socket(host, puerto);
-    entrada = new BufferedReader(new java.io.InputStreamReader(socket.getInputStream()));
+    entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     salida = new PrintWriter(socket.getOutputStream(), true);
 
-    // Envio nombre del jugador justo después de conectarse
+    // Enviar nombre al servidor
     salida.println(nombreJugador);
 
-    // Lanzo un hilo para escuchar respuestas del servidor
+    // Hilo para escuchar mensajes del servidor
     new Thread(() -> {
         try {
-            // Leo bienvenida
-            String bienvenida = recibirMensaje();
-            System.out.println("Servidor: " + bienvenida);
-            Platform.runLater(() -> controladorVista.mostrarMensaje(bienvenida));
-
-            // Leo nombres de jugadores
-            String nombreJugadores = recibirMensaje();
-            System.out.println("Servidor: " + nombreJugadores);
-            Platform.runLater(() -> controladorVista.mostrarMensaje("Jugadores conectados: " + nombreJugadores));
-
-            if (nombreJugadores != null && nombreJugadores.contains(";")) {
-                String[] nombres = nombreJugadores.split(";");
-                Platform.runLater(() -> controladorVista.setNombreJugadores(nombres[0], nombres[1]));
-            }
-            
-            // Leo otros mensajes 
             String mensaje;
             while ((mensaje = recibirMensaje()) != null) {
                 final String finalMensaje = mensaje;
-             
-            if(mensaje.startsWith("PROGRESO: ")) {
-                String [] partes = mensaje.substring(9).split(";");
-                String nombre = partes[0];
-                int puntos = Integer.parseInt(partes[1]);
 
-                Platform.runLater(() -> 
-                    controladorVista.actualizarProgresoCamello(nombre, puntos));
-                    controladorVista.actualizarProgreso(nombre, puntos);
-                   
-            }else {
-                Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
-            }
-            }
-            
+                if (mensaje.startsWith("PROGRESO:")) {
+                    String[] partes = mensaje.substring(9).split(";");
+                    String nombre = partes[0];
+                    int puntos = Integer.parseInt(partes[1]);
 
+                    Platform.runLater(() -> {
+                        controladorVista.actualizarProgresoTotal(nombre, puntos);
+                        
+                    });
+
+                } else if (mensaje.startsWith("JUGADORES:")) {
+                    String[] jugadores = mensaje.substring(10).split(";");
+                    Platform.runLater(() -> controladorVista.setNombreJugadores(jugadores[0], jugadores[1]));
+
+                } else {
+                    Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
+                }
+            }
         } catch (IOException e) {
             Platform.runLater(() -> controladorVista.mostrarMensaje("Error al recibir datos del servidor."));
             e.printStackTrace();
         }
     }).start();
+
 
     }    
     public void enviarNombre(String nombre) {

@@ -10,16 +10,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 public class ControladorVista {
+
+    private String nombreJugador1;
+    private String nombreJugador2;
     
     @FXML
     private TextField txtNombreCliente;
 
-    private String nombre;
+    
     
     @FXML
     private TextField txtNombreCamello1; //icono
@@ -31,40 +35,41 @@ public class ControladorVista {
     private Label lblProgresoCamello1;
 
     @FXML
-private Label lblProgresoJugador1;
-@FXML
-private Label lblProgresoJugador2;
+    private Label lblProgresoCamello2;
 
-@FXML// Este método lo llama Cliente cuando recibe "PROGRESO"
-public void actualizarProgreso(String nombre, int puntos) {
-    String bloques = "🟩".repeat(Math.max(0, puntos));  // Por defecto 🟩
-    
-    if (nombre.equals(txtNombreCamello1.getText())) {
-        lblProgresoJugador1.setText(bloques + " (" + puntos + ")");
-    } else if (nombre.equals(txtNombreCamello2.getText())) {
-        bloques = "🟦".repeat(Math.max(0, puntos));  // Jugador 2 con 🟦
-        lblProgresoJugador2.setText(bloques + " (" + puntos + ")");
-    }
-}
+    @FXML
+    private Label lblProgresoJugador1;
+    @FXML
+    private Label lblProgresoJugador2;
     
     @FXML
-    private Label lblProgresoCamello2;
-    @FXML  
-    public void actualizarProgresoCamello(String nombre, int puntos) {
-        if (nombre.equals("Camello 1")) {
-            lblProgresoCamello1.setText(puntos + " puntos"); // debajo podria meter el progreso de la barra /100
-        } else if (nombre.equals("Camello 2")) {
-            lblProgresoCamello2.setText(puntos + " puntos"); // debajo podria meter el progreso de la barra /100 con setProgress
+    private ProgressBar pbCamello1;
+
+    @FXML
+    private ProgressBar pbCamello2;
+
+    private final int PUNTOS_MAXIMOS = 100; // Cambia esto si tu carrera tiene más o menos
+
+@FXML
+public void actualizarProgresoTotal(String nombre, int puntos) {
+    double progreso = Math.min((double) puntos / PUNTOS_MAXIMOS, 1.0);
+    String decoracion = "🟩".repeat(puntos);
+    String texto = decoracion + " (" + puntos + " pts)";
+
+    Platform.runLater(() -> {
+        if (nombre.equals(nombreJugador1)) {
+            lblProgresoCamello1.setText(puntos + " puntos");
+            pbCamello1.setProgress(progreso);
+            lblProgresoJugador1.setText(texto);
+        } else if (nombre.equals(nombreJugador2)) {
+            lblProgresoCamello2.setText(puntos + " puntos");
+            pbCamello2.setProgress(progreso);
+            lblProgresoJugador2.setText("🟦".repeat(puntos) + " (" + puntos + " pts)");
         }
-        Platform.runLater(() -> {
-            taMensajes.setText("Progreso Camello 1: " + puntos);
-        });
-    }
-    public void actualizarProgresoCamello2(int puntos){
-        Platform.runLater(() -> {
-            taCamello2.setText("Progreso Camello 2: " + puntos);
-        });
-    }
+
+        taMensajes.appendText(nombre + " avanza a " + puntos + " puntos.\n");
+    });
+}
 
     @FXML
     private TextArea taCamello2;
@@ -88,6 +93,8 @@ public void actualizarProgreso(String nombre, int puntos) {
     }
   
     public void setNombreJugadores(String nombre1, String nombre2) {
+        this.nombreJugador1 = nombre1;
+        this.nombreJugador2 = nombre2;
         Platform.runLater(() -> {
             txtNombreCamello1.setText(nombre1); // ASI NO ME COGE EL EQUALS txtNombreCamello1.setText("Camello de " + nombre1);
             txtNombreCamello2.setText(nombre2);
@@ -105,10 +112,9 @@ public void mostrarMensaje(String mensaje) {
 
     @FXML
     public void iniciarPartida(ActionEvent event)throws IOException{
-  System.out.println("BOTON CONECTAR correctamente.");
-  System.out.println("[DEBUG] controladorCliente = " + controladorCliente);
-        nombre = txtNombreCliente.getText().trim();
-        controladorCliente.conectarConServidor(nombre);
+
+        nombreJugador1 = txtNombreCliente.getText().trim();
+        controladorCliente.conectarConServidor(nombreJugador1);
 
     }
     @FXML

@@ -49,8 +49,8 @@ public class Servidor {
                 PrintWriter salida1 = new PrintWriter(jugador1.getSocket().getOutputStream(), true);
                 PrintWriter salida2 = new PrintWriter(jugador2.getSocket().getOutputStream(), true);
 
-                salida1.println(jugador1.getNombre() + ";" + jugador2.getNombre());
-                salida2.println(jugador2.getNombre() + ";" + jugador1.getNombre());
+                salida1.println("JUGADORES: "+jugador1.getNombre() + ";" + jugador2.getNombre());
+                salida2.println("JUGADORES: "+jugador2.getNombre() + ";" + jugador1.getNombre());
 
                 // Crear un hilo para ejecutar la partida
                 Thread hiloPartida = new Thread(partida);

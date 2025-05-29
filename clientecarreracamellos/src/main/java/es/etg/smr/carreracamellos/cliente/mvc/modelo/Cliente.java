@@ -53,6 +53,8 @@ public class Cliente {
                     int puntos = Integer.parseInt(partes[1]);
 
                     Platform.runLater(() -> {
+                        System.out.println("Actualizando progreso de " + nombre + " con " + puntos + " puntos.");
+                        controladorVista.actualizarProgresoCamello(nombre, puntos);
                         controladorVista.actualizarProgresoTotal(nombre, puntos);
                         
                     });

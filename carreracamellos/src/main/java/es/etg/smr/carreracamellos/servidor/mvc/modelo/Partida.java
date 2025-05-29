@@ -60,29 +60,30 @@ public class Partida implements Runnable {
                 jugador.incrementarPuntos(puntosCamello);
                 LogCamellos.log(jugador.getNombre() + " avanza " + puntosCamello +
                         " puntos. Total acumulado: " + jugador.getPuntos());
-
+            for (Jugable receptor : jugadores) {   // ENVIO PROGRESO A TODOS LOS JUGADORES
                 try {        
-                PrintWriter salida = new PrintWriter(jugador.getSocket().getOutputStream(), true);
+                PrintWriter salida = new PrintWriter(receptor.getSocket().getOutputStream(), true);
                 salida.println("PROGRESO: " + jugador.getNombre() + ";" + jugador.getPuntos());
-                salida.println(); // VER COMO COMO PUEDO DEJAR UN SALTO DE
                 
                 } catch (IOException e) {
                     System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());
+                  }
                 }
-                try {
-                    LogCamellos.log("Enviando progreso al jugador " + jugador.getNombre() + ": " + jugador.getPuntos());
-                
-                    if (jugador.esGanador()) {
-                        PrintWriter salida = new PrintWriter(jugador.getSocket().getOutputStream(), true);
-                        salida.print("El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
+  
+                if (jugador.esGanador()) {
                         partidaTerminada = true;
-                        //guardarResultadoPartida(); // Me da error IO
-                        break;
+                        for (Jugable receptor : jugadores) {
+                            try {
+                             PrintWriter salida = new PrintWriter(receptor.getSocket().getOutputStream(), true);
+                             salida.print("El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
+                
+                            } catch (Exception e) {
+                             System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());
+                            }
+                        }
+                    //guardarResultadoPartida(); // Me da error IO
+                             break;
                 }
-                } catch (Exception e) {
-                    System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());
-                }
-
                 try {
                     Thread.sleep(TIEMPO_ESPERA); // Espera 3 segundos antes de continuar
                 } catch (InterruptedException e) {
@@ -98,5 +99,5 @@ public class Partida implements Runnable {
             }*/
         }
     }
-}
+}             
 

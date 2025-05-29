@@ -36,11 +36,6 @@ public class ControladorVista {
 
     @FXML
     private Label lblProgresoCamello2;
-
-    @FXML
-    private Label lblProgresoJugador1;
-    @FXML
-    private Label lblProgresoJugador2;
     
     @FXML
     private ProgressBar pbCamello1;
@@ -53,21 +48,41 @@ public class ControladorVista {
 @FXML
 public void actualizarProgresoTotal(String nombre, int puntos) {
     double progreso = Math.min((double) puntos / PUNTOS_MAXIMOS, 1.0);
-    String decoracion = "🟩".repeat(puntos);
-    String texto = decoracion + " (" + puntos + " pts)";
 
     Platform.runLater(() -> {
-        if (nombre.equals(nombreJugador1)) {
+        String nombreNormalizado = nombre.trim().toLowerCase();
+        String jugador1Normalizado = nombreJugador1.trim().toLowerCase();
+        String jugador2Normalizado = nombreJugador2.trim().toLowerCase();
+
+
+        if (nombreNormalizado.equals(jugador1Normalizado)) {
+            System.out.println("entando en equals " + nombreJugador1 + " con " + puntos + " puntos.");
             lblProgresoCamello1.setText(puntos + " puntos");
             pbCamello1.setProgress(progreso);
-            lblProgresoJugador1.setText(texto);
-        } else if (nombre.equals(nombreJugador2)) {
+            
+        } else if (nombreNormalizado.equals(jugador2Normalizado)) {
+            System.out.println("entando en  egundo equals " + nombreJugador1 + " con " + puntos + " puntos.");
             lblProgresoCamello2.setText(puntos + " puntos");
             pbCamello2.setProgress(progreso);
-            lblProgresoJugador2.setText("🟦".repeat(puntos) + " (" + puntos + " pts)");
+         
+        } else {
+            System.out.println("Nombre de camello no reconocido: " + nombre);
+            System.out.println("Jugadores actuales: " + nombreJugador1 + ", " + nombreJugador2);
         }
 
         taMensajes.appendText(nombre + " avanza a " + puntos + " puntos.\n");
+    });
+}
+    @FXML
+public void actualizarProgresoCamello(String nombre, int puntos) {
+    Platform.runLater(() -> {
+        if (txtNombreCamello1.getText().equals(nombre)) {
+            lblProgresoCamello1.setText(puntos + " puntos");
+            pbCamello1.setProgress(puntos / 100.0);  
+        } else if (txtNombreCamello2.getText().equals(nombre)) {
+            lblProgresoCamello2.setText(puntos + " puntos");
+            pbCamello2.setProgress(puntos / 100.0);
+        }
     });
 }
 

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
+import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMd;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorDocumentos;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorPDFDocker;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GuardarHistorial;
@@ -48,8 +49,11 @@ public class Partida implements Runnable {
             historial.generar(resultado);
     
             // Genero el PDF de la partida
-            GeneradorDocumentos certificado = new GeneradorPDFDocker();
+            GeneradorDocumentos certificado = new GeneradorCertificadoMd();
             certificado.generar(resultado);
+            GeneradorDocumentos pdf = new GeneradorPDFDocker();
+            pdf.generar(resultado);
+           
 
         } catch (IOException e) {
             System.out.println("Error al guardar el resultado de la partida: " + e.getMessage());

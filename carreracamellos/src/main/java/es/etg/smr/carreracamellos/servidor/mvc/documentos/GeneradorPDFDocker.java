@@ -1,6 +1,7 @@
 package es.etg.smr.carreracamellos.servidor.mvc.documentos;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -8,17 +9,35 @@ import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 
 public class GeneradorPDFDocker implements GeneradorDocumentos {
 
+    private static final String IMAGEN_DOCKER = "pandoc/latex";
+    private static final String DIRECTORIO = " /datos";
     @Override
     public void generar(Resultado resultado) throws IOException {
-        String nombreArchivoMd = resultado.getGanador();
-        String archivo = " Certificado de ganador:\n\n"+ nombreArchivoMd;
+       
+        String nombreGanador = resultado.getGanador();
+        String archivo = " Certificado de ganador:\n\n"+ nombreGanador;
+        String nombreArchivoMD = nombreGanador + ".md";
+
+        String rutaActual = new File(".").getAbsolutePath();
+
+        File archivoMd = new File(nombreArchivoMD);
+        if (!archivoMd.exists()) {
+            System.err.println("❌ El archivo " + nombreArchivoMD + " no existe. Primero genera el .md.");
+            return;
+        }
 
         String [] comando = {
             "docker", "run", "--rm",
-            "-v", System.getProperty("user.dir") + ":/workdir",
-            "plass/mdtopdf", nombreArchivoMd
+            "--platform=linux/amd64",
+            "-v", System.getProperty("user.dir") + ":/data",
+            IMAGEN_DOCKER,
+            "/data/" + nombreGanador + ".md",
+            "-o",
+            "/data/" + nombreGanador + ".pdf"
             
         };
+
+        System.out.println("COMANDO DOCKER: " + String.join(" ", comando));
     
         Process proceso = Runtime.getRuntime().exec(comando);
 

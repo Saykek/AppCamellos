@@ -6,7 +6,8 @@ import java.io.PrintWriter;
 import java.util.Random;
 
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorDocumentos;
-import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorTxt;
+import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorPDFDocker;
+import es.etg.smr.carreracamellos.servidor.mvc.documentos.GuardarHistorial;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
 public class Partida implements Runnable {
@@ -32,7 +33,7 @@ public class Partida implements Runnable {
         jugadores[indice] = jugador; // Asigna el jugador al índice correspondiente
     }
 
-    private void guardarResultadoPartida() throws IOException {
+    private void guardarResultado() throws IOException {
         Jugable ganador = jugadores[0].getPuntos() >= jugadores[1].getPuntos() ? jugadores[0] : jugadores[1];
         Jugable perdedor = (ganador == jugadores[0]) ? jugadores[1] : jugadores[0];
 
@@ -41,9 +42,18 @@ public class Partida implements Runnable {
                 perdedor.getNombre(), perdedor.getPuntos()
         );
 
-        GeneradorDocumentos generar = new GeneradorTxt();
+        try {
+            // Genero el historial de la partida
+            GeneradorDocumentos historial = new GuardarHistorial();
+            historial.generar(resultado);
+    
+            // Genero el PDF de la partida
+            GeneradorDocumentos certificado = new GeneradorPDFDocker();
+            certificado.generar(resultado);
 
-        generar.guardar(resultado);
+        } catch (IOException e) {
+            System.out.println("Error al guardar el resultado de la partida: " + e.getMessage());
+        }
     }
 
     @Override
@@ -75,14 +85,18 @@ public class Partida implements Runnable {
                         for (Jugable receptor : jugadores) {
                             try {
                              PrintWriter salida = new PrintWriter(receptor.getSocket().getOutputStream(), true);
-                             salida.print("El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
+                             salida.print("RESULTADO: El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
                 
                             } catch (Exception e) {
                              System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());
                             }
                         }
-                    //guardarResultadoPartida(); // Me da error IO
+                try{        
+                    guardarResultado(); // Me da error IO
                              break;
+                } catch (IOException e) {
+                    System.out.println("Error al guardar el resultado de la partida: " + e.getMessage());
+                }             
                 }
                 try {
                     Thread.sleep(TIEMPO_ESPERA); // Espera 3 segundos antes de continuar

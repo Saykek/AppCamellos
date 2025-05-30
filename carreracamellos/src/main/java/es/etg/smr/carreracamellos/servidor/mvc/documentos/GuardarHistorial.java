@@ -6,13 +6,13 @@ import java.time.format.DateTimeFormatter;
 
 import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 
-public class GeneradorTxt implements GeneradorDocumentos {
+public class GuardarHistorial implements GeneradorDocumentos {
 
 
-   private static final String ARCHIVO = "demo/partidas.txt";
+   private static final String ARCHIVO = "partidas.txt";
 
     @Override
-    public void guardar(Resultado resultadoPartida) throws IOException {
+    public void generar(Resultado resultadoPartida) throws IOException {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         String linea = String.format("Fecha: %s | Ganador: %s (%d pts) | Perdedor: %s (%d pts)",
                 resultadoPartida.getFecha().format(formato),

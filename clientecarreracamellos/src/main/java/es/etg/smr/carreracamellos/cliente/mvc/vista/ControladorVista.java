@@ -5,6 +5,7 @@ package es.etg.smr.carreracamellos.cliente.mvc.vista;
 import java.io.IOException;
 
 import es.etg.smr.carreracamellos.cliente.mvc.controlador.ControladorCliente;
+import es.etg.smr.carreracamellos.cliente.utilidades.Constantes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,11 +44,14 @@ public class ControladorVista {
     @FXML
     private ProgressBar pbCamello2;
 
-    private final int PUNTOS_MAXIMOS = 100; // Cambia esto si tu carrera tiene más o menos
+    //private final int PUNTOS_MAXIMOS = 100;
+    //private final double PORCENTAJE = 1.0;
+    private final double PORCENTAJE_MAXIMO =100.0; // Porcentaje máximo para la barra de progreso
+    
 
 @FXML
 public void actualizarProgresoTotal(String nombre, int puntos) {
-    double progreso = Math.min((double) puntos / PUNTOS_MAXIMOS, 1.0);
+    double progreso = Math.min((double) puntos / Constantes.PUNTOS_MAXIMOS, Constantes.PORCENTAJE);
 
     Platform.runLater(() -> {
         String nombreNormalizado = nombre.trim().toLowerCase();
@@ -56,12 +60,12 @@ public void actualizarProgresoTotal(String nombre, int puntos) {
 
 
         if (nombreNormalizado.equals(jugador1Normalizado)) {
-            System.out.println("entando en equals " + nombreJugador1 + " con " + puntos + " puntos.");
+            
             lblProgresoCamello1.setText(puntos + " puntos");
             pbCamello1.setProgress(progreso);
             
         } else if (nombreNormalizado.equals(jugador2Normalizado)) {
-            System.out.println("entando en  egundo equals " + nombreJugador1 + " con " + puntos + " puntos.");
+            
             lblProgresoCamello2.setText(puntos + " puntos");
             pbCamello2.setProgress(progreso);
          
@@ -78,10 +82,10 @@ public void actualizarProgresoCamello(String nombre, int puntos) {
     Platform.runLater(() -> {
         if (txtNombreCamello1.getText().equals(nombre)) {
             lblProgresoCamello1.setText(puntos + " puntos");
-            pbCamello1.setProgress(puntos / 100.0);  
+            pbCamello1.setProgress(puntos / PORCENTAJE_MAXIMO);  
         } else if (txtNombreCamello2.getText().equals(nombre)) {
             lblProgresoCamello2.setText(puntos + " puntos");
-            pbCamello2.setProgress(puntos / 100.0);
+            pbCamello2.setProgress(puntos / PORCENTAJE_MAXIMO);
         }
     });
 }

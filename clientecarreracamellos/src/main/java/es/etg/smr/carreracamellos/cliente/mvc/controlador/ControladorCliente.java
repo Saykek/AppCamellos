@@ -50,7 +50,7 @@ public class ControladorCliente extends Application {
         cliente = new Cliente();  // Usará los valores por defecto definidos en Cliente
     }
 
-    // Constructor personalizado (para usar otro host o puerto)
+    // Constructor personalizado (para usar otro puerto)
     public ControladorCliente(String host, int puerto) {
         cliente = new Cliente(host, puerto);
     }

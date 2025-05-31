@@ -24,6 +24,7 @@ public class Cliente {
     private DataInputStream entradaDatos;
     private PrintWriter salida;
     private ControladorVista controladorVista;
+    private String nombreJugadorLocal;
 
     public Cliente() throws IOException {
         this.host = HOST_POR_DEFECTO;
@@ -37,6 +38,7 @@ public class Cliente {
         this.controladorVista = controladorVista;
     }
     public void conectar(String nombreJugador) throws IOException {
+    this.nombreJugadorLocal = nombreJugador;
     socket = new Socket(host, puerto);
     entradaDatos = new DataInputStream(socket.getInputStream());
     entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -72,10 +74,28 @@ public class Cliente {
 
                 } else if (mensaje.startsWith("GANADOR: ")) {
                     controladorVista.mostrarBotonCertificado(true);
+                    System.out.println("[DEBUG CLIENTE] Mensaje de ganador recibido: " + mensaje);
+
+                } else if (mensaje.startsWith("RESULTADO:")) {
+                    // Extraer nombre del ganador
+                    String[] partes = mensaje.split(" ");
+                    String nombreGanador = partes[3]; // "RESULTADO: El jugador NOMBRE ha..."
+                    System.out.println("[DEBUG CLIENTE] Mensaje de resultado recibido: " + mensaje);
+
+                    System.out.println("[DEBUG CLIENTE] Ganador es: " + nombreGanador);
+                    System.out.println("[DEBUG CLIENTE] Este cliente es: " + nombreJugador);
+
+                    if (nombreGanador.equalsIgnoreCase(nombreJugadorLocal)) {
+                        controladorVista.mostrarMensaje("¡Felicidades " + nombreGanador + "! Has ganado la carrera.");
+                        controladorVista.mostrarBotonCertificado(true);
+                    } else {
+                        controladorVista.mostrarMensaje("El ganador es: " + nombreGanador);
+                        controladorVista.mostrarBotonCertificado(false);
+                    }                  
+                                          
 
                 } else if (mensaje.equals("PDF")) {
-                    recibirCertificado();
-                    
+                    recibirCertificado();                   
 
                 } else {
                     Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
@@ -85,11 +105,11 @@ public class Cliente {
         } catch (IOException e) {
             Platform.runLater(() -> controladorVista.mostrarMensaje("Error al recibir datos del servidor."));
             e.printStackTrace();
-        }
+        }   
     }).start();
 
 
-    }    
+}    
     public void enviarNombre(String nombre) {
         salida.println(nombre);  
     }

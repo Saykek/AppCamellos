@@ -21,7 +21,6 @@ public class Partida implements Runnable {
 
     private  Jugable[] jugadores;
 
-    private static final int MIN_POINTS = 0;
     private static final int MAX_POINTS = 10;
     private static final int TIEMPO_ESPERA = 300;
 
@@ -112,9 +111,6 @@ public class Partida implements Runnable {
         }
     }
 
-    //private void enviarCertificado(Jugable jugador) throws IOException {
-        //File certificado = new File(ganador.getNombre() + ".pdf");
-    //}
 
     @Override
     public void run() {
@@ -145,7 +141,7 @@ public class Partida implements Runnable {
                         for (Jugable receptor : jugadores) {
                             try {
                              PrintWriter salida = new PrintWriter(receptor.getSocket().getOutputStream(), true);
-                             salida.print("RESULTADO: El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
+                             salida.println("RESULTADO: El jugador " + jugador.getNombre() + " ha ganado la partida con " + jugador.getPuntos() + " puntos.");
                 
                             } catch (Exception e) {
                              System.out.println("Error al enviar el progreso al jugador " + jugador.getNombre() + ": " + e.getMessage());

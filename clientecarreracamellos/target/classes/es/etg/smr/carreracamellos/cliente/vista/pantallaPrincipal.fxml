@@ -37,6 +37,6 @@
       <Label id="lblProgresoCamello2" fx:id="lblProgresoCamello2" layoutX="553.0" layoutY="191.0" prefHeight="34.0" prefWidth="127.0" />
       <ProgressBar id="pbCamello1" fx:id="pbCamello1" layoutX="205.0" layoutY="142.0" prefHeight="20.0" prefWidth="326.0" progress="0.0" stylesheets="@estilo.css" />
       <ProgressBar id="pbCamello2" fx:id="pbCamello2" layoutX="205.0" layoutY="211.0" prefHeight="20.0" prefWidth="326.0" progress="0.0" stylesheets="@estilo.css" />
-      <Button fx:id="btnConectar1" contentDisplay="RIGHT" layoutX="522.0" layoutY="292.0" mnemonicParsing="false" onAction="#iniciarPartida" prefHeight="32.0" prefWidth="156.0" stylesheets="@estilo.css" text="Generar Certificado" textAlignment="RIGHT" />
+      <Button id="btnCertificado" fx:id="btnCertificado" contentDisplay="RIGHT" layoutX="522.0" layoutY="292.0" mnemonicParsing="false" onAction="#abrirCertificado" prefHeight="32.0" prefWidth="156.0" stylesheets="@estilo.css" text="Generar Certificado" textAlignment="RIGHT" />
    </children>
 </AnchorPane>

@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades sara!
+     ¡Felicidades EL LENTO DE ALEX!
 
 Has ganado la partida de la Carrera de Camellos.
 

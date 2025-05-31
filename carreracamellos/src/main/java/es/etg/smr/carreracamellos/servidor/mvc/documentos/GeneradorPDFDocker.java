@@ -10,17 +10,22 @@ import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 public class GeneradorPDFDocker implements GeneradorDocumentos {
 
     private static final String IMAGEN_DOCKER = "pandoc/latex";
-    private static final String DIRECTORIO = " /datos";
+    private static final String DIRECTORIO = " /data/";
+    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/"; 
+
     @Override
     public void generar(Resultado resultado) throws IOException {
        
         String nombreGanador = resultado.getGanador();
-        String archivo = " Certificado de ganador:\n\n"+ nombreGanador;
+        String archivoMdRuta = "documentos/envios/" + nombreGanador + ".md";
+        String archivoPdfRuta = "documentos/envios/" + nombreGanador + ".pdf";
         String nombreArchivoMD = nombreGanador + ".md";
+        
 
-        String rutaActual = new File(".").getAbsolutePath();
+        //String rutaActual = new File(".").getAbsolutePath();
 
-        File archivoMd = new File(nombreArchivoMD);
+        File archivoMd = new File(RUTA_DOCUMENTOS + nombreArchivoMD);
+
         if (!archivoMd.exists()) {
             System.err.println("❌ El archivo " + nombreArchivoMD + " no existe. Primero genera el .md.");
             return;
@@ -29,11 +34,11 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
         String [] comando = {
             "docker", "run", "--rm",
             "--platform=linux/amd64",
-            "-v", System.getProperty("user.dir") + ":/data",
+            "-v", RUTA_DOCUMENTOS + ":/data",
             IMAGEN_DOCKER,
-            "/data/" + nombreGanador + ".md",
+            nombreArchivoMD,
             "-o",
-            "/data/" + nombreGanador + ".pdf"
+            nombreGanador + ".pdf"
             
         };
 

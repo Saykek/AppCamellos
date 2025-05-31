@@ -1,5 +1,6 @@
 package es.etg.smr.carreracamellos.servidor.mvc.documentos;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -7,7 +8,7 @@ import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 
 public class GeneradorCertificadoMd implements GeneradorDocumentos {
     
-    //private static final String PREFIJO = " Certificado de ganador:\n\n";  
+    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/"; 
     private static final String EXTENSION = ".md";
     private static final String TITULO = "      CERTIFICADO DE GANADOR\n\n     "  ;
     private static final String MENSAJE = "¡Felicidades %s!\n\n" + 
@@ -16,8 +17,13 @@ public class GeneradorCertificadoMd implements GeneradorDocumentos {
     @Override
     public void generar(Resultado resultado) throws IOException {
         String nombreGanador = resultado.getGanador();
-        String nombreArchivo =nombreGanador + EXTENSION;
+        String nombreArchivo =RUTA_DOCUMENTOS + nombreGanador + EXTENSION;
         String contenidoMd = TITULO  + MENSAJE.formatted(nombreGanador);
+
+        File carpeta = new File(RUTA_DOCUMENTOS);
+        if (!carpeta.exists()) {
+            carpeta.mkdirs(); // Crea el directorio si no existe
+        }
 
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
             writer.write(contenidoMd);

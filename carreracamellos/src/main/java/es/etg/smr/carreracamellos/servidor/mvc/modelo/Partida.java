@@ -1,8 +1,14 @@
 package es.etg.smr.carreracamellos.servidor.mvc.modelo;
 
 
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
 
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMd;
@@ -34,13 +40,34 @@ public class Partida implements Runnable {
         jugadores[indice] = jugador; // Asigna el jugador al índice correspondiente
     }
 
+    private boolean arhivoListo (Path ruta, int intentosMax, int esperaMs) {
+        int intentos = 0;
+        while (!Files.exists(ruta) && intentos < intentosMax) {
+            try {
+                Thread.sleep(esperaMs);
+                intentos++;
+            } catch (InterruptedException e) {
+                System.out.println("⏱ Error mientras se esperaba el archivo PDF: " + e.getMessage());
+                return false;
+            }
+        }
+        return Files.exists(ruta);
+    }
+
     private void guardarResultado() throws IOException {
         Jugable ganador = jugadores[0].getPuntos() >= jugadores[1].getPuntos() ? jugadores[0] : jugadores[1];
+        String nombreGanador = ganador.getNombre();
+        Socket socketGanador = ganador.getSocket();
         Jugable perdedor = (ganador == jugadores[0]) ? jugadores[1] : jugadores[0];
+        String nombrePerdedor = perdedor.getNombre();
+
+        String nombrePdf = nombreGanador + ".pdf";
+        Path rutaPdf = Paths.get("/Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios", nombrePdf);
+        
 
         Resultado resultado = new Resultado(
-                ganador.getNombre(), ganador.getPuntos(),
-                perdedor.getNombre(), perdedor.getPuntos()
+                nombreGanador, ganador.getPuntos(),
+                nombrePerdedor, perdedor.getPuntos()
         );
 
         try {
@@ -53,12 +80,41 @@ public class Partida implements Runnable {
             certificado.generar(resultado);
             GeneradorDocumentos pdf = new GeneradorPDFDocker();
             pdf.generar(resultado);
+
+            System.out.println("📁 Buscando PDF en: " + rutaPdf.toAbsolutePath()); 
+
+            boolean pdfListo = arhivoListo(rutaPdf, 10, 100); // Espera hasta que el PDF esté listo
+            if (!pdfListo) {
+                System.out.println("❌ El PDF no está listo después de varios intentos.");
+                return;
+            }
+             
+            
+// Asumimos que tienes PrintWriter y BufferedReader ya, pero para enviar bytes usamos OutputStream
+            OutputStream outGanador = socketGanador.getOutputStream();
+            DataOutputStream dataOut = new DataOutputStream(outGanador);
+
+            PrintWriter salidaGanador = new PrintWriter(outGanador, true);
+            salidaGanador.println("GANADOR: " + nombreGanador + " ha ganado la partida con " + ganador.getPuntos() + " puntos.");
+            // 1. Enviamos el tipo de documento
+            salidaGanador.println("PDF");
+
+            byte[] bytesPdf = Files.readAllBytes(rutaPdf);
+            dataOut.writeInt(bytesPdf.length);// 2. Enviamos la longitud del PDF
+            dataOut.write(bytesPdf); // 3. Enviamos el contenido del PDF
+            dataOut.flush(); // Aseguramos que se envíe todo
+
+            System.out.println("📤 PDF enviado al cliente ganador: " + nombrePdf);
            
 
         } catch (IOException e) {
             System.out.println("Error al guardar el resultado de la partida: " + e.getMessage());
         }
     }
+
+    //private void enviarCertificado(Jugable jugador) throws IOException {
+        //File certificado = new File(ganador.getNombre() + ".pdf");
+    //}
 
     @Override
     public void run() {
@@ -96,7 +152,7 @@ public class Partida implements Runnable {
                             }
                         }
                 try{        
-                    guardarResultado(); // Me da error IO
+                    guardarResultado(); 
                              break;
                 } catch (IOException e) {
                     System.out.println("Error al guardar el resultado de la partida: " + e.getMessage());
@@ -109,6 +165,7 @@ public class Partida implements Runnable {
                 }
 
             }
+            
 
             /*for (Jugar jugador : jugadores) {
                 

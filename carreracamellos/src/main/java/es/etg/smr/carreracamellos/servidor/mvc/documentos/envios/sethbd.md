@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades sara!
+     ¡Felicidades sethbd!
 
 Has ganado la partida de la Carrera de Camellos.
 

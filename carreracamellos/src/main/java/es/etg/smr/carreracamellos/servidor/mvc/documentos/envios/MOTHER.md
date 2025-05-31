@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades sara!
+     ¡Felicidades MOTHER!
 
 Has ganado la partida de la Carrera de Camellos.
 

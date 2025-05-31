@@ -2,6 +2,7 @@ package es.etg.smr.carreracamellos.cliente.mvc.vista;
 
 
 
+import java.io.File;
 import java.io.IOException;
 
 import es.etg.smr.carreracamellos.cliente.mvc.controlador.ControladorCliente;
@@ -24,7 +25,51 @@ public class ControladorVista {
     @FXML
     private TextField txtNombreCliente;
 
-    
+    @FXML
+    private Button btnCertificado; 
+
+    public void mostrarBotonCertificado(boolean esGanador) {
+        if (esGanador) {
+            btnCertificado.setVisible(true);
+            btnCertificado.setDisable(false);
+        } else {
+            btnCertificado.setVisible(false);
+            btnCertificado.setDisable(true);
+        }
+    }
+
+    @FXML
+private void abrirCertificado (ActionEvent event) {
+    try {
+        File pdfFile = new File("certificados_recibidos/certificado.pdf");
+
+        if (!pdfFile.exists()) {
+            System.out.println("El archivo no existe: " + pdfFile.getAbsolutePath());
+            return;
+        }
+
+        // Para macOS
+        if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+            new ProcessBuilder("open", pdfFile.getAbsolutePath()).start();
+
+        // Para Linux
+        } else if (System.getProperty("os.name").toLowerCase().contains("nix") ||
+                   System.getProperty("os.name").toLowerCase().contains("nux")) {
+            new ProcessBuilder("xdg-open", pdfFile.getAbsolutePath()).start();
+
+        // Para Windows
+        } else if (System.getProperty("os.name").toLowerCase().contains("win")) {
+            new ProcessBuilder("cmd", "/c", "start", "", pdfFile.getAbsolutePath()).start();
+        }
+
+    } catch (IOException e) {
+        e.printStackTrace();
+        System.out.println("Error al intentar abrir el PDF.");
+    }
+}
+
+
+
     
     @FXML
     private TextField txtNombreCamello1; //icono

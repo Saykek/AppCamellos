@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades sara!
+     ¡Felicidades papi pocho!
 
 Has ganado la partida de la Carrera de Camellos.
 

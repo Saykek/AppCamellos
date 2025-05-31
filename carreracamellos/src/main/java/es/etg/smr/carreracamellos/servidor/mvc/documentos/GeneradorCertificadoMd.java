@@ -14,6 +14,7 @@ public class GeneradorCertificadoMd implements GeneradorDocumentos {
     private static final String MENSAJE = "¡Felicidades %s!\n\n" + 
             "Has ganado la partida de la Carrera de Camellos.\n\n" +
             "Gracias por jugar y esperamos verte en la próxima carrera.\n";
+            
     @Override
     public void generar(Resultado resultado) throws IOException {
         String nombreGanador = resultado.getGanador();
@@ -22,7 +23,7 @@ public class GeneradorCertificadoMd implements GeneradorDocumentos {
 
         File carpeta = new File(RUTA_DOCUMENTOS);
         if (!carpeta.exists()) {
-            carpeta.mkdirs(); // Crea el directorio si no existe
+            carpeta.mkdirs(); 
         }
 
         try (FileWriter writer = new FileWriter(nombreArchivo)) {

@@ -22,8 +22,6 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
         String nombreArchivoMD = nombreGanador + ".md";
         
 
-        //String rutaActual = new File(".").getAbsolutePath();
-
         File archivoMd = new File(RUTA_DOCUMENTOS + nombreArchivoMD);
 
         if (!archivoMd.exists()) {
@@ -57,20 +55,20 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
                 System.err.println(linea);
             }
         } catch (IOException e) {
-            System.err.println("❌ Error al leer la salida del proceso: " + e.getMessage());
+            System.err.println(" Error al leer la salida del proceso: " + e.getMessage());
         }
 
 
         try {
             int codigoSalida = proceso.waitFor();
             if (codigoSalida == 0) {
-                System.out.println("✅ PDF generado correctamente.");
+                System.out.println(" PDF generado correctamente.");
             } else {
-                System.err.println("❌ Error al generar el PDF. Código de salida: " + codigoSalida);
+                System.err.println(" Error al generar el PDF. Código de salida: " + codigoSalida);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            System.err.println("❌ Proceso interrumpido: " + e.getMessage());
+            System.err.println(" Proceso interrumpido: " + e.getMessage());
         }
     }
     

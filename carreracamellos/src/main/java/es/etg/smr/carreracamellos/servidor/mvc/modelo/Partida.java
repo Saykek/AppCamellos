@@ -23,9 +23,12 @@ public class Partida implements Runnable {
 
     private static final int MAX_POINTS = 10;
     private static final int TIEMPO_ESPERA = 300;
+    private static final int INTENTOS_MAX = 10;
+    private static final int ESPERA_MS = 100;
+    private static final String RUTA_DOCUMENTOS = ("/Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios");
 
     private int puntosCamello = 0;
-    public boolean partidaTerminada = false; // Variable para indicar si la partida ha terminado
+    public boolean partidaTerminada = false; 
 
     public Jugable[] getJugadores() {
         return jugadores;
@@ -36,7 +39,7 @@ public class Partida implements Runnable {
     }
 
     public void agregarJugador(Jugador jugador, int indice) {
-        jugadores[indice] = jugador; // Asigna el jugador al índice correspondiente
+        jugadores[indice] = jugador; // Asigno el jugador al índice correspondiente
     }
 
     private boolean arhivoListo (Path ruta, int intentosMax, int esperaMs) {
@@ -46,7 +49,7 @@ public class Partida implements Runnable {
                 Thread.sleep(esperaMs);
                 intentos++;
             } catch (InterruptedException e) {
-                System.out.println("⏱ Error mientras se esperaba el archivo PDF: " + e.getMessage());
+                System.out.println(" Error mientras se esperaba el archivo PDF: " + e.getMessage());
                 return false;
             }
         }
@@ -61,7 +64,7 @@ public class Partida implements Runnable {
         String nombrePerdedor = perdedor.getNombre();
 
         String nombrePdf = nombreGanador + ".pdf";
-        Path rutaPdf = Paths.get("/Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios", nombrePdf);
+        Path rutaPdf = Paths.get(RUTA_DOCUMENTOS, nombrePdf);
         
 
         Resultado resultado = new Resultado(
@@ -80,30 +83,27 @@ public class Partida implements Runnable {
             GeneradorDocumentos pdf = new GeneradorPDFDocker();
             pdf.generar(resultado);
 
-            System.out.println("📁 Buscando PDF en: " + rutaPdf.toAbsolutePath()); 
+            System.out.println("Buscando PDF en: " + rutaPdf.toAbsolutePath()); 
 
-            boolean pdfListo = arhivoListo(rutaPdf, 10, 100); // Espera hasta que el PDF esté listo
+            boolean pdfListo = arhivoListo(rutaPdf, INTENTOS_MAX, ESPERA_MS); // Espera hasta que el PDF esté listo
             if (!pdfListo) {
-                System.out.println("❌ El PDF no está listo después de varios intentos.");
+                System.out.println("El PDF no está listo después de varios intentos.");
                 return;
             }
              
             
-// Asumimos que tienes PrintWriter y BufferedReader ya, pero para enviar bytes usamos OutputStream
             OutputStream outGanador = socketGanador.getOutputStream();
             DataOutputStream dataOut = new DataOutputStream(outGanador);
 
             PrintWriter salidaGanador = new PrintWriter(outGanador, true);
             salidaGanador.println("GANADOR: " + nombreGanador + " ha ganado la partida con " + ganador.getPuntos() + " puntos.");
-            // 1. Enviamos el tipo de documento
-            salidaGanador.println("PDF");
+           
+            salidaGanador.println("PDF"); // Envío el tipo de documento
 
             byte[] bytesPdf = Files.readAllBytes(rutaPdf);
-            dataOut.writeInt(bytesPdf.length);// 2. Enviamos la longitud del PDF
-            dataOut.write(bytesPdf); // 3. Enviamos el contenido del PDF
-            dataOut.flush(); // Aseguramos que se envíe todo
-
-            System.out.println("📤 PDF enviado al cliente ganador: " + nombrePdf);
+            dataOut.writeInt(bytesPdf.length);// Envío la longitud del PDF
+            dataOut.write(bytesPdf); // Envío el contenido del PDF
+            dataOut.flush(); // Aseguro que se envíe todo
            
 
         } catch (IOException e) {
@@ -116,7 +116,7 @@ public class Partida implements Runnable {
     public void run() {
         
         Random random = new Random();
-        // imprimimos un mensaje indicando que la partida ha comenzado.
+        
         System.out.println("Iniciando partida con los jugadores: " + jugadores[0].getNombre() + " y " + jugadores[1].getNombre());
 
         while (!partidaTerminada) {

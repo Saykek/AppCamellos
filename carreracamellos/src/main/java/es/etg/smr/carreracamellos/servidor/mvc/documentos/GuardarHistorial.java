@@ -10,11 +10,13 @@ public class GuardarHistorial implements GeneradorDocumentos {
 
 
    private static final String ARCHIVO = "partidas.txt";
+   private static final String FORMATO_HISTORIAL = "Fecha: %s |  Ganador: %s (%d pts)  |  Perdedor: %s (%d pts) ";
+   private static final String FORMATO_FECHA = "dd/MM/yyyy HH:mm";
 
     @Override
     public void generar(Resultado resultadoPartida) throws IOException {
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
-        String linea = String.format("Fecha: %s | Ganador: %s (%d pts) | Perdedor: %s (%d pts)",
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern(FORMATO_FECHA);
+        String linea = String.format(FORMATO_HISTORIAL,
                 resultadoPartida.getFecha().format(formato),
                 resultadoPartida.getGanador(), resultadoPartida.getPuntosGanador(),
                 resultadoPartida.getPerdedor(), resultadoPartida.getPuntosPerdedor());

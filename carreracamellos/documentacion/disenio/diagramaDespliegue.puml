@@ -1,0 +1,19 @@
+```plantuml
+@startuml
+
+node "<<device>>\nCliente" as Cliente {
+    [<<Java>>   \nCarreraCamellos]
+    
+}
+
+node "<<device>>\nServidor" as Servidor {
+    [<<Java>>   \nServidorJuego] as ServidorJuego
+    [<<Docker>>\nmdToPdf] as ServicioPDF
+    
+
+    
+}
+   
+Cliente -- [Servidor] : Conexión TCP: 3009
+
+ServidorJuego -- [ServicioPDF] 

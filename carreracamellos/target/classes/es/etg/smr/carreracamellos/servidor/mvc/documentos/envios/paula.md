@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades SERGIO!
+     ¡Felicidades paula!
 
 Has ganado la partida de la Carrera de Camellos.
 

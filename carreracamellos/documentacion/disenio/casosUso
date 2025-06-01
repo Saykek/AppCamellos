@@ -1,0 +1,19 @@
+
+@startuml
+
+
+actor Usuario
+
+rectangle "Sistema Carrera de Camellos" {
+    usecase "Jugar" as Jugar
+    usecase "Generar certificado PDF" as Certificado
+}
+
+Usuario --> Jugar
+Usuario --> Certificado : Si gana la carrera
+
+
+
+@enduml
+
+

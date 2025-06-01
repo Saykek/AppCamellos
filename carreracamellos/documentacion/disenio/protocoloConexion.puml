@@ -4,23 +4,33 @@
 @startuml
 actor Cliente
 participant Servidor
+participant Docker
 
 Cliente -> Servidor: Conectar (Socket)
 activate Servidor
 Cliente -> Servidor: Enviar nombre
 
 
-Servidor -> Servidor: Esperar 3 segundos
+Servidor -> Servidor: Esperar a 2 jugadores y  3 segundos 
 note over Servidor: Comienza la partida
 
 loop Mientras partidaTerminada == false
-    Servidor -> Cliente: Enviar puntaje aleatorio(x veces del 1 al 10)
-    Servidor -> Servidor: Comprobar puntuación
+    Servidor -> Cliente: Enviar puntuación aleatoria(x veces del 1 al 10)
+    Servidor -> Servidor: Comprobar si hay ganador
 end
         Servidor -> Cliente: Enviar "¡Felicidades NOMBRE! Has ganado la carrera."
         Servidor -> Cliente: Enviar "El ganador es: NOMBRE" 
-        Servidor -> Servidor: Terminar juego
+      
+Servidor -> Docker : Generar certificado PDF
+note over Servidor: Llama al contenedor Docker para crear el PDF
+Servidor -> Cliente: Enviar "PDF"
+Servidor -> Cliente: Enviar bytes del archivo PDF
 
+
+Servidor -> Servidor: Terminar juego
 Cliente -> Servidor: Cerrar conexión
 deactivate Servidor
 @enduml
+
+
+

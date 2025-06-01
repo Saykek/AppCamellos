@@ -47,9 +47,9 @@ _______________
 
 
 ## Hito 2 - Arquitectura, diseño y plan de pruebas
- El sistema sigue una arquitectura cliente-servidor, donde 2 clientes se conectan al servidor a través de sockets TCP para participar en la carrera de camellos.
- Cada cliente mostrará su propia interfaz gráfica mediante JavaFX.
- En el servidor será donde se centralice toda la lógica del juego.
+ El sistema sigue una arquitectura cliente-servidor con el patron MVC, donde 2 clientes se conectan al servidor a través de sockets TCP para participar en la carrera de camellos.
+ Cada cliente mostrará su propia interfaz gráfica mediante JavaFX, donde se le permitirá registrarse con su nombre, seguir la carrera en tiempo real y en caso de ser ganador podrá descargar su certificado en PDF.
+ En el servidor será donde se centralice toda la lógica del juego, incluyendo el registro de jugadores, los avances, el control del vencedor y  el almacenamiento de las partidas y  generación del certificado, que lo generará en markdown para después convertirlo a través de docker en PDF.
 
  ### Arquitectura Cliente - Servidor
  - Diagrama de despliegue: 
@@ -94,7 +94,8 @@ flowchart TD
   
   - Los clientes se conectarán al servidor, podrán conectarse hasta 2 personas. Se registrarán enviando su nombre y se les asignará un camello.
   - Una vez que estén registrados los dos jugadores el servidor hará una breve pausa e irá asignando aleatoriamente valores del 1 al 10 a cada jugador.  Cuando un jugador llegue a la meta ( en mi caso he puesto llegar a 100 puntos)se dará por finalizada la carrera y se le generará al jugador vencedor el certificado PDF. Ambos jugadores recibirán un mensaje final recibiendo la enhorabuena o diciéndoles quien gano."
-![Protocolo conexión](protocoloConexion.png)
+  
+![Protocolo conexión](../disenio/protocoloConexion.png)
 
  - ### Tecnologías a usar:
   - Interfaz gráfica: La interfaz gráfica a utilizar será JavaFX con Scene Builder.
@@ -102,6 +103,7 @@ flowchart TD
   - Programación: Se utilizará Java en Visual Studio Code.
   - Se utilizarán hilos para los jugadores y la lógica del juego.
   - Para la persistencia se usará un archivo de texto. 
+  - Para la conversión de markdown a PDF se usará Docker.
 
 - ### Desarrollo de la interfaz:
   
@@ -114,32 +116,23 @@ En esta fase muestro como será la estructura del proyecto y un prototipo de la 
 
 ### Estructura del proyecto
 
-El proyecto esta organizado en cuatro paquetes:
-- **src/**
-    - **cliente/** contiene las clases del cliente, la interfaz de usuario (JavaFX) y la lógica que gestiona la comunicación con el servidor.
-    - **servidor/** contiene la lógica del juego, los hilos para gestionar múltiples jugadores, la verificación de respuestas y la generación de certificados.
-    - **compartida/** contiene clases comunes que se utilizan tanto en el cliente como en el servidor para intercambiar información.
-    - **recursos/** incluye los archivos .fxml, imágenes e iconos usados en la interfaz JavaFX.
+El programa esta organizado en dos proyectos, por un lado tenemos el cliente y por otro el servidor. Dentro de cada proyecto se organiza en paquetes.
+Tanto en un proyecto como otro tenemos una estructura con MVC (aunque no disponemos de paquete vista en servidor), donde separamos responsabilidades.
+En el servidor ademas tendremos un paquete llamado documentos para guardar todas las clases relacionadas con la generación de documentos, y además, guardaremos los certificados obtenidos. También contamos con paquete utilidades que será desde donde controlemos todos los logs. Fuera de esto tenemos otro paquete llamado documentacion con los diseños de los diagramas y la documentación sobre los proyectos. También se encuentra el fichero donde se guardan los log, el fichero donde se guardan las partidas, y un paquete más con las pruebas oportunas para los proyectos.
+En el cliente mantenemos MVC, y este si que contiene los tres paquetes. Fuera tendremos la clase con la que pondremos en marcha el programa, un paquete llamado resources con los recursos utilizados y un paquete con todas las pruebas oportunas.
 
 
  
 
 ### Interfaz inicial (JavaFX)
 
-Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos el nombre del juego. Arriba en el lado izquierdo permite que el jugador introduzca su nombre y se conecte al servidor o salga del juego, en la parte inferior podrá generar el certificado PDF si resulta ser ganador, y en el hueco que hay entre medias saldrá un mensaje al final de la partida. En el lado derecho muestra la posición del jugador, también saldrán las preguntas extras y se podrá contestar o no a ellas.
+Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos el nombre del juego, debajo de esto permite que el jugador introduzca su nombre y se conecte al servidor, en la parte inferior a la derecha habrá un botón que sólo se mostrará en caso de resultar vencedor, donde podrá generar el certificado PDF, en el lado derecho de ésto hay una ventana donde se mostrarán los mensajes enviados por el servidor.
 
   
 
 
-![Prototipo pantalla](prototipoPantalla.png)
+![Prototipo pantalla](../disenio/prototipoPantalla.png)
 
-### Diseño del Sistema
-El diseño será en paquetes, en principio habrá 4:
-**src/**
-    - **cliente/** contiene las clases del cliente, la interfaz de usuario (JavaFX) y la lógica que gestiona la comunicación con el servidor.
-    - **servidor/** contiene la lógica del juego, los hilos para gestionar múltiples jugadores, la verificación de respuestas y la generación de certificados.
-    - **compartida/** contiene clases comunes que se utilizan tanto en el cliente como en el servidor para intercambiar información.
-    - **recursos/** incluye los archivos .fxml, imágenes e iconos usados en la interfaz JavaFX.
 
 ### Plan de Pruebas
 #### ***Pruebas Manuales***
@@ -148,13 +141,20 @@ El diseño será en paquetes, en principio habrá 4:
 ***Pruebas de funcionalidad***
 
   *Prueba 1: Conexión*
-Iniciar el servidor y conectar los dos clientes.Comprobar que no hay ningún error de conexión.
+    •    Objetivo: Verificar que los dos clientes pueden conectarse correctamente al servidor.
+    •    Procedimiento: Iniciar el servidor, luego conectar cada cliente.
+    •    Resultado esperado: El servidor reconoce a los dos clientes y comienza la partida sin errores.
 
-*Prueba 2 : Envío y recepción de preguntas*
-El servidor enviará una pregunta y deberá llegar al cliente sin problemas, este a su vez podrá contestarla y que la reciba el servidor.
 
-*Prueba 3 : Verificación de respuestas*
-El servidor recibirá la respuesta del cliente y deberá verificar si es correcta o no para actualizar la posición del camello.
+*Prueba 2 : Avance del juego*
+    •    Objetivo: Comprobar que el servidor actualiza correctamente el avance de cada camello.
+    •    Procedimiento: Iniciar una partida y dejar que avance automáticamente.
+    •    Resultado esperado: El progreso de los camellos se muestra correctamente en cada cliente.
+
+*Prueba 3 :  Fin de la partida y ganador*
+    •    Objetivo: Verificar que se detecta el final de la partida.
+    •    Procedimiento: Jugar hasta que uno de los camellos gane.
+    •    Resultado esperado: Se muestra el ganador y se genera el certificado PDF.
 
 *Prueba 4 : Fin de la partida*
 Se deberá comprobar cuando un camello llega a la meta para mostrar quien es el ganador y generar el PDF.
@@ -163,19 +163,25 @@ Se deberá comprobar cuando un camello llega a la meta para mostrar quien es el 
 ***Pruebas de la interfaz***
 
 *Prueba 1: Verificación botones*
-Verificar que los botones tienen la funcionalidad deseada. Y se muestra todo lo incluido.
+    •    Objetivo: Asegurar que los botones funcionan como se espera.
+    •    Procedimiento: Pulsar cada botón disponible en la interfaz en diferentes momentos.
+    •    Resultado esperado: Se ejecutan las acciones esperadas sin errores.
 
 *Prueba 2 : Imágenes*
-Verificar que se muestran correctamente todas las imágenes.
+    •    Objetivo: Comprobar que las imágenes de los camellos y la interfaz se cargan correctamente.
+    •    Resultado esperado: Todas las imágenes se muestran bien en los clientes.
 
 
 ***Pruebas de mal funcionamiento***
 
-*Prueba 1 : Clientes*
-Intentar conectar más clientes de los permitidos(2).
+*Prueba 1 : Más de 2 clientes*
+    •    Objetivo: Ver qué ocurre si se intenta conectar un tercer cliente.
+    •    Resultado esperado: El servidor no acepta más de 2 conexiones por partida y el tercero será dirigido a la siguiente partida.
 
-*Prueba 2 : Desconexión*
-Desconectar un cliente, el servidor debería detectarlo y finalizar la partida e informar al otro jugador.
+*Prueba 2 : Cliente desconectado*
+    •    Objetivo: Comprobar que el servidor detecta una desconexión.
+    •    Procedimiento: Cerrar uno de los clientes durante una partida.
+    •    Resultado esperado: El servidor informa de la desconexión y termina la partida.
 
 #### ***Pruebas Automáticas***
 
@@ -183,16 +189,20 @@ Desconectar un cliente, el servidor debería detectarlo y finalizar la partida e
   Para ello tenemos la carpeta src/test donde se guardarán. 
 
 *Prueba 1: Avances camellos*
-Se comprobará que el camello avanza correctamente si responde bien, mal, o simplemente no responde. 
+    •    Objetivo: Verificar que el camello avanza correctamente según los puntos asignados.
+    •    Método probado: .
 
 *Prueba 2: Posición camellos*
-Comprobará la posición del camello para ver que es la esperada.
+    •    Objetivo: Comprobar que las posiciones se actualizan de forma coherente.
+    •    Método probado: .
 
-*Prueba 3: Datos*
-Comprobará que los datos ( como el nombre del camello) es correcto
+*Prueba 3: Datos del jugador*
+    •    Objetivo: Verificar que los datos como nombre del jugador se asignan correctamente.
+    •    Método probado: .
 
-*Prueba 4: Respuestas*
-Comprobará que las respuestas proporcionadas sean las correctas.
+*Prueba 4: Generación de historial*
+    •    Objetivo: Comprobar que al finalizar una partida se guarda correctamente el historial.
+    •    Método probado: .
 
 __________________
 

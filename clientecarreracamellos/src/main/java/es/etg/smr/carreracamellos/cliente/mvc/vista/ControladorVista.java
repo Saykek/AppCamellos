@@ -204,6 +204,7 @@ public void mostrarMensaje(String mensaje) {
     }
     @FXML
 public void initialize() {
+    btnCertificado.setVisible(false);
     if (txtNombreCliente != null) {
         System.out.println("TextField inicializado correctamente.");
     } else {

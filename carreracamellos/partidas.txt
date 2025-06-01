@@ -74,3 +74,5 @@ Fecha: 01/06/2025 10:08 |  Ganador: cliente (109 pts)  |  Perdedor: werik (92 pt
 Fecha: 01/06/2025 10:09 |  Ganador: cliente (100 pts)  |  Perdedor: werik (83 pts) 
 Fecha: 01/06/2025 10:15 |  Ganador: lili (100 pts)  |  Perdedor: pepe (87 pts) 
 Fecha: 01/06/2025 10:18 |  Ganador: lucas (101 pts)  |  Perdedor: diego (65 pts) 
+Fecha: 01/06/2025 10:32 |  Ganador: antonio (106 pts)  |  Perdedor: liam (87 pts) 
+Fecha: 01/06/2025 10:33 |  Ganador: paco (102 pts)  |  Perdedor: pablo (90 pts) 

@@ -18,8 +18,27 @@ import javafx.scene.image.ImageView;
 
 public class ControladorVista {
 
+    private static final String OS_NAME = System.getProperty("os.name").toLowerCase();
+    private static final String OS_MAC = "mac";
+    private static final String OS_LINUX_1 = "nix";
+    private static final String OS_LINUX_2 = "nux";
+    private static final String OS_WINDOWS = "win";
+    private static final String COMANDO_MAC = "open";
+    private static final String COMANDO_LINUX = "xdg-open";
+    private static final String COMANDO_WINDOWS = "cmd";
+
+
+    private final String RUTA_CERTIFICADO = "certificados_recibidos/certificado.pdf";
+    private final int PUNTOS_MAXIMOS = 100;
+    private final double PORCENTAJE = 1.0;
+    private final double PORCENTAJE_MAXIMO =100.0; // Porcentaje máximo para la barra de progreso
+    
     private String nombreJugador1;
     private String nombreJugador2;
+
+    private int puntosAcumuladosJugador1 = 0;
+    private int puntosAcumuladosJugador2 = 0;
+    
     
     @FXML
     private TextField txtNombreCliente;
@@ -40,7 +59,7 @@ public class ControladorVista {
     @FXML
 private void abrirCertificado (ActionEvent event) {
     try {
-        File pdfFile = new File("certificados_recibidos/certificado.pdf");
+        File pdfFile = new File(RUTA_CERTIFICADO);
 
         if (!pdfFile.exists()) {
             System.out.println("El archivo no existe: " + pdfFile.getAbsolutePath());
@@ -48,17 +67,17 @@ private void abrirCertificado (ActionEvent event) {
         }
 
         // Para macOS
-        if (System.getProperty("os.name").toLowerCase().contains("mac")) {
-            new ProcessBuilder("open", pdfFile.getAbsolutePath()).start();
+        if (OS_NAME.contains(OS_MAC)) {
+            new ProcessBuilder(COMANDO_MAC, pdfFile.getAbsolutePath()).start();
 
         // Para Linux
-        } else if (System.getProperty("os.name").toLowerCase().contains("nix") ||
-                   System.getProperty("os.name").toLowerCase().contains("nux")) {
-            new ProcessBuilder("xdg-open", pdfFile.getAbsolutePath()).start();
+        } else if (OS_NAME.contains(OS_LINUX_1) ||
+                   OS_NAME.contains(OS_LINUX_2)) {
+            new ProcessBuilder(COMANDO_LINUX, pdfFile.getAbsolutePath()).start();
 
         // Para Windows
-        } else if (System.getProperty("os.name").toLowerCase().contains("win")) {
-            new ProcessBuilder("cmd", "/c", "start", "", pdfFile.getAbsolutePath()).start();
+        } else if (OS_NAME.contains(OS_WINDOWS)) {
+            new ProcessBuilder(COMANDO_WINDOWS, "/c", "start", "", pdfFile.getAbsolutePath()).start();
         }
 
     } catch (IOException e) {
@@ -88,12 +107,7 @@ private void abrirCertificado (ActionEvent event) {
     @FXML
     private ProgressBar pbCamello2;
 
-    private final int PUNTOS_MAXIMOS = 100;
-    private final double PORCENTAJE = 1.0;
-    private final double PORCENTAJE_MAXIMO =100.0; // Porcentaje máximo para la barra de progreso
-    
-    private int puntosAcumuladosJugador1 = 0;
-    private int puntosAcumuladosJugador2 = 0;
+   
 
 @FXML
 public void actualizarProgresoTotal(String nombre, int puntos) {

@@ -16,6 +16,19 @@ public class Cliente {
     private static final String HOST_POR_DEFECTO = "localhost";
     private static final int PUERTO_POR_DEFECTO = 3009;
 
+    private static final String MSG_PROGRESO = "PROGRESO:";
+    private static final String MSG_JUGADORES = "JUGADORES:";
+    private static final String MSG_GANADOR = "GANADOR:";
+    private static final String MSG_RESULTADO = "RESULTADO:";
+    private static final String MSG_PDF = "PDF";
+    private static final String MSG_PRE_FELICIDADES = "¡Felicidades ";
+    private static final String MSG_POST_FELICIDADES = "! Has ganado la carrera.";
+    private static final String MSG_PRE_GANADOR = "El ganador es: ";
+
+    private static final String CARPETA_CERTIFICADOS = "certificados_recibidos";
+    private static final String NOMBRE_CERTIFICADO = "certificado.pdf";
+    private static final int VALOR_SUBSTRING = 10; 
+
     private String host;
     private int puerto;
 
@@ -56,7 +69,7 @@ public class Cliente {
                
                 final String finalMensaje = mensaje;
 
-                if (mensaje.startsWith("PROGRESO:")) {
+                if (mensaje.startsWith(MSG_PROGRESO)) {
                     String[] partes = mensaje.substring(9).split(";");
                     String nombre = partes[0];
                     int puntos = Integer.parseInt(partes[1]);
@@ -68,33 +81,33 @@ public class Cliente {
                         
                     });
 
-                } else if (mensaje.startsWith("JUGADORES:")) {
-                    String[] jugadores = mensaje.substring(10).split(";");
+                } else if (mensaje.startsWith(MSG_JUGADORES)) {
+                    String[] jugadores = mensaje.substring(VALOR_SUBSTRING).split(";");
                     Platform.runLater(() -> controladorVista.setNombreJugadores(jugadores[0], jugadores[1]));
 
-                } else if (mensaje.startsWith("GANADOR: ")) {
+                } else if (mensaje.startsWith(MSG_GANADOR)) {
                     controladorVista.mostrarBotonCertificado(true);
                     System.out.println("[DEBUG CLIENTE] Mensaje de ganador recibido: " + mensaje);
 
-                } else if (mensaje.startsWith("RESULTADO:")) {
-                    // Extraer nombre del ganador
+                } else if (mensaje.startsWith(MSG_RESULTADO)) {
+                    // Extraigo nombre del ganador
                     String[] partes = mensaje.split(" ");
-                    String nombreGanador = partes[3]; // "RESULTADO: El jugador NOMBRE ha..."
+                    String nombreGanador = partes[3]; 
                     System.out.println("[DEBUG CLIENTE] Mensaje de resultado recibido: " + mensaje);
 
                     System.out.println("[DEBUG CLIENTE] Ganador es: " + nombreGanador);
                     System.out.println("[DEBUG CLIENTE] Este cliente es: " + nombreJugador);
 
                     if (nombreGanador.equalsIgnoreCase(nombreJugadorLocal)) {
-                        controladorVista.mostrarMensaje("¡Felicidades " + nombreGanador + "! Has ganado la carrera.");
+                        controladorVista.mostrarMensaje(MSG_PRE_FELICIDADES + nombreGanador + MSG_POST_FELICIDADES);
                         controladorVista.mostrarBotonCertificado(true);
                     } else {
-                        controladorVista.mostrarMensaje("El ganador es: " + nombreGanador);
+                        controladorVista.mostrarMensaje(MSG_PRE_GANADOR + nombreGanador);
                         controladorVista.mostrarBotonCertificado(false);
                     }                  
                                           
 
-                } else if (mensaje.equals("PDF")) {
+                } else if (mensaje.equals(MSG_PDF)) {
                     recibirCertificado();                   
 
                 } else {
@@ -132,11 +145,11 @@ public class Cliente {
 
         System.out.println("[DEBUG CLIENTE] Certificado PDF recibido correctamente. Guardando en disco...");
 
-        File carpeta = new File("certificados_recibidos");
+        File carpeta = new File(CARPETA_CERTIFICADOS);
         if (!carpeta.exists()) {
             carpeta.mkdir(); // Creo la carpeta si no existe
         }
-        File archivoPdf = new File(carpeta, "certificado.pdf"); // Nombre del archivo PDF
+        File archivoPdf = new File(carpeta, NOMBRE_CERTIFICADO); // Nombre del archivo PDF
 
         try (FileOutputStream flujo = new FileOutputStream(archivoPdf)) {
             flujo.write(datosPdf); // Escribo los bytes en el archivo

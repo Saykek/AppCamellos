@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.IOException;
 
 import es.etg.smr.carreracamellos.cliente.mvc.controlador.ControladorCliente;
-import es.etg.smr.carreracamellos.cliente.utilidades.Constantes;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -89,27 +88,35 @@ private void abrirCertificado (ActionEvent event) {
     @FXML
     private ProgressBar pbCamello2;
 
-    //private final int PUNTOS_MAXIMOS = 100;
-    //private final double PORCENTAJE = 1.0;
+    private final int PUNTOS_MAXIMOS = 100;
+    private final double PORCENTAJE = 1.0;
     private final double PORCENTAJE_MAXIMO =100.0; // Porcentaje máximo para la barra de progreso
     
+    private int puntosAcumuladosJugador1 = 0;
+    private int puntosAcumuladosJugador2 = 0;
 
 @FXML
 public void actualizarProgresoTotal(String nombre, int puntos) {
-    double progreso = Math.min((double) puntos / Constantes.PUNTOS_MAXIMOS, Constantes.PORCENTAJE);
+    double progreso = Math.min((double) puntos /PUNTOS_MAXIMOS,PORCENTAJE);
 
     Platform.runLater(() -> {
         String nombreNormalizado = nombre.trim().toLowerCase();
         String jugador1Normalizado = nombreJugador1.trim().toLowerCase();
         String jugador2Normalizado = nombreJugador2.trim().toLowerCase();
 
+        int puntosTurno = 0;
+
 
         if (nombreNormalizado.equals(jugador1Normalizado)) {
-            
+            puntosTurno = puntos-puntosAcumuladosJugador1;
+            puntosAcumuladosJugador1 = puntos;
+
             lblProgresoCamello1.setText(puntos + " puntos");
             pbCamello1.setProgress(progreso);
             
         } else if (nombreNormalizado.equals(jugador2Normalizado)) {
+            puntosTurno = puntos-puntosAcumuladosJugador2;
+            puntosAcumuladosJugador2 = puntos;
             
             lblProgresoCamello2.setText(puntos + " puntos");
             pbCamello2.setProgress(progreso);
@@ -119,7 +126,7 @@ public void actualizarProgresoTotal(String nombre, int puntos) {
             System.out.println("Jugadores actuales: " + nombreJugador1 + ", " + nombreJugador2);
         }
 
-        taMensajes.appendText(nombre + " avanza a " + puntos + " puntos.\n");
+        taMensajes.appendText(nombre + " avanza  " + puntosTurno + " puntos.\n");
     });
 }
     @FXML

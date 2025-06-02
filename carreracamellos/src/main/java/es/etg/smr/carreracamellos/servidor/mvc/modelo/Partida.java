@@ -25,7 +25,7 @@ public class Partida implements Runnable {
     private static final int TIEMPO_ESPERA = 300;
     private static final int INTENTOS_MAX = 10;
     private static final int ESPERA_MS = 100;
-    private static final String RUTA_DOCUMENTOS = ("/Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios");
+    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/"; 
 
     private int puntosCamello = 0;
     public boolean partidaTerminada = false; 

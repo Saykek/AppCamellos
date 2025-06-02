@@ -9282,3 +9282,77 @@ jun 01, 2025 6:50:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.L
 INFO: PEDRO avanza 1 puntos. Total acumulado: 94
 jun 01, 2025 6:50:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
 INFO: SARA avanza 8 puntos. Total acumulado: 101
+jun 02, 2025 4:48:01 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: Servidor iniciado en el puerto 3009
+jun 02, 2025 4:49:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: Servidor iniciado en el puerto 3009
+jun 02, 2025 4:50:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: Jugador conectado: miriam 1
+jun 02, 2025 4:50:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: Jugador conectado: javi 2
+jun 02, 2025 4:50:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 8 puntos. Total acumulado: 8
+jun 02, 2025 4:50:29 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 8 puntos. Total acumulado: 8
+jun 02, 2025 4:50:29 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 1 puntos. Total acumulado: 9
+jun 02, 2025 4:50:29 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 8 puntos. Total acumulado: 16
+jun 02, 2025 4:50:30 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 9 puntos. Total acumulado: 18
+jun 02, 2025 4:50:30 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 7 puntos. Total acumulado: 23
+jun 02, 2025 4:50:30 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 6 puntos. Total acumulado: 24
+jun 02, 2025 4:50:31 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 10 puntos. Total acumulado: 33
+jun 02, 2025 4:50:31 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 7 puntos. Total acumulado: 31
+jun 02, 2025 4:50:31 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 1 puntos. Total acumulado: 34
+jun 02, 2025 4:50:31 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 6 puntos. Total acumulado: 37
+jun 02, 2025 4:50:32 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 3 puntos. Total acumulado: 37
+jun 02, 2025 4:50:32 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 5 puntos. Total acumulado: 42
+jun 02, 2025 4:50:32 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 9 puntos. Total acumulado: 46
+jun 02, 2025 4:50:33 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 8 puntos. Total acumulado: 50
+jun 02, 2025 4:50:33 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 3 puntos. Total acumulado: 49
+jun 02, 2025 4:50:33 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 8 puntos. Total acumulado: 58
+jun 02, 2025 4:50:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 2 puntos. Total acumulado: 51
+jun 02, 2025 4:50:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 5 puntos. Total acumulado: 63
+jun 02, 2025 4:50:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 7 puntos. Total acumulado: 58
+jun 02, 2025 4:50:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 2 puntos. Total acumulado: 65
+jun 02, 2025 4:50:35 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 9 puntos. Total acumulado: 67
+jun 02, 2025 4:50:35 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 8 puntos. Total acumulado: 73
+jun 02, 2025 4:50:35 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 5 puntos. Total acumulado: 72
+jun 02, 2025 4:50:36 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 1 puntos. Total acumulado: 74
+jun 02, 2025 4:50:36 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 5 puntos. Total acumulado: 77
+jun 02, 2025 4:50:36 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 9 puntos. Total acumulado: 83
+jun 02, 2025 4:50:37 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 5 puntos. Total acumulado: 82
+jun 02, 2025 4:50:37 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 10 puntos. Total acumulado: 93
+jun 02, 2025 4:50:37 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 7 puntos. Total acumulado: 89
+jun 02, 2025 4:50:38 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 3 puntos. Total acumulado: 96
+jun 02, 2025 4:50:38 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: javi 2 avanza 4 puntos. Total acumulado: 93
+jun 02, 2025 4:50:38 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
+INFO: miriam 1 avanza 5 puntos. Total acumulado: 101

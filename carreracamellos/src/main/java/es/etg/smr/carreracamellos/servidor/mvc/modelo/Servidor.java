@@ -17,7 +17,7 @@ public class Servidor {
 
     public static void main(String[] args) throws IOException {
         try (ServerSocket server = new ServerSocket(PUERTO)) {
-            LogCamellos.log("Servidor iniciado en el puerto " + PUERTO);
+            LogCamellos.info("Servidor iniciado en el puerto " + PUERTO);
 
             while (true) {
                 // Crear la partida
@@ -25,22 +25,24 @@ public class Servidor {
 
                 for (int i = 0; i < MAX_CAMELLOS; i++) {
                     Socket socket = server.accept();
-                    System.out.println("Cliente conectado desde: " + socket.getInetAddress().getHostAddress()); ////
+                    LogCamellos.info("Cliente conectado desde: " + socket.getInetAddress().getHostAddress()); ////
 
                     BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     PrintWriter salida = new PrintWriter(socket.getOutputStream(), true);
 
                     String nombreJugador = entrada.readLine();
 
-                    LogCamellos.log("Jugador conectado: " + nombreJugador);
-                    System.out.println("Mensaje recibido del cliente: " + nombreJugador);
+                    LogCamellos.info("Jugador conectado: " + nombreJugador);
+                    LogCamellos.debug("Mensaje recibido del cliente: " + nombreJugador);
 
-                    Jugador jugador = new Jugador(nombreJugador, socket); // creo un camello con el nombre del jugador y el socket
+                    Jugador jugador = new Jugador(nombreJugador, socket); // creo un camello con el nombre del jugador y
+                                                                          // el socket
                     partida.agregarJugador(jugador, i); // agrego el jugador a la partida
 
                     // Envío un mensaje al cliente
-                    salida.println(MJ_BIENVENIDA + nombreJugador + MJ_ESPERA ); // envío un mensaje de bienvenida al jugador
-                    salida.println(nombreJugador);    
+                    salida.println(MJ_BIENVENIDA + nombreJugador + MJ_ESPERA); // envío un mensaje de bienvenida al
+                                                                               // jugador
+                    salida.println(nombreJugador);
                 }
 
                 Jugador jugador1 = (Jugador) partida.getJugadores()[0];
@@ -50,12 +52,12 @@ public class Servidor {
                 PrintWriter salida1 = new PrintWriter(jugador1.getSocket().getOutputStream(), true);
                 PrintWriter salida2 = new PrintWriter(jugador2.getSocket().getOutputStream(), true);
 
-                salida1.println("JUGADORES: "+jugador1.getNombre() + ";" + jugador2.getNombre());
-                salida2.println("JUGADORES: "+jugador2.getNombre() + ";" + jugador1.getNombre());
+                salida1.println("JUGADORES: " + jugador1.getNombre() + ";" + jugador2.getNombre());
+                salida2.println("JUGADORES: " + jugador2.getNombre() + ";" + jugador1.getNombre());
 
                 // Crear un hilo para ejecutar la partida
                 Thread hiloPartida = new Thread(partida);
-                hiloPartida.start(); 
+                hiloPartida.start();
             }
         }
     }

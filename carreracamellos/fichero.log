@@ -9356,3 +9356,731 @@ jun 02, 2025 4:50:38 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.L
 INFO: javi 2 avanza 4 puntos. Total acumulado: 93
 jun 02, 2025 4:50:38 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos log
 INFO: miriam 1 avanza 5 puntos. Total acumulado: 101
+jun 02, 2025 5:32:35 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Servidor iniciado en el puerto 3009
+jun 02, 2025 5:33:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Servidor iniciado en el puerto 3009
+jun 02, 2025 5:33:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Cliente conectado desde: 127.0.0.1
+jun 02, 2025 5:33:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Jugador conectado: log
+jun 02, 2025 5:33:34 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Mensaje recibido del cliente: log
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Cliente conectado desde: 127.0.0.1
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Jugador conectado: log2
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Mensaje recibido del cliente: log2
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Iniciando partida con los jugadores: log y log2
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 6 puntos. Total acumulado: 6
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 1 puntos. Total acumulado: 1
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:45 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 1 puntos. Total acumulado: 7
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 1 puntos. Total acumulado: 2
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 1 puntos. Total acumulado: 8
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 9 puntos. Total acumulado: 11
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:46 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 5 puntos. Total acumulado: 13
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 1 puntos. Total acumulado: 12
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 8 puntos. Total acumulado: 21
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:47 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 1 puntos. Total acumulado: 13
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 4 puntos. Total acumulado: 25
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 10 puntos. Total acumulado: 23
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 10 puntos. Total acumulado: 35
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 10 puntos. Total acumulado: 33
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 10 puntos. Total acumulado: 45
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 9 puntos. Total acumulado: 42
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 10 puntos. Total acumulado: 55
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 9 puntos. Total acumulado: 51
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 7 puntos. Total acumulado: 62
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 3 puntos. Total acumulado: 54
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 1 puntos. Total acumulado: 63
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 9 puntos. Total acumulado: 63
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 1 puntos. Total acumulado: 64
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 3 puntos. Total acumulado: 66
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 7 puntos. Total acumulado: 71
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 1 puntos. Total acumulado: 67
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 8 puntos. Total acumulado: 79
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 9 puntos. Total acumulado: 76
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 4 puntos. Total acumulado: 83
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 8 puntos. Total acumulado: 84
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 5 puntos. Total acumulado: 88
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 8 puntos. Total acumulado: 92
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log avanza 3 puntos. Total acumulado: 91
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log a log2
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: log2 avanza 10 puntos. Total acumulado: 102
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de log2 a log2
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Resultado enviado a log
+jun 02, 2025 5:33:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Resultado enviado a log2
+jun 02, 2025 5:33:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Buscando PDF en: /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/log2.pdf
+jun 02, 2025 5:33:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Enviado mensaje de ganador a: log2
+jun 02, 2025 5:33:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Preparando envío del PDF a: log2
+jun 02, 2025 5:33:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: PDF enviado correctamente a: log2 (52902 bytes)
+jun 02, 2025 5:41:00 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Servidor iniciado en el puerto 3009
+jun 02, 2025 5:41:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Cliente conectado desde: 127.0.0.1
+jun 02, 2025 5:41:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Jugador conectado: util
+jun 02, 2025 5:41:28 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Mensaje recibido del cliente: util
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Cliente conectado desde: 127.0.0.1
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Jugador conectado: litu
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Mensaje recibido del cliente: litu
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Iniciando partida con los jugadores: util y litu
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 3 puntos. Total acumulado: 3
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 6 puntos. Total acumulado: 6
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 7 puntos. Total acumulado: 10
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:48 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 10 puntos. Total acumulado: 16
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 9 puntos. Total acumulado: 19
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 10 puntos. Total acumulado: 26
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:49 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 4 puntos. Total acumulado: 23
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 5 puntos. Total acumulado: 31
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 10 puntos. Total acumulado: 33
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:50 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 6 puntos. Total acumulado: 37
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 5 puntos. Total acumulado: 38
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 4 puntos. Total acumulado: 41
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:51 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 2 puntos. Total acumulado: 40
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 5 puntos. Total acumulado: 46
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 9 puntos. Total acumulado: 49
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 6 puntos. Total acumulado: 52
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:52 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 6 puntos. Total acumulado: 55
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 2 puntos. Total acumulado: 54
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 5 puntos. Total acumulado: 60
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:53 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 10 puntos. Total acumulado: 64
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 6 puntos. Total acumulado: 66
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 2 puntos. Total acumulado: 66
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:54 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 1 puntos. Total acumulado: 67
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 2 puntos. Total acumulado: 68
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 5 puntos. Total acumulado: 72
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 3 puntos. Total acumulado: 71
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:55 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 2 puntos. Total acumulado: 74
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 7 puntos. Total acumulado: 78
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 10 puntos. Total acumulado: 84
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:56 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 6 puntos. Total acumulado: 84
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 10 puntos. Total acumulado: 94
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 6 puntos. Total acumulado: 90
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:57 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 4 puntos. Total acumulado: 98
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: litu avanza 4 puntos. Total acumulado: 94
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a util
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de litu a litu
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: util avanza 3 puntos. Total acumulado: 101
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a util
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de util a litu
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Resultado enviado a util
+jun 02, 2025 5:41:58 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Resultado enviado a litu
+jun 02, 2025 5:42:01 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Buscando PDF en: /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/util.pdf
+jun 02, 2025 5:42:01 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Enviado mensaje de ganador a: util
+jun 02, 2025 5:42:01 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Preparando envío del PDF a: util
+jun 02, 2025 5:42:01 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: PDF enviado correctamente a: util (52543 bytes)
+jun 02, 2025 6:52:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Servidor iniciado en el puerto 3009
+jun 02, 2025 6:53:09 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Cliente conectado desde: 127.0.0.1
+jun 02, 2025 6:53:09 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Jugador conectado: seis
+jun 02, 2025 6:53:09 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Mensaje recibido del cliente: seis
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Cliente conectado desde: 127.0.0.1
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Jugador conectado: seis2
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Mensaje recibido del cliente: seis2
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Iniciando partida con los jugadores: seis y seis2
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 9 puntos. Total acumulado: 9
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 4 puntos. Total acumulado: 4
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:10 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 9 puntos. Total acumulado: 18
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 8 puntos. Total acumulado: 12
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 9 puntos. Total acumulado: 27
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:11 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 6 puntos. Total acumulado: 18
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 5 puntos. Total acumulado: 32
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 4 puntos. Total acumulado: 22
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:12 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 4 puntos. Total acumulado: 36
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 10 puntos. Total acumulado: 32
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 7 puntos. Total acumulado: 43
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 7 puntos. Total acumulado: 39
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:13 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 4 puntos. Total acumulado: 47
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 8 puntos. Total acumulado: 47
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 8 puntos. Total acumulado: 55
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:14 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 9 puntos. Total acumulado: 56
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 1 puntos. Total acumulado: 56
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 1 puntos. Total acumulado: 57
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:15 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 1 puntos. Total acumulado: 57
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 9 puntos. Total acumulado: 66
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 4 puntos. Total acumulado: 61
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 8 puntos. Total acumulado: 74
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:16 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 2 puntos. Total acumulado: 63
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 5 puntos. Total acumulado: 79
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 8 puntos. Total acumulado: 71
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:17 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 7 puntos. Total acumulado: 86
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 9 puntos. Total acumulado: 80
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 2 puntos. Total acumulado: 88
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:18 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 5 puntos. Total acumulado: 85
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 7 puntos. Total acumulado: 95
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 3 puntos. Total acumulado: 88
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:19 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 1 puntos. Total acumulado: 96
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 1 puntos. Total acumulado: 89
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 3 puntos. Total acumulado: 99
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis avanza 6 puntos. Total acumulado: 95
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis
+jun 02, 2025 6:53:20 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis a seis2
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: seis2 avanza 6 puntos. Total acumulado: 105
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Enviado progreso de seis2 a seis2
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Resultado enviado a seis
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Resultado enviado a seis2
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Historial guardado: Fecha: 02/06/2025 18:53 |  Ganador: seis2 (105 pts)  |  Perdedor: seis (95 pts) 
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Certificado generado correctamente para: seis2
+jun 02, 2025 6:53:21 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Ejecutando comando Docker: docker run --rm --platform=linux/amd64 -v /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/:/data pandoc/latex seis2.md -o seis2.pdf
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: [DOCKER-STDERR] pandoc: Ticker: poll failed: Interrupted system call: Interrupted system call
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: [DOCKER-STDERR] pandoc: Ticker: poll failed: Interrupted system call: Interrupted system call
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: PDF generado correctamente para %s.
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Buscando PDF en: /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/seis2.pdf
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Enviado mensaje de ganador a: seis2
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+FINE: Preparando envío del PDF a: seis2
+jun 02, 2025 6:53:24 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: PDF enviado correctamente a: seis2 (52416 bytes)

@@ -5,13 +5,13 @@ import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
+import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
 public class GuardarHistorial implements GeneradorDocumentos {
 
-
-   private static final String ARCHIVO = "partidas.txt";
-   private static final String FORMATO_HISTORIAL = "Fecha: %s |  Ganador: %s (%d pts)  |  Perdedor: %s (%d pts) ";
-   private static final String FORMATO_FECHA = "dd/MM/yyyy HH:mm";
+    private static final String ARCHIVO = "partidas.txt";
+    private static final String FORMATO_HISTORIAL = "Fecha: %s |  Ganador: %s (%d pts)  |  Perdedor: %s (%d pts) ";
+    private static final String FORMATO_FECHA = "dd/MM/yyyy HH:mm";
 
     @Override
     public void generar(Resultado resultadoPartida) throws IOException {
@@ -21,12 +21,13 @@ public class GuardarHistorial implements GeneradorDocumentos {
                 resultadoPartida.getGanador(), resultadoPartida.getPuntosGanador(),
                 resultadoPartida.getPerdedor(), resultadoPartida.getPuntosPerdedor());
 
-        FileWriter writer = new FileWriter(ARCHIVO, true);
-        writer.write(linea + "\n");
-        writer.close();
-      
+        try (FileWriter writer = new FileWriter(ARCHIVO, true)) {
+            writer.write(linea + "\n");
+            LogCamellos.info("Historial guardado: " + linea);
+        } catch (IOException e) {
+            LogCamellos.error("Error al guardar el historial: ", e);
+            throw e;
+        }
+
     }
 }
-
-
-

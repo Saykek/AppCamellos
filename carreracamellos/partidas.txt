@@ -105,3 +105,6 @@ Fecha: 02/06/2025 16:50 |  Ganador: miriam 1 (101 pts)  |  Perdedor: javi 2 (93 
 Fecha: 02/06/2025 17:33 |  Ganador: log2 (102 pts)  |  Perdedor: log (91 pts) 
 Fecha: 02/06/2025 17:41 |  Ganador: util (101 pts)  |  Perdedor: litu (94 pts) 
 Fecha: 02/06/2025 18:53 |  Ganador: seis2 (105 pts)  |  Perdedor: seis (95 pts) 
+Fecha: 02/06/2025 19:27 |  Ganador: cliente 2 (102 pts)  |  Perdedor: cliente1 (69 pts) 
+Fecha: 03/06/2025 12:20 |  Ganador: Luis (101 pts)  |  Perdedor: Sandra (87 pts) 
+Fecha: 03/06/2025 12:21 |  Ganador: FORMAT2 (106 pts)  |  Perdedor: FORMAT (97 pts) 

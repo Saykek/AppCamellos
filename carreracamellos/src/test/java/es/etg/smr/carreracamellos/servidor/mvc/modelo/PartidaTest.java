@@ -27,8 +27,8 @@ public class PartidaTest {
         Jugador jugador2 = new Jugador("Sandra", servidor2);
 
         Partida partida = new Partida(2);
-        partida.agregarJugador(jugador1, 0);
-        partida.agregarJugador(jugador2, 1);
+        partida.agregar(jugador1, 0);
+        partida.agregar(jugador2, 1);
 
         Thread hiloPartida = new Thread(partida);
         hiloPartida.start();

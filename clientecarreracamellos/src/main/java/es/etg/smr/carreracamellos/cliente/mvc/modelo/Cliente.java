@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 import es.etg.smr.carreracamellos.cliente.mvc.vista.ControladorVista;
+import es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos;
 import javafx.application.Platform;
 
 public class Cliente {
@@ -27,7 +28,7 @@ public class Cliente {
 
     private static final String CARPETA_CERTIFICADOS = "certificados_recibidos";
     private static final String NOMBRE_CERTIFICADO = "certificado.pdf";
-    private static final int VALOR_SUBSTRING = 10; 
+    private static final int VALOR_SUBSTRING = 10;
 
     private String host;
     private int puerto;
@@ -43,88 +44,91 @@ public class Cliente {
         this.host = HOST_POR_DEFECTO;
         this.puerto = PUERTO_POR_DEFECTO;
     }
+
     public Cliente(String host, int puerto) {
         this.host = host;
         this.puerto = puerto;
     }
+
     public void setControladorVista(ControladorVista controladorVista) {
         this.controladorVista = controladorVista;
     }
+
     public void conectar(String nombreJugador) throws IOException {
-    this.nombreJugadorLocal = nombreJugador;
-    socket = new Socket(host, puerto);
-    entradaDatos = new DataInputStream(socket.getInputStream());
-    entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-    salida = new PrintWriter(socket.getOutputStream(), true);
+        this.nombreJugadorLocal = nombreJugador;
+        socket = new Socket(host, puerto);
+        entradaDatos = new DataInputStream(socket.getInputStream());
+        entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        salida = new PrintWriter(socket.getOutputStream(), true);
 
-    // Enviar nombre al servidor
-    salida.println(nombreJugador);
+        // Enviar nombre al servidor
+        salida.println(nombreJugador);
 
-    // Hilo para escuchar mensajes del servidor
-    new Thread(() -> {
-        try {
-            String mensaje;
-            while ((mensaje = entrada.readLine()) != null) {
-                System.out.println("[DEBUG CLIENTE] Mensaje recibido del servidor: " + mensaje);
-               
-                final String finalMensaje = mensaje;
+        // Hilo para escuchar mensajes del servidor
+        new Thread(() -> {
+            try {
+                String mensaje;
+                while ((mensaje = entrada.readLine()) != null) {
+                    LogCamellos.info("[CLIENTE] Mensaje recibido del servidor: " + mensaje);
 
-                if (mensaje.startsWith(MSG_PROGRESO)) {
-                    String[] partes = mensaje.substring(9).split(";");
-                    String nombre = partes[0];
-                    int puntos = Integer.parseInt(partes[1]);
+                    final String finalMensaje = mensaje;
 
-                    Platform.runLater(() -> {
-                        System.out.println("Actualizando progreso de " + nombre + " con " + puntos + " puntos.");
-                        controladorVista.actualizarProgresoCamello(nombre, puntos);
-                        controladorVista.actualizarProgresoTotal(nombre, puntos);
-                        
-                    });
+                    if (mensaje.startsWith(MSG_PROGRESO)) {
+                        String[] partes = mensaje.substring(9).split(";");
+                        String nombre = partes[0];
+                        int puntos = Integer.parseInt(partes[1]);
 
-                } else if (mensaje.startsWith(MSG_JUGADORES)) {
-                    String[] jugadores = mensaje.substring(VALOR_SUBSTRING).split(";");
-                    Platform.runLater(() -> controladorVista.setNombreJugadores(jugadores[0], jugadores[1]));
+                        Platform.runLater(() -> {
+                            LogCamellos.info("Actualizando progreso de " + nombre + " con " + puntos + " puntos.");
+                            controladorVista.actualizarProgresoCamello(nombre, puntos);
+                            controladorVista.actualizarProgresoTotal(nombre, puntos);
 
-                } else if (mensaje.startsWith(MSG_GANADOR)) {
-                    controladorVista.mostrarBotonCertificado(true);
-                    System.out.println("[DEBUG CLIENTE] Mensaje de ganador recibido: " + mensaje);
+                        });
 
-                } else if (mensaje.startsWith(MSG_RESULTADO)) {
-                    // Extraigo nombre del ganador
-                    String[] partes = mensaje.split(" ");
-                    String nombreGanador = partes[3]; 
-                    System.out.println("[DEBUG CLIENTE] Mensaje de resultado recibido: " + mensaje);
+                    } else if (mensaje.startsWith(MSG_JUGADORES)) {
+                        String[] jugadores = mensaje.substring(VALOR_SUBSTRING).split(";");
+                        Platform.runLater(() -> controladorVista.setNombreJugadores(jugadores[0], jugadores[1]));
 
-                    System.out.println("[DEBUG CLIENTE] Ganador es: " + nombreGanador);
-                    System.out.println("[DEBUG CLIENTE] Este cliente es: " + nombreJugador);
-
-                    if (nombreGanador.equalsIgnoreCase(nombreJugadorLocal)) {
-                        controladorVista.mostrarMensaje(MSG_PRE_FELICIDADES + nombreGanador + MSG_POST_FELICIDADES);
+                    } else if (mensaje.startsWith(MSG_GANADOR)) {
                         controladorVista.mostrarBotonCertificado(true);
+                        LogCamellos.info("[CLIENTE] Mensaje de ganador recibido: " + mensaje);
+
+                    } else if (mensaje.startsWith(MSG_RESULTADO)) {
+                        // Extraigo nombre del ganador
+                        String[] partes = mensaje.split(" ");
+                        String nombreGanador = partes[3];
+                        LogCamellos.info("[CLIENTE] Mensaje de resultado recibido: " + mensaje);
+
+                        LogCamellos.info("[CLIENTE] Ganador es: " + nombreGanador);
+                        LogCamellos.info("[CLIENTE] Este cliente es: " + nombreJugador);
+
+                        if (nombreGanador.equalsIgnoreCase(nombreJugadorLocal)) {
+                            controladorVista.mostrarMensaje(MSG_PRE_FELICIDADES + nombreGanador + MSG_POST_FELICIDADES);
+                            controladorVista.mostrarBotonCertificado(true);
+                        } else {
+                            controladorVista.mostrarMensaje(MSG_PRE_GANADOR + nombreGanador);
+                            controladorVista.mostrarBotonCertificado(false);
+                        }
+
+                    } else if (mensaje.equals(MSG_PDF)) {
+                        recibirCertificado();
+
                     } else {
-                        controladorVista.mostrarMensaje(MSG_PRE_GANADOR + nombreGanador);
-                        controladorVista.mostrarBotonCertificado(false);
-                    }                  
-                                          
+                        Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
+                    }
+                }
 
-                } else if (mensaje.equals(MSG_PDF)) {
-                    recibirCertificado();                   
+            } catch (IOException e) {
+                Platform.runLater(() -> controladorVista.mostrarMensaje("Error al recibir datos del servidor."));
+                LogCamellos.error("Error al recibir datos del servidor: " + e.getMessage(), e);
 
-                } else {
-                    Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
-               }
             }
-            
-        } catch (IOException e) {
-            Platform.runLater(() -> controladorVista.mostrarMensaje("Error al recibir datos del servidor."));
-            e.printStackTrace();
-        }   
-    }).start();
+        }).start();
 
+    }
 
-}    
     public void enviarNombre(String nombre) {
-        salida.println(nombre);  
+        salida.println(nombre);
     }
 
     public String recibirMensaje() throws IOException {
@@ -136,14 +140,16 @@ public class Cliente {
             socket.close();
         }
     }
+
     public void recibirCertificado() throws IOException {
-        System.out.println("[DEBUG CLIENTE] Recibiendo certificado PDF del servidor...");
-        int longitud = entradaDatos.readInt(); //LEO EL TAMAÑO
-        System.out.println("[DEBUG CLIENTE] Longitud del certificado PDF: " + longitud);
+        LogCamellos.info("[CLIENTE] Recibiendo certificado PDF del servidor...");
+        int longitud = entradaDatos.readInt(); // LEO EL TAMAÑO
+        LogCamellos.info("[CLIENTE] Longitud del certificado PDF: " + longitud);
+
         byte[] datosPdf = new byte[longitud]; // leo los bytes
         entradaDatos.readFully(datosPdf); // leo los bytes
 
-        System.out.println("[DEBUG CLIENTE] Certificado PDF recibido correctamente. Guardando en disco...");
+        LogCamellos.info("[CLIENTE] Certificado PDF recibido correctamente. Guardando en disco...");
 
         File carpeta = new File(CARPETA_CERTIFICADOS);
         if (!carpeta.exists()) {
@@ -153,11 +159,10 @@ public class Cliente {
 
         try (FileOutputStream flujo = new FileOutputStream(archivoPdf)) {
             flujo.write(datosPdf); // Escribo los bytes en el archivo
-            System.out.println("[DEBUG CLIENTE] Certificado PDF guardado en: " + archivoPdf.getAbsolutePath());
+            LogCamellos.info("[CLIENTE] Certificado PDF guardado en: " + archivoPdf.getAbsolutePath());
         } catch (IOException e) {
-            e.printStackTrace();
-            
-            System.out.println("[DEBUG CLIENTE] Error al guardar el certificado PDF: " + e.getMessage());
+            LogCamellos.error("[CLIENTE] Error al guardar el certificado PDF: " + e.getMessage(), e);
+
         }
     }
 }

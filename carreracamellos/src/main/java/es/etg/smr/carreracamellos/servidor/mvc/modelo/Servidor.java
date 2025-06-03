@@ -37,7 +37,7 @@ public class Servidor {
 
                     Jugador jugador = new Jugador(nombreJugador, socket); // creo un camello con el nombre del jugador y
                                                                           // el socket
-                    partida.agregarJugador(jugador, i); // agrego el jugador a la partida
+                    partida.agregar(jugador, i); // agrego el jugador a la partida
 
                     // Envío un mensaje al cliente
                     salida.println(MJ_BIENVENIDA + nombreJugador + MJ_ESPERA); // envío un mensaje de bienvenida al

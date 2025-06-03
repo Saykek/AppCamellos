@@ -21,11 +21,33 @@ public class Partida implements Runnable {
     private Jugable[] jugadores;
 
     private static final int MAX_POINTS = 10;
+    private static final int INDICE_JUG1 = 0;
+    private static final int INDICE_JUG2 = 1;
     private static final int TIEMPO_ESPERA = 300;
     private static final int INTENTOS_MAX = 10;
     private static final int ESPERA_MS = 100;
+    private static final int PUNTOS_GANADOR = 100;
     private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir")
             + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/";
+
+    private static final String MJ_ERROR_PDF = "Error mientras se esperaba el archivo PDF: ";
+    private static final String MJ_ERROR_ENVIO_RESULTADO = "Error al enviar el resultado de la partida: ";
+    private static final String MJ_ERROR_GUARDAR_ENVIAR = "Error al guardar o enviar el resultado de la partida para: ";
+    private static final String MJ_ERROR_PAUSAR = "Error al pausar la partida";
+    private static final String MJ_ERROR_ENVIO_PROGRESO = "Error al enviar el progreso al jugador ";
+    private static final String FORMATO_BUSCANDO = "Buscando PDF en: %s";
+    private static final String MJ_PDF_NO_LISTO = "El PDF no está listo después de varios intentos.";
+    private static final String MJ_ENVIO_GANADOR = "Enviado mensaje de ganador a: ";
+    private static final String FORMATO_GANADOR = "GANADOR: %s%s%d";
+    private static final String MJ_GANADOR_PUNTOS = " ha ganado la partida con estos puntos:  ";
+    private static final String FORMATO_ESPERA_PDF = "Esperando a que se cree el archivo PDF: %s (%d)";
+    private static final String FORMATO_RESULTADO_GANADOR = "RESULTADO: El jugador %s ha ganado la partida con %d puntos.";
+    private static final String FORMATO_INICIO_PARTIDA = "Iniciando partida con los jugadores: %s%s";
+    private static final String FORMATO_LOG_PUNTOS = "%s;%d;%d";
+    private static final String FORMATO_PROGRESO = "PROGRESO: %s;%d";
+    private static final String FORMATO_DOC_ENVIADO_OK = "PDF enviado correctamente a: %s (%d)";
+    private static final String EXT_PDF = ".pdf";
+    private static final String TIPO_DOC = "PDF";
 
     private int puntosCamello = 0;
     public boolean partidaTerminada = false;
@@ -38,7 +60,7 @@ public class Partida implements Runnable {
         jugadores = new Jugador[MAX_JUGADORES];
     }
 
-    public void agregarJugador(Jugador jugador, int indice) {
+    public void agregar(Jugador jugador, int indice) {
         jugadores[indice] = jugador; // Asigno el jugador al índice correspondiente
     }
 
@@ -46,12 +68,12 @@ public class Partida implements Runnable {
         int intentos = 0;
         while (!Files.exists(ruta) && intentos < intentosMax) {
             try {
-                LogCamellos.debug("Esperando a que se cree el archivo PDF: " + RUTA_DOCUMENTOS + " (intento "
-                        + (intentos + 1) + ")");
+                LogCamellos.debug(String.format(FORMATO_ESPERA_PDF, RUTA_DOCUMENTOS, intentos + 1));
+
                 Thread.sleep(esperaMs);
                 intentos++;
             } catch (InterruptedException e) {
-                LogCamellos.error("Error mientras se esperaba el archivo PDF: " + ruta, e);
+                LogCamellos.error(MJ_ERROR_PDF + ruta, e);
                 Thread.currentThread().interrupt();
                 return false;
             }
@@ -59,14 +81,16 @@ public class Partida implements Runnable {
         return Files.exists(ruta);
     }
 
-    private void guardarResultado() throws IOException {
-        Jugable ganador = jugadores[0].getPuntos() >= jugadores[1].getPuntos() ? jugadores[0] : jugadores[1];
+    private void guardar() throws IOException {
+        Jugable ganador = jugadores[INDICE_JUG1].getPuntos() >= jugadores[INDICE_JUG2].getPuntos()
+                ? jugadores[INDICE_JUG1]
+                : jugadores[INDICE_JUG2];
         String nombreGanador = ganador.getNombre();
         Socket socketGanador = ganador.getSocket();
-        Jugable perdedor = (ganador == jugadores[0]) ? jugadores[1] : jugadores[0];
+        Jugable perdedor = (ganador == jugadores[INDICE_JUG1]) ? jugadores[INDICE_JUG2] : jugadores[INDICE_JUG1];
         String nombrePerdedor = perdedor.getNombre();
 
-        String nombrePdf = nombreGanador + ".pdf";
+        String nombrePdf = nombreGanador + EXT_PDF;
         Path rutaPdf = Paths.get(RUTA_DOCUMENTOS, nombrePdf);
 
         Resultado resultado = new Resultado(
@@ -84,11 +108,11 @@ public class Partida implements Runnable {
             GeneradorDocumentos pdf = new GeneradorPDFDocker();
             pdf.generar(resultado);
 
-            LogCamellos.debug("Buscando PDF en: " + rutaPdf.toAbsolutePath());
+            LogCamellos.debug(String.format(FORMATO_BUSCANDO, rutaPdf.toAbsolutePath()));
 
             boolean pdfListo = arhivoListo(rutaPdf, INTENTOS_MAX, ESPERA_MS); // Espera hasta que el PDF esté listo
             if (!pdfListo) {
-                LogCamellos.info("El PDF no está listo después de varios intentos.");
+                LogCamellos.info(MJ_PDF_NO_LISTO);
                 return;
             }
 
@@ -96,22 +120,23 @@ public class Partida implements Runnable {
             DataOutputStream dataOut = new DataOutputStream(outGanador);
 
             PrintWriter salidaGanador = new PrintWriter(outGanador, true);
-            salidaGanador.println(
-                    "GANADOR: " + nombreGanador + " ha ganado la partida con " + ganador.getPuntos() + " puntos.");
-            LogCamellos.info("Enviado mensaje de ganador a: " + nombreGanador);
 
-            salidaGanador.println("PDF"); // Envío el tipo de documento
-            LogCamellos.debug("Preparando envío del PDF a: " + nombreGanador);
+            salidaGanador
+                    .println(String.format(FORMATO_GANADOR, nombreGanador, MJ_GANADOR_PUNTOS, ganador.getPuntos()));
+
+            LogCamellos.info(MJ_ENVIO_GANADOR + nombreGanador);
+
+            salidaGanador.println(TIPO_DOC); // Envío el tipo de documento
 
             byte[] bytesPdf = Files.readAllBytes(rutaPdf);
             dataOut.writeInt(bytesPdf.length);// Envío la longitud del PDF
             dataOut.write(bytesPdf); // Envío el contenido del PDF
             dataOut.flush(); // Aseguro que se envíe todo
 
-            LogCamellos.info("PDF enviado correctamente a: " + nombreGanador + " (" + bytesPdf.length + " bytes)");
+            LogCamellos.info(String.format(FORMATO_DOC_ENVIADO_OK, nombreGanador, bytesPdf.length));
 
         } catch (IOException e) {
-            LogCamellos.error("Error al guardar o enviar el resultado de la partida para: " + nombreGanador, e);
+            LogCamellos.error(MJ_ERROR_GUARDAR_ENVIAR + nombreGanador, e);
         }
     }
 
@@ -120,8 +145,8 @@ public class Partida implements Runnable {
 
         Random random = new Random();
 
-        LogCamellos.info(
-                "Iniciando partida con los jugadores: " + jugadores[0].getNombre() + " y " + jugadores[1].getNombre());
+        LogCamellos.info(String.format(FORMATO_INICIO_PARTIDA, jugadores[INDICE_JUG1].getNombre(),
+                jugadores[INDICE_JUG2].getNombre()));
 
         while (!partidaTerminada) {
 
@@ -129,17 +154,18 @@ public class Partida implements Runnable {
                 puntosCamello = random.nextInt(MAX_POINTS) + 1;
                 jugador.incrementarPuntos(puntosCamello);
 
-                LogCamellos.debug(jugador.getNombre() + " avanza " + puntosCamello +
-                        " puntos. Total acumulado: " + jugador.getPuntos());
+                LogCamellos.debug(String.format(FORMATO_LOG_PUNTOS,
+                        jugador.getNombre(), puntosCamello, jugador.getPuntos()));
+
                 for (Jugable receptor : jugadores) { // ENVIO PROGRESO A TODOS LOS JUGADORES
                     try {
                         PrintWriter salida = new PrintWriter(receptor.getSocket().getOutputStream(), true);
-                        salida.println("PROGRESO: " + jugador.getNombre() + ";" + jugador.getPuntos());
 
-                        LogCamellos.debug("Enviado progreso de " + jugador.getNombre() + " a " + receptor.getNombre());
+                        salida.println(String.format(FORMATO_PROGRESO,
+                                jugador.getNombre(), jugador.getPuntos()));
 
                     } catch (IOException e) {
-                        LogCamellos.error("Error al enviar el progreso al jugador " + receptor.getNombre(), e);
+                        LogCamellos.error(MJ_ERROR_ENVIO_PROGRESO + receptor.getNombre(), e);
                     }
                 }
 
@@ -148,26 +174,25 @@ public class Partida implements Runnable {
                     for (Jugable receptor : jugadores) {
                         try {
                             PrintWriter salida = new PrintWriter(receptor.getSocket().getOutputStream(), true);
-                            salida.println("RESULTADO: El jugador " + jugador.getNombre() + " ha ganado la partida con "
-                                    + jugador.getPuntos() + " puntos.");
 
-                            LogCamellos.debug("Resultado enviado a " + receptor.getNombre());
+                            salida.println(String.format(FORMATO_RESULTADO_GANADOR,
+                                    jugador.getNombre(), jugador.getPuntos()));
 
                         } catch (Exception e) {
-                            LogCamellos.error("Error al enviar el resultado al jugador " + receptor.getNombre(), e);
+                            LogCamellos.error(MJ_ERROR_ENVIO_RESULTADO + receptor.getNombre(), e);
                         }
                     }
                     try {
-                        guardarResultado();
+                        guardar();
                         break;
                     } catch (IOException e) {
-                        System.out.println("Error al guardar el resultado de la partida: " + e.getMessage());
+                        LogCamellos.error(MJ_ERROR_GUARDAR_ENVIAR + e.getMessage(), e);
                     }
                 }
                 try {
                     Thread.sleep(TIEMPO_ESPERA); // Espera 3 segundos antes de continuar
                 } catch (InterruptedException e) {
-                    LogCamellos.error("Error al pausar la partida", e);
+                    LogCamellos.error(MJ_ERROR_PAUSAR, e);
                 }
 
             }

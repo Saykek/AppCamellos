@@ -49,7 +49,7 @@ public class Partida implements Runnable {
     private static final String EXT_PDF = ".pdf";
     private static final String TIPO_DOC = "PDF";
 
-    private int puntosCamello = 0;
+    // private int puntosCamello = 0;
     public boolean partidaTerminada = false;
 
     public Jugable[] getJugadores() {
@@ -151,7 +151,17 @@ public class Partida implements Runnable {
         while (!partidaTerminada) {
 
             for (Jugable jugador : jugadores) {
-                puntosCamello = random.nextInt(MAX_POINTS) + 1;
+                int puntosCamello = random.nextInt(MAX_POINTS) + 1;
+                int puntosActuales = jugador.getPuntos();
+                if (puntosActuales + puntosCamello > PUNTOS_GANADOR) { // PARA LOS 100 PUNTOS MÁXIMOS
+                    puntosCamello = PUNTOS_GANADOR - puntosActuales;
+                }
+                if (puntosCamello <= 0) {
+                    jugador.setPuntos(puntosActuales + puntosCamello);
+                    partidaTerminada = true;
+                    break;
+                }
+
                 jugador.incrementarPuntos(puntosCamello);
 
                 LogCamellos.debug(String.format(FORMATO_LOG_PUNTOS,

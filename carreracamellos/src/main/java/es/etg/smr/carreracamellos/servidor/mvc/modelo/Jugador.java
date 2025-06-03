@@ -7,6 +7,7 @@ import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 public class Jugador implements Jugable {
 
     private static final int PUNTOS_GANADOR = 100;
+    private static final String ERROR_CONEXION = "Error al cerrar la conexión:";
 
     private String nombre;
     private int puntos = 0;
@@ -41,7 +42,7 @@ public class Jugador implements Jugable {
             try {
                 socket.close();
             } catch (Exception e) {
-                LogCamellos.error("Error al cerrar la conexión: ", e);
+                LogCamellos.error(ERROR_CONEXION, e);
             }
         }
     }

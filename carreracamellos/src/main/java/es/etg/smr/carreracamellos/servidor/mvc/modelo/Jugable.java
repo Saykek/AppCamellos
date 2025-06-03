@@ -8,5 +8,6 @@ public interface Jugable {
     public String getNombre();
     public void terminarConexion();
     public int getPuntos();
-    public Socket getSocket(); // Cambiado a String para simplificar el ejemplo
+    public void setPuntos(int puntos);
+    public Socket getSocket(); 
 }

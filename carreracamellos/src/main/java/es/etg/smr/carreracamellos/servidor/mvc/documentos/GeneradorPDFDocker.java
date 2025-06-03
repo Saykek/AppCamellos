@@ -24,12 +24,14 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
     private static final String VOL = "-v";
     private static final String FLAG_SALIDA = "-o";
 
-    private static final String MSG_NO_EXISTE_MD = "El archivo %s no existe. Primero genera el archivo .md.";
-    private static final String MSG_COMANDO = "Ejecutando comando Docker: %s";
-    private static final String MSG_SALIDA_OK = "PDF generado correctamente para %s.";
-    private static final String MSG_SALIDA_ERROR = "Error al generar el PDF para %s. Código de salida: %d";
-    private static final String MSG_ERROR_LECTURA = "Error al leer la salida del proceso Docker";
-    private static final String MSG_INTERRUPCION = "El proceso fue interrumpido mientras se generaba el PDF para %s.";
+    private static final String MJ_NO_EXISTE_MD = "El archivo %s no existe. Primero genera el archivo .md.";
+    private static final String FORMATO_COMANDO = "Ejecutando comando Docker: %s";
+    private static final String FORMATO_SALIDA_OK = "PDF generado correctamente para %s.";
+    private static final String FORMATO_SALIDA_ERROR = "Error al generar el PDF . Código de salida: %d";
+    private static final String MJ_ERROR_LECTURA = "Error al leer la salida del proceso Docker";
+    private static final String FORMATO_INTERRUPCION = "El proceso fue interrumpido mientras se generaba el PDF para %s.";
+    private static final String FORMATO_DOCKER_SALIDA = "[DOCKER-STDOUT] %s";
+    private static final String FORMATO_DOCKER_ERROR = "[DOCKER-STDERR] %s";
 
     @Override
     public void generar(Resultado resultado) throws IOException {
@@ -40,7 +42,7 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
         File archivoMd = new File(RUTA_DOCUMENTOS + nombreArchivoMD);
 
         if (!archivoMd.exists()) {
-            LogCamellos.info(String.format(MSG_NO_EXISTE_MD + nombreArchivoMD));
+            LogCamellos.info(String.format(MJ_NO_EXISTE_MD + nombreArchivoMD));
             return;
         }
 
@@ -55,7 +57,7 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
 
         };
 
-        LogCamellos.debug(String.format(MSG_COMANDO, String.join(" ", comando)));
+        LogCamellos.debug(String.format(FORMATO_COMANDO, String.join(" ", comando)));
 
         Process proceso = Runtime.getRuntime().exec(comando);
 
@@ -63,25 +65,25 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
                 BufferedReader error = new BufferedReader(new InputStreamReader(proceso.getErrorStream()))) {
             String linea;
             while ((linea = salida.readLine()) != null) {
-                LogCamellos.debug("[DOCKER-STDOUT] " + linea);
+                LogCamellos.debug(String.format(FORMATO_DOCKER_SALIDA, linea));
             }
             while ((linea = error.readLine()) != null) {
-                LogCamellos.info("[DOCKER-STDERR] " + linea);
+                LogCamellos.info(String.format(FORMATO_DOCKER_ERROR, linea));
             }
         } catch (IOException e) {
-            LogCamellos.error(MSG_ERROR_LECTURA, e);
+            LogCamellos.error(MJ_ERROR_LECTURA, e);
         }
 
         try {
             int codigoSalida = proceso.waitFor();
             if (codigoSalida == 0) {
-                LogCamellos.info(MSG_SALIDA_OK);
+                LogCamellos.info(FORMATO_SALIDA_OK);
             } else {
-                LogCamellos.error(MSG_SALIDA_ERROR + codigoSalida, null);
+                LogCamellos.error(String.format(FORMATO_SALIDA_ERROR, codigoSalida), null);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            LogCamellos.error(MSG_INTERRUPCION + e.getMessage(), e);
+            LogCamellos.error(String.format(FORMATO_INTERRUPCION, e.getMessage()), e);
         }
     }
 

@@ -1,0 +1,29 @@
+// IDEA: Separar las conexiones en una clase aparte
+
+public class GestorConexiones {
+    private ServerSocket serverSocket;
+
+    public GestorConexiones(int puerto) throws IOException {
+        this.serverSocket = new ServerSocket(puerto);
+    }
+
+    public Jugador esperarJugador() throws IOException {
+        Socket socket = serverSocket.accept();
+        ConexionCliente conexion = new ConexionCliente(socket);
+        String nombre = conexion.leer();
+        conexion.enviar("Bienvenido " + nombre + ", espera a tu rival...");
+        return new Jugador(nombre, socket);
+    }
+}
+
+____________________
+
+GestorConexiones gestor = new GestorConexiones(PUERTO);
+while (true) {
+    Jugador j1 = gestor.esperarJugador();
+    Jugador j2 = gestor.esperarJugador();
+    Partida partida = new Partida(MAX_CAMELLOS);
+    partida.agregar(j1, 0);
+    partida.agregar(j2, 1);
+    new Thread(partida).start();
+}

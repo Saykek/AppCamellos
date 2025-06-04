@@ -9,8 +9,9 @@ import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
 public class GeneradorCertificadoMd implements GeneradorDocumentos {
 
-    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir")
-            + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/";
+    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/documentos_generados/";
+    private static final String FORMATO_CERTIFICADO_OK = "Certificado generado correctamente para: %s";
+    private static final String FORMATO_CERTIFICADO_ERROR = "Error al generar el certificado para %s: %s";
     private static final String EXTENSION = ".md";
     private static final String TITULO = "      CERTIFICADO DE GANADOR\n\n     ";
     private static final String MENSAJE = "¡Felicidades %s!\n\n" +
@@ -31,9 +32,9 @@ public class GeneradorCertificadoMd implements GeneradorDocumentos {
         try (FileWriter writer = new FileWriter(nombreArchivo)) {
             writer.write(contenidoMd);
 
-            LogCamellos.info("Certificado generado correctamente para: " + nombreGanador);
+            LogCamellos.info(String.format(FORMATO_CERTIFICADO_OK, nombreGanador));
         } catch (IOException e) {
-            LogCamellos.error("Error al generar el certificado para " + nombreGanador + ": " + e.getMessage(), e);
+            LogCamellos.error(String.format(FORMATO_CERTIFICADO_ERROR, nombreGanador, e.getMessage()), e);
             throw e;
         }
 

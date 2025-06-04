@@ -151,7 +151,8 @@ public class Cliente {
 
         LogCamellos.info("[CLIENTE] Certificado PDF recibido correctamente. Guardando en disco...");
 
-        File carpeta = new File(CARPETA_CERTIFICADOS);
+        String rutaBase = System.getProperty("user.dir")+ File.separator + CARPETA_CERTIFICADOS; // Obtengo la ruta base del proyecto
+        File carpeta = new File(rutaBase);
         if (!carpeta.exists()) {
             carpeta.mkdir(); // Creo la carpeta si no existe
         }

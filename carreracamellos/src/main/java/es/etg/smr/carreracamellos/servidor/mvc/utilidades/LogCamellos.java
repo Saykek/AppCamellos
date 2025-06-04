@@ -10,6 +10,7 @@ public class LogCamellos {
 
     public static final String FICHERO_LOG = "fichero.log";
     public static final String LOGGER = "CarreraCamellosLogger";
+    public static final String FORMATO_ERROR = "Error al inicializar el logger: %s";
     public static final Logger logger = Logger.getLogger(LOGGER);
     public static boolean inicializado = false;
 
@@ -26,7 +27,8 @@ public class LogCamellos {
 
             inicializado = true;
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "Error al inicializar el logger: " + e.getMessage());
+            logger.log(Level.SEVERE, String.format(FORMATO_ERROR, e.getMessage()));
+
         }
     }
 

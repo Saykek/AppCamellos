@@ -27,8 +27,7 @@ public class Partida implements Runnable {
     private static final int INTENTOS_MAX = 10;
     private static final int ESPERA_MS = 100;
     private static final int PUNTOS_GANADOR = 100;
-    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir")
-            + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/";
+    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/documentos_generados/";
 
     private static final String MJ_ERROR_PDF = "Error mientras se esperaba el archivo PDF: ";
     private static final String MJ_ERROR_ENVIO_RESULTADO = "Error al enviar el resultado de la partida: ";

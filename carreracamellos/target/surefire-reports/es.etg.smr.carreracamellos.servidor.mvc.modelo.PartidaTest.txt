@@ -1,18 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: es.etg.smr.carreracamellos.servidor.mvc.modelo.PartidaTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.026 s <<< FAILURE! - in es.etg.smr.carreracamellos.servidor.mvc.modelo.PartidaTest
-es.etg.smr.carreracamellos.servidor.mvc.modelo.PartidaTest.testPartidaYGeneraResultado  Time elapsed: 0.017 s  <<< ERROR!
-java.net.BindException: Address already in use
-	at java.base/sun.nio.ch.Net.bind0(Native Method)
-	at java.base/sun.nio.ch.Net.bind(Net.java:556)
-	at java.base/sun.nio.ch.Net.bind(Net.java:545)
-	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:629)
-	at java.base/java.net.ServerSocket.bind(ServerSocket.java:393)
-	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:275)
-	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:168)
-	at es.etg.smr.carreracamellos.servidor.mvc.modelo.PartidaTest.testPartidaYGeneraResultado(PartidaTest.java:16)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.944 s - in es.etg.smr.carreracamellos.servidor.mvc.modelo.PartidaTest

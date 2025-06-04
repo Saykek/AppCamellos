@@ -1,4 +1,28 @@
 -------------------------------------------------------------------------------
 Test set: es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s - in es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.048 s <<< FAILURE! - in es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest
+es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest.testGeneraCertificadoCorrectamente  Time elapsed: 0.034 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: El archivo debe existir después de generarlo ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest.testGeneraCertificadoCorrectamente(GeneradorCertificadoMdTest.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest.testCreaCarpetaSiNoExiste  Time elapsed: 0.003 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: El archivo debe crearse incluso si la carpeta no existía ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMdTest.testCreaCarpetaSiNoExiste(GeneradorCertificadoMdTest.java:62)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades certi2!
+     ¡Felicidades controlador!
 
 Has ganado la partida de la Carrera de Camellos.
 

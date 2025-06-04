@@ -144,3 +144,5 @@ Fecha: 04/06/2025 10:56 |  Ganador: certi2 (100 pts)  |  Perdedor: certi1 (91 pt
 Fecha: 04/06/2025 10:58 |  Ganador: 1058 (100 pts)  |  Perdedor: 1059 (99 pts) 
 Fecha: 04/06/2025 11:30 |  Ganador: sara (100 pts)  |  Perdedor: sergio (90 pts) 
 Fecha: 04/06/2025 11:33 |  Ganador: mac1 (100 pts)  |  Perdedor: mac (91 pts) 
+Fecha: 04/06/2025 15:39 |  Ganador: pichi (100 pts)  |  Perdedor: niebla (96 pts) 
+Fecha: 04/06/2025 15:57 |  Ganador: controlador (100 pts)  |  Perdedor: servidor (88 pts) 

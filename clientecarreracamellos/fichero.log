@@ -4187,3 +4187,187 @@ jun 04, 2025 10:58:50 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCa
 INFORMACIÓN: [CLIENTE] Certificado PDF recibido correctamente. Guardando en disco...
 jun 04, 2025 10:58:50 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
 INFORMACIÓN: [CLIENTE] Certificado PDF guardado en: /Users/saramartinez/Desktop/NuevaCarrera/clientecarreracamellos/certificados_recibidos/certificado.pdf
+jun 04, 2025 11:29:30 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Iniciando interfaz de usuario...
+jun 04, 2025 11:29:30 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 04, 2025 11:29:30 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.
+jun 04, 2025 11:31:26 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Iniciando interfaz de usuario...
+jun 04, 2025 11:31:26 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 04, 2025 11:31:26 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.
+jun 04, 2025 11:33:03 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Conectando al servidor como: mac
+jun 04, 2025 11:33:03 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido tras conexión: mac
+jun 04, 2025 11:33:03 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: Bienvenido mac. Esperando a que se unan más jugadores...
+jun 04, 2025 11:33:03 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Servidor: Bienvenido mac. Esperando a que se unan más jugadores...
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: JUGADORES: mac;mac1
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;5
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 5 puntos.
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;1
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 1 puntos.
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;12
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 12 puntos.
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;3
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 3 puntos.
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;15
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 15 puntos.
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;8
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 8 puntos.
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;18
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 18 puntos.
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;14
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 14 puntos.
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;23
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 23 puntos.
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;22
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 22 puntos.
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;32
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 32 puntos.
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;28
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 28 puntos.
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;34
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 34 puntos.
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;30
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 30 puntos.
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;37
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 37 puntos.
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;36
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 36 puntos.
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;45
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 45 puntos.
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;42
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 42 puntos.
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;49
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 49 puntos.
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;46
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 46 puntos.
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;51
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 51 puntos.
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;47
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 47 puntos.
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;61
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 61 puntos.
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;49
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 49 puntos.
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;65
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 65 puntos.
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;59
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 59 puntos.
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;66
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 66 puntos.
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;65
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 65 puntos.
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;68
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 68 puntos.
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;72
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 72 puntos.
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;78
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 78 puntos.
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;81
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 81 puntos.
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;83
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 83 puntos.
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;88
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 88 puntos.
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;88
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 88 puntos.
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;94
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 94 puntos.
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac;91
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac con 91 puntos.
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: PROGRESO: mac1;100
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje recibido del servidor: RESULTADO: El jugador mac1 ha ganado la partida con 100 puntos.
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Mensaje de resultado recibido: RESULTADO: El jugador mac1 ha ganado la partida con 100 puntos.
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Ganador es: mac1
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: [CLIENTE] Este cliente es: mac
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  mac1 con 100 puntos.
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Servidor: El ganador es: mac1

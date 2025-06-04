@@ -13110,3 +13110,205 @@ jun 04, 2025 10:58:50 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.
 INFO: Enviado mensaje de ganador a: 1058
 jun 04, 2025 10:58:50 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
 INFO: PDF enviado correctamente a: 1058 (52843)
+jun 04, 2025 11:29:28 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Servidor iniciado en el puerto  3009
+jun 04, 2025 11:30:05 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Cliente conectado desde: sara127.0.0.1 
+jun 04, 2025 11:30:06 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Cliente conectado desde: sergio127.0.0.1 
+jun 04, 2025 11:30:06 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando partida con los jugadores: sarasergio
+jun 04, 2025 11:30:06 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;1;1
+jun 04, 2025 11:30:06 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;2;2
+jun 04, 2025 11:30:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;4;5
+jun 04, 2025 11:30:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;10;12
+jun 04, 2025 11:30:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;3;8
+jun 04, 2025 11:30:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;10;22
+jun 04, 2025 11:30:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;6;14
+jun 04, 2025 11:30:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;7;29
+jun 04, 2025 11:30:09 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;9;23
+jun 04, 2025 11:30:09 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;5;34
+jun 04, 2025 11:30:09 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;3;26
+jun 04, 2025 11:30:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;1;35
+jun 04, 2025 11:30:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;10;36
+jun 04, 2025 11:30:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;8;43
+jun 04, 2025 11:30:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;4;40
+jun 04, 2025 11:30:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;5;48
+jun 04, 2025 11:30:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;9;49
+jun 04, 2025 11:30:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;4;52
+jun 04, 2025 11:30:12 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;9;58
+jun 04, 2025 11:30:12 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;1;53
+jun 04, 2025 11:30:12 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;8;66
+jun 04, 2025 11:30:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;9;62
+jun 04, 2025 11:30:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;5;71
+jun 04, 2025 11:30:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;4;66
+jun 04, 2025 11:30:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;4;75
+jun 04, 2025 11:30:14 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;8;74
+jun 04, 2025 11:30:14 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;5;80
+jun 04, 2025 11:30:14 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;1;75
+jun 04, 2025 11:30:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;3;83
+jun 04, 2025 11:30:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;2;77
+jun 04, 2025 11:30:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;2;85
+jun 04, 2025 11:30:16 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;1;78
+jun 04, 2025 11:30:16 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;8;93
+jun 04, 2025 11:30:16 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;2;80
+jun 04, 2025 11:30:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;3;96
+jun 04, 2025 11:30:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sergio;10;90
+jun 04, 2025 11:30:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: sara;4;100
+jun 04, 2025 11:30:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Historial guardado: Fecha: 04/06/2025 11:30 |  Ganador: sara (100 pts)  |  Perdedor: sergio (90 pts) 
+jun 04, 2025 11:30:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Certificado generado correctamente para: sara
+jun 04, 2025 11:30:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: Ejecutando comando Docker: docker run --rm --platform=linux/amd64 -v /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/documentos_generados/:/data pandoc/latex sara.md -o sara.pdf
+jun 04, 2025 11:30:20 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: [DOCKER-STDERR] pandoc: Ticker: poll failed: Interrupted system call: Interrupted system call
+jun 04, 2025 11:30:20 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: [DOCKER-STDERR] pandoc: Ticker: poll failed: Interrupted system call: Interrupted system call
+jun 04, 2025 11:30:20 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: PDF generado correctamente para %s.
+jun 04, 2025 11:30:20 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: Buscando PDF en: /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/documentos_generados/sara.pdf
+jun 04, 2025 11:30:20 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Enviado mensaje de ganador a: sara
+jun 04, 2025 11:30:20 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: PDF enviado correctamente a: sara (52387)
+jun 04, 2025 11:31:24 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Servidor iniciado en el puerto  3009
+jun 04, 2025 11:33:03 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Cliente conectado desde: mac127.0.0.1 
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Cliente conectado desde: mac1127.0.0.1 
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando partida con los jugadores: macmac1
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;5;5
+jun 04, 2025 11:33:07 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;1;1
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;7;12
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;2;3
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;3;15
+jun 04, 2025 11:33:08 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;5;8
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;3;18
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;14
+jun 04, 2025 11:33:09 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;5;23
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;8;22
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;9;32
+jun 04, 2025 11:33:10 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;28
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;2;34
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;2;30
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;3;37
+jun 04, 2025 11:33:11 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;36
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;8;45
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;42
+jun 04, 2025 11:33:12 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;4;49
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;4;46
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;2;51
+jun 04, 2025 11:33:13 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;1;47
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;10;61
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;2;49
+jun 04, 2025 11:33:14 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;4;65
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;10;59
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;1;66
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;65
+jun 04, 2025 11:33:15 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;2;68
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;7;72
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;10;78
+jun 04, 2025 11:33:16 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;9;81
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;5;83
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;7;88
+jun 04, 2025 11:33:17 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;5;88
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;94
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac;3;91
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: mac1;6;100
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Historial guardado: Fecha: 04/06/2025 11:33 |  Ganador: mac1 (100 pts)  |  Perdedor: mac (91 pts) 
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Certificado generado correctamente para: mac1
+jun 04, 2025 11:33:18 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: Ejecutando comando Docker: docker run --rm --platform=linux/amd64 -v /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/documentos_generados/:/data pandoc/latex mac1.md -o mac1.pdf
+jun 04, 2025 11:33:19 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: [DOCKER-STDERR] pandoc: Ticker: poll failed: Interrupted system call: Interrupted system call
+jun 04, 2025 11:33:19 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: [DOCKER-STDERR] pandoc: Ticker: poll failed: Interrupted system call: Interrupted system call
+jun 04, 2025 11:33:19 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: PDF generado correctamente para %s.
+jun 04, 2025 11:33:19 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos debug
+DETALLADO: Buscando PDF en: /Users/saramartinez/Desktop/NuevaCarrera/carreracamellos/documentos_generados/mac1.pdf
+jun 04, 2025 11:33:19 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: Enviado mensaje de ganador a: mac1
+jun 04, 2025 11:33:19 A. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFORMACIÓN: PDF enviado correctamente a: mac1 (52600)

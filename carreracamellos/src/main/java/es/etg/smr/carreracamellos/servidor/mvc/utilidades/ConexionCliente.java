@@ -7,7 +7,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-
 public class ConexionCliente {
     private final Socket socket;
     private final BufferedReader entrada;
@@ -30,6 +29,7 @@ public class ConexionCliente {
     }
 
     public void enviarDatos(byte[] datos) throws IOException {
+        dataOut.writeInt(datos.length);
         dataOut.write(datos);
         dataOut.flush();
     }
@@ -45,5 +45,3 @@ public class ConexionCliente {
         socket.close();
     }
 }
-    
-

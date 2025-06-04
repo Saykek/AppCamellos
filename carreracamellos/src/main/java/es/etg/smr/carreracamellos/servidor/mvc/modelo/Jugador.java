@@ -2,6 +2,7 @@ package es.etg.smr.carreracamellos.servidor.mvc.modelo;
 
 import java.net.Socket;
 
+import es.etg.smr.carreracamellos.servidor.mvc.utilidades.ConexionCliente;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
 public class Jugador implements Jugable {
@@ -12,10 +13,17 @@ public class Jugador implements Jugable {
     private String nombre;
     private int puntos = 0;
     private Socket socket;
+    private ConexionCliente conexion;
 
-    public Jugador(String nombre, Socket socket) {
+    public Jugador(String nombre, Socket socket) throws Exception  {
         this.nombre = nombre;
         this.socket = socket;
+        this.conexion = new ConexionCliente(socket);
+        
+    }
+    @Override
+    public ConexionCliente getConexion() {
+        return conexion;
     }
 
     @Override

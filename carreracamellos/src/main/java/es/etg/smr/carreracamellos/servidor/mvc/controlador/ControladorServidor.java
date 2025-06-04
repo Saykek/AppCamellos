@@ -17,6 +17,7 @@ public class ControladorServidor {
 
     private static final String MJ_ESPERA = ". Esperando a que se unan más jugadores...";
     private static final String FORMATO_SERVIDOR = "Servidor iniciado en el puerto  %s";
+    private static final String FORMATO_ERROR_JUGADOR = "Error al crear el jugador:  %s";
     private static final String FORMATO_BIENVENIDA = "Bienvenido %s%s";
     private static final String FORMATO_CONEXION = "Cliente conectado desde: %s%s ";
     private static final String FORMATO_JUGADORES = "JUGADORES: %s;%s";
@@ -38,13 +39,17 @@ public class ControladorServidor {
 
                     LogCamellos.info(
                             String.format(FORMATO_CONEXION, nombreJugador, socket.getInetAddress().getHostAddress()));
+                    try {
+                        Jugador jugador = new Jugador(nombreJugador, socket);
 
-                    Jugador jugador = new Jugador(nombreJugador, socket);
+                        partida.agregar(jugador, i);
 
-                    partida.agregar(jugador, i);
-
-                    conexion.enviar(String.format(FORMATO_BIENVENIDA, nombreJugador, MJ_ESPERA));
-                    conexion.enviar(nombreJugador);
+                        conexion.enviar(String.format(FORMATO_BIENVENIDA, nombreJugador, MJ_ESPERA));
+                        conexion.enviar(nombreJugador);
+                    } catch (Exception e) {
+                        LogCamellos.error(FORMATO_ERROR_JUGADOR + nombreJugador, e);
+                        
+                    }
                 }
 
                 Jugador jugador1 = (Jugador) partida.getJugadores()[INDICE_JUG1];

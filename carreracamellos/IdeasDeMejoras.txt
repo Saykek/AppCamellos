@@ -27,3 +27,8 @@ while (true) {
     partida.agregar(j2, 1);
     new Thread(partida).start();
 }
+
+El servidor permanece abierto tras cada partida para permitir la conexión de nuevos jugadores y 
+la ejecución de partidas adicionales sin necesidad de reiniciar el servicio. El cierre de la conexión 
+se realiza a nivel de cada cliente, liberando recursos tras finalizar su participación, mientras
+ que el servidor continúa disponible para nuevas solicitudes de conexión.

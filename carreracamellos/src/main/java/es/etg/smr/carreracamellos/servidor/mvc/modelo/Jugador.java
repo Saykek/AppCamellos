@@ -15,12 +15,13 @@ public class Jugador implements Jugable {
     private Socket socket;
     private ConexionCliente conexion;
 
-    public Jugador(String nombre, Socket socket) throws Exception  {
+    public Jugador(String nombre, Socket socket) throws Exception {
         this.nombre = nombre;
         this.socket = socket;
         this.conexion = new ConexionCliente(socket);
-        
+
     }
+
     @Override
     public ConexionCliente getConexion() {
         return conexion;

@@ -23,19 +23,17 @@ public class Cliente {
     private static final int PARTES_MJ_PROGRESO = 0;
     private static final int PARTES_PUNTOS = 1;
     private static final int PARTES_MJ_PROGRESO_SUBSTRING = 9;
-    private  static final String DIRECTORIO_ACTUAL = System.getProperty("user.dir");
+    private static final String DIRECTORIO_ACTUAL = System.getProperty("user.dir");
 
     private static final String MJ_PROGRESO = "PROGRESO:";
     private static final String MJ_JUGADORES = "JUGADORES:";
     private static final String MJ_GANADOR = "GANADOR:";
     private static final String MJ_RESULTADO = "RESULTADO:";
-    private static final String MJ_PDF = "PDF"; 
+    private static final String MJ_PDF = "PDF";
     private static final String MJ_PRE_GANADOR = "El ganador es: ";
     private static final String MJ_ERROR_DATOS = "Error al recibir datos del servidor.";
     private static final String MJ_RECEPCION_CERTIFICADO = "Recibiendo certificado PDF del servidor...";
     private static final String MJ_CERTIFICADO_OK = "Certificado PDF recibido correctamente. Guardando en disco...";
- 
-    
 
     private static final String FORMATO_MJ_RECIBIDO = "Mensaje recibido del servidor: %s";
     private static final String FORMATO_ACTUALIZAR_PROGRESO = "Actualizando progreso de %s con %d puntos.";
@@ -102,7 +100,7 @@ public class Cliente {
                         int puntos = Integer.parseInt(partes[PARTES_PUNTOS]);
 
                         Platform.runLater(() -> {
-                            LogCamellos.info(String.format(FORMATO_ACTUALIZAR_PROGRESO, nombre , puntos ));
+                            LogCamellos.info(String.format(FORMATO_ACTUALIZAR_PROGRESO, nombre, puntos));
                             controladorVista.actualizarProgresoCamello(nombre, puntos);
                             controladorVista.actualizarProgresoTotal(nombre, puntos);
 
@@ -137,15 +135,22 @@ public class Cliente {
                         recibirCertificado();
                         pdfRecibido = true;
 
+                        try {
+                            cerrar();
+
+                        } catch (IOException e) {
+                        }
+
                     } else {
                         Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
                     }
                 }
 
             } catch (IOException e) {
-                Platform.runLater(() -> controladorVista.mostrarMensaje(MJ_ERROR_DATOS));
-                LogCamellos.error(MJ_ERROR_DATOS + e.getMessage(), e);
-
+                if (!socket.isClosed()) {
+                    Platform.runLater(() -> controladorVista.mostrarMensaje(MJ_ERROR_DATOS));
+                    LogCamellos.error(MJ_ERROR_DATOS + e.getMessage(), e);
+                }
             }
         }).start();
 
@@ -168,7 +173,7 @@ public class Cliente {
     public void recibirCertificado() throws IOException {
         LogCamellos.info(MJ_RECEPCION_CERTIFICADO);
         int longitud = entradaDatos.readInt(); // LEO EL TAMAÑO
-        LogCamellos.info(String.format(FORMATO_TAMANIO_CERTIFICADO ,longitud));
+        LogCamellos.info(String.format(FORMATO_TAMANIO_CERTIFICADO, longitud));
 
         byte[] datosPdf = new byte[longitud]; // leo los bytes
         entradaDatos.readFully(datosPdf); // leo los bytes
@@ -176,7 +181,7 @@ public class Cliente {
         LogCamellos.info(MJ_CERTIFICADO_OK);
 
         String rutaBase = DIRECTORIO_ACTUAL + File.separator + CARPETA_CERTIFICADOS; // Obtengo la ruta
-                                                                                                  // base del proyecto
+                                                                                     // base del proyecto
         File carpeta = new File(rutaBase);
         if (!carpeta.exists()) {
             carpeta.mkdir(); // Creo la carpeta si no existe

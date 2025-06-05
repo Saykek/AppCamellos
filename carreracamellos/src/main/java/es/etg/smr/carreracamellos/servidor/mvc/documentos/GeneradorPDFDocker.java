@@ -14,7 +14,7 @@ public class GeneradorPDFDocker implements GeneradorDocumentos {
     private static final String DIRECTORIO = ":/data";
     private static final String EXTENSION_MD = ".md";
     private static final String EXTENSION_PDF = ".pdf";
-    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir")  + "/documentos_generados/";
+    private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/documentos_generados/";
 
     private static final String DOCKER_RUN = "run";
     private static final String DOCKER_REMOVE = "--rm";

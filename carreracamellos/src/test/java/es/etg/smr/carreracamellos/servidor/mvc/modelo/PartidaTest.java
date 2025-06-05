@@ -10,7 +10,7 @@ public class PartidaTest {
 
     @Test
     void testPartidaYGeneraResultado() throws Exception {
-        final int PUERTO = 6000;
+        final int PUERTO = 3009;
 
         // Arrancamos un servidor para simular conexiones de clientes
         ServerSocket serverSocket = new ServerSocket(PUERTO);

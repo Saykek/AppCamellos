@@ -84,6 +84,10 @@ public class Cliente {
         // Enviar nombre al servidor
         salida.println(nombreJugador);
 
+        Platform.runLater(() -> {
+            controladorVista.deshabilitarConectar(); 
+        });
+
         // Hilo para escuchar mensajes del servidor
         new Thread(() -> {
             try {
@@ -130,6 +134,7 @@ public class Cliente {
                             controladorVista.mostrarMensaje(MJ_PRE_GANADOR + nombreGanador);
                             controladorVista.mostrarBotonCertificado(false);
                         }
+                        Platform.runLater(() -> controladorVista.habilitarConectar());
 
                     } else if (mensaje.equals(MJ_PDF)) {
                         recibirCertificado();
@@ -143,6 +148,7 @@ public class Cliente {
 
                     } else {
                         Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
+                        
                     }
                 }
 

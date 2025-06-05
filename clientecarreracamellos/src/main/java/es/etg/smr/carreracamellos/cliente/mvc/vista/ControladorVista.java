@@ -144,6 +144,13 @@ public class ControladorVista {
     @FXML
     private Button btnConectar;
 
+    public void deshabilitarConectar() {
+        btnConectar.setDisable(true);
+    }
+    public void habilitarConectar() {
+        btnConectar.setDisable(false);
+    }
+
     private ControladorCliente controladorCliente;
 
     public void setControladorCliente(ControladorCliente controladorCliente) {
@@ -173,6 +180,7 @@ public class ControladorVista {
 
         nombreJugador1 = txtNombreCliente.getText().trim();
         controladorCliente.conectarConServidor(nombreJugador1);
+        
 
     }
 

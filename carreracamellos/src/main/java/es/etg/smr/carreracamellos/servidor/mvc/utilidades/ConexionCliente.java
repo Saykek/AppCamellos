@@ -33,6 +33,10 @@ public class ConexionCliente {
         dataOut.write(datos);
         dataOut.flush();
     }
+    public void enviarLongitud(int longitud) throws IOException {
+        dataOut.writeInt(longitud);
+        dataOut.flush();
+    }
 
     public Socket getSocket() {
         return socket;

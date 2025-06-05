@@ -96,6 +96,7 @@ public class GestorPartida {
             conexion.enviar(String.format(FORMATO_GANADOR, resultado.getGanador(), resultado.getPuntosGanador()));
             conexion.enviar(TIPO_DOC);
             byte[] contenidoPdf = Files.readAllBytes(rutaPdf);// 3. Enviar el contenido del PDF
+            conexion.enviarLongitud(contenidoPdf.length);
             conexion.enviarDatos(contenidoPdf);
 
             LogCamellos.info(String.format(FORMATO_DOC_ENVIADO_OK, resultado.getGanador(), contenidoPdf.length));

@@ -17,7 +17,6 @@ import javafx.scene.image.ImageView;
 
 public class ControladorVista {
 
-
     private static final String LOG_APERTURA_CERTIFICADO_ERROR = "Error al intentar abrir el PDF: %s";
     private static final String LOG_CAMELLO_NO_RECONOCIDO = "Nombre de camello no reconocido: %s";
     private static final String LOG_JUGADORES_ACTUALES = "Jugadores actuales: %s, %s";
@@ -25,6 +24,8 @@ public class ControladorVista {
     private static final String LOG_TEXTFIELD_FAIL = "Error al inicializar el TextField.";
     private static final String LOG_MENSAJE_RECIBIDO = "Servidor: %s";
 
+    private static final String FORMATO_AVANCE = "%s avanza %d puntos.\n";
+    private static final String PUNTOS = " puntos";
     private final String RUTA_CERTIFICADO = "certificados_recibidos/certificado.pdf";
     private final int PUNTOS_MAXIMOS = 100;
     private final double PORCENTAJE = 1.0;
@@ -54,8 +55,9 @@ public class ControladorVista {
 
     @FXML
     private void abrirCertificado(ActionEvent event) {
-        try { GestorCertificado.abrirCertificado(RUTA_CERTIFICADO);
-     
+        try {
+            GestorCertificado.abrirCertificado(RUTA_CERTIFICADO);
+
         } catch (IOException e) {
             LogCamellos.error(String.format(LOG_APERTURA_CERTIFICADO_ERROR, e.getMessage()), e);
 
@@ -95,14 +97,14 @@ public class ControladorVista {
                 puntosTurno = puntos - puntosAcumuladosJugador1;
                 puntosAcumuladosJugador1 = puntos;
 
-                lblProgresoCamello1.setText(puntos + " puntos");
+                lblProgresoCamello1.setText(puntos + PUNTOS);
                 pbCamello1.setProgress(progreso);
 
             } else if (nombreNormalizado.equals(jugador2Normalizado)) {
                 puntosTurno = puntos - puntosAcumuladosJugador2;
                 puntosAcumuladosJugador2 = puntos;
 
-                lblProgresoCamello2.setText(puntos + " puntos");
+                lblProgresoCamello2.setText(puntos + PUNTOS);
                 pbCamello2.setProgress(progreso);
 
             } else {
@@ -110,7 +112,7 @@ public class ControladorVista {
                 LogCamellos.info(String.format(LOG_JUGADORES_ACTUALES, nombreJugador1, nombreJugador2));
             }
 
-            taMensajes.appendText(nombre + " avanza  " + puntosTurno + " puntos.\n");
+            taMensajes.appendText(String.format(FORMATO_AVANCE, nombre, puntosTurno));
         });
     }
 
@@ -118,10 +120,10 @@ public class ControladorVista {
     public void actualizarProgresoCamello(String nombre, int puntos) {
         Platform.runLater(() -> {
             if (txtNombreCamello1.getText().equals(nombre)) {
-                lblProgresoCamello1.setText(puntos + " puntos");
+                lblProgresoCamello1.setText(puntos + PUNTOS);
                 pbCamello1.setProgress(puntos / PORCENTAJE_MAXIMO);
             } else if (txtNombreCamello2.getText().equals(nombre)) {
-                lblProgresoCamello2.setText(puntos + " puntos");
+                lblProgresoCamello2.setText(puntos + PUNTOS);
                 pbCamello2.setProgress(puntos / PORCENTAJE_MAXIMO);
             }
         });
@@ -152,7 +154,7 @@ public class ControladorVista {
         this.nombreJugador1 = nombre1;
         this.nombreJugador2 = nombre2;
         Platform.runLater(() -> {
-            txtNombreCamello1.setText(nombre1); 
+            txtNombreCamello1.setText(nombre1);
             txtNombreCamello2.setText(nombre2);
         });
 

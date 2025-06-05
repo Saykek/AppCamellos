@@ -17,23 +17,44 @@ public class Cliente {
     private static final String HOST_POR_DEFECTO = "localhost";
     private static final int PUERTO_POR_DEFECTO = 3009;
     private static final int VALOR_SUBSTRING = 10;
+    private static final int INDICE_JUG1 = 0;
+    private static final int INDICE_JUG2 = 1;
+    private static final int PARTES_MJ_RESULTADO = 3;
+    private static final int PARTES_MJ_PROGRESO = 0;
+    private static final int PARTES_PUNTOS = 1;
+    private static final int PARTES_MJ_PROGRESO_SUBSTRING = 9;
+    private  static final String DIRECTORIO_ACTUAL = System.getProperty("user.dir");
 
-    private static final String MSG_PROGRESO = "PROGRESO:";
-    private static final String MSG_JUGADORES = "JUGADORES:";
-    private static final String MSG_GANADOR = "GANADOR:";
-    private static final String MSG_RESULTADO = "RESULTADO:";
-    private static final String MSG_PDF = "PDF";
-    private static final String MSG_PRE_FELICIDADES = "¡Felicidades ";
-    private static final String MSG_POST_FELICIDADES = "! Has ganado la carrera.";
-    private static final String MSG_PRE_GANADOR = "El ganador es: ";
+    private static final String MJ_PROGRESO = "PROGRESO:";
+    private static final String MJ_JUGADORES = "JUGADORES:";
+    private static final String MJ_GANADOR = "GANADOR:";
+    private static final String MJ_RESULTADO = "RESULTADO:";
+    private static final String MJ_PDF = "PDF"; 
+    private static final String MJ_PRE_GANADOR = "El ganador es: ";
+    private static final String MJ_ERROR_DATOS = "Error al recibir datos del servidor.";
+    private static final String MJ_RECEPCION_CERTIFICADO = "Recibiendo certificado PDF del servidor...";
+    private static final String MJ_CERTIFICADO_OK = "Certificado PDF recibido correctamente. Guardando en disco...";
+ 
+    
+
+    private static final String FORMATO_MJ_RECIBIDO = "Mensaje recibido del servidor: %s";
+    private static final String FORMATO_ACTUALIZAR_PROGRESO = "Actualizando progreso de %s con %d puntos.";
+    private static final String FORMATO_MJ_GANADOR_RECIBIDO = "Mensaje de ganador recibido: %s";
+    private static final String FORMATO_MJ_RESULTADO_RECIBIDO = "Mensaje de resultado recibido: %s";
+    private static final String FORMATO_GANADOR = "Ganador es: %s";
+    private static final String FORMATO_TAMANIO_CERTIFICADO = "Longitud del certificado PDF: %s";
+    private static final String FORMATO_MJ_GANADOR = "¡Felicidades %s! Has ganado la carrera.";
+    private static final String FORMATO_UBICACION_CERTIFICADO = "Certificado PDF guardado en:  %s";
+    private static final String FORMATO_ERROR_GUARDAR_CERTIFICADO = "Error al guardar el certificado PDF: %s";
 
     private static final String CARPETA_CERTIFICADOS = "certificados_recibidos";
     private static final String NOMBRE_CERTIFICADO = "certificado.pdf";
-   
+    private static final String PUNTO_COMA = ";";
+    private static final String VACIO = " ";
 
     private String host;
     private int puerto;
-    
+
     private Socket socket;
     private BufferedReader entrada;
     private DataInputStream entradaDatos;
@@ -69,50 +90,52 @@ public class Cliente {
         new Thread(() -> {
             try {
                 String mensaje;
+                boolean pdfRecibido = false;
                 while ((mensaje = entrada.readLine()) != null) {
-                    LogCamellos.info("[CLIENTE] Mensaje recibido del servidor: " + mensaje);
+                    LogCamellos.info(String.format(FORMATO_MJ_RECIBIDO, mensaje));
 
                     final String finalMensaje = mensaje;
 
-                    if (mensaje.startsWith(MSG_PROGRESO)) {
-                        String[] partes = mensaje.substring(9).split(";");
-                        String nombre = partes[0];
-                        int puntos = Integer.parseInt(partes[1]);
+                    if (mensaje.startsWith(MJ_PROGRESO)) {
+                        String[] partes = mensaje.substring(PARTES_MJ_PROGRESO_SUBSTRING).split(PUNTO_COMA);
+                        String nombre = partes[PARTES_MJ_PROGRESO];
+                        int puntos = Integer.parseInt(partes[PARTES_PUNTOS]);
 
                         Platform.runLater(() -> {
-                            LogCamellos.info("Actualizando progreso de " + nombre + " con " + puntos + " puntos.");
+                            LogCamellos.info(String.format(FORMATO_ACTUALIZAR_PROGRESO, nombre , puntos ));
                             controladorVista.actualizarProgresoCamello(nombre, puntos);
                             controladorVista.actualizarProgresoTotal(nombre, puntos);
 
                         });
 
-                    } else if (mensaje.startsWith(MSG_JUGADORES)) {
-                        String[] jugadores = mensaje.substring(VALOR_SUBSTRING).split(";");
-                        Platform.runLater(() -> controladorVista.setNombreJugadores(jugadores[0], jugadores[1]));
+                    } else if (mensaje.startsWith(MJ_JUGADORES)) {
+                        String[] jugadores = mensaje.substring(VALOR_SUBSTRING).split(PUNTO_COMA);
+                        Platform.runLater(() -> controladorVista.setNombreJugadores(jugadores[INDICE_JUG1],
+                                jugadores[INDICE_JUG2]));
 
-                    } else if (mensaje.startsWith(MSG_GANADOR)) {
+                    } else if (mensaje.startsWith(MJ_GANADOR)) {
                         controladorVista.mostrarBotonCertificado(true);
-                        LogCamellos.info("[CLIENTE] Mensaje de ganador recibido: " + mensaje);
+                        LogCamellos.info(String.format(FORMATO_MJ_GANADOR_RECIBIDO, mensaje));
 
-                    } else if (mensaje.startsWith(MSG_RESULTADO)) {
+                    } else if (mensaje.startsWith(MJ_RESULTADO)) {
                         // Extraigo nombre del ganador
-                        String[] partes = mensaje.split(" ");
-                        String nombreGanador = partes[3];
-                        LogCamellos.info("[CLIENTE] Mensaje de resultado recibido: " + mensaje);
+                        String[] partes = mensaje.split(VACIO);
+                        String nombreGanador = partes[PARTES_MJ_RESULTADO];
+                        LogCamellos.info(String.format(FORMATO_MJ_RESULTADO_RECIBIDO, mensaje));
 
-                        LogCamellos.info("[CLIENTE] Ganador es: " + nombreGanador);
-                        LogCamellos.info("[CLIENTE] Este cliente es: " + nombreJugador);
+                        LogCamellos.info(String.format(FORMATO_GANADOR, nombreGanador));
 
                         if (nombreGanador.equalsIgnoreCase(nombreJugadorLocal)) {
-                            controladorVista.mostrarMensaje(MSG_PRE_FELICIDADES + nombreGanador + MSG_POST_FELICIDADES);
+                            controladorVista.mostrarMensaje(String.format(FORMATO_MJ_GANADOR, nombreGanador));
                             controladorVista.mostrarBotonCertificado(true);
                         } else {
-                            controladorVista.mostrarMensaje(MSG_PRE_GANADOR + nombreGanador);
+                            controladorVista.mostrarMensaje(MJ_PRE_GANADOR + nombreGanador);
                             controladorVista.mostrarBotonCertificado(false);
                         }
 
-                    } else if (mensaje.equals(MSG_PDF)) {
+                    } else if (mensaje.equals(MJ_PDF)) {
                         recibirCertificado();
+                        pdfRecibido = true;
 
                     } else {
                         Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
@@ -120,8 +143,8 @@ public class Cliente {
                 }
 
             } catch (IOException e) {
-                Platform.runLater(() -> controladorVista.mostrarMensaje("Error al recibir datos del servidor."));
-                LogCamellos.error("Error al recibir datos del servidor: " + e.getMessage(), e);
+                Platform.runLater(() -> controladorVista.mostrarMensaje(MJ_ERROR_DATOS));
+                LogCamellos.error(MJ_ERROR_DATOS + e.getMessage(), e);
 
             }
         }).start();
@@ -143,16 +166,17 @@ public class Cliente {
     }
 
     public void recibirCertificado() throws IOException {
-        LogCamellos.info("[CLIENTE] Recibiendo certificado PDF del servidor...");
+        LogCamellos.info(MJ_RECEPCION_CERTIFICADO);
         int longitud = entradaDatos.readInt(); // LEO EL TAMAÑO
-        LogCamellos.info("[CLIENTE] Longitud del certificado PDF: " + longitud);
+        LogCamellos.info(String.format(FORMATO_TAMANIO_CERTIFICADO ,longitud));
 
         byte[] datosPdf = new byte[longitud]; // leo los bytes
         entradaDatos.readFully(datosPdf); // leo los bytes
 
-        LogCamellos.info("[CLIENTE] Certificado PDF recibido correctamente. Guardando en disco...");
+        LogCamellos.info(MJ_CERTIFICADO_OK);
 
-        String rutaBase = System.getProperty("user.dir")+ File.separator + CARPETA_CERTIFICADOS; // Obtengo la ruta base del proyecto
+        String rutaBase = DIRECTORIO_ACTUAL + File.separator + CARPETA_CERTIFICADOS; // Obtengo la ruta
+                                                                                                  // base del proyecto
         File carpeta = new File(rutaBase);
         if (!carpeta.exists()) {
             carpeta.mkdir(); // Creo la carpeta si no existe
@@ -161,9 +185,9 @@ public class Cliente {
 
         try (FileOutputStream flujo = new FileOutputStream(archivoPdf)) {
             flujo.write(datosPdf); // Escribo los bytes en el archivo
-            LogCamellos.info("[CLIENTE] Certificado PDF guardado en: " + archivoPdf.getAbsolutePath());
+            LogCamellos.info(String.format(FORMATO_UBICACION_CERTIFICADO, archivoPdf.getAbsolutePath()));
         } catch (IOException e) {
-            LogCamellos.error("[CLIENTE] Error al guardar el certificado PDF: " + e.getMessage(), e);
+            LogCamellos.error(String.format(FORMATO_ERROR_GUARDAR_CERTIFICADO + e.getMessage()), e);
 
         }
     }

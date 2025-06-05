@@ -1,9 +1,9 @@
 package es.etg.smr.carreracamellos.cliente.mvc.vista;
 
-import java.io.File;
 import java.io.IOException;
 
 import es.etg.smr.carreracamellos.cliente.mvc.controlador.ControladorCliente;
+import es.etg.smr.carreracamellos.cliente.utilidades.GestorCertificado;
 import es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -17,16 +17,7 @@ import javafx.scene.image.ImageView;
 
 public class ControladorVista {
 
-    private static final String OS_NAME = System.getProperty("os.name").toLowerCase();
-    private static final String OS_MAC = "mac";
-    private static final String OS_LINUX_1 = "nix";
-    private static final String OS_LINUX_2 = "nux";
-    private static final String OS_WINDOWS = "win";
-    private static final String COMANDO_MAC = "open";
-    private static final String COMANDO_LINUX = "xdg-open";
-    private static final String COMANDO_WINDOWS = "cmd";
 
-    private static final String LOG_CERTIFICADO_NO_EXISTE = "El archivo no existe: %s";
     private static final String LOG_APERTURA_CERTIFICADO_ERROR = "Error al intentar abrir el PDF: %s";
     private static final String LOG_CAMELLO_NO_RECONOCIDO = "Nombre de camello no reconocido: %s";
     private static final String LOG_JUGADORES_ACTUALES = "Jugadores actuales: %s, %s";
@@ -63,30 +54,11 @@ public class ControladorVista {
 
     @FXML
     private void abrirCertificado(ActionEvent event) {
-        try {
-            File pdfFile = new File(RUTA_CERTIFICADO);
-
-            if (!pdfFile.exists()) {
-                LogCamellos.info(String.format(LOG_CERTIFICADO_NO_EXISTE, pdfFile.getAbsolutePath()));
-                return;
-            }
-
-            // Para macOS
-            if (OS_NAME.contains(OS_MAC)) {
-                new ProcessBuilder(COMANDO_MAC, pdfFile.getAbsolutePath()).start();
-
-                // Para Linux
-            } else if (OS_NAME.contains(OS_LINUX_1) ||
-                    OS_NAME.contains(OS_LINUX_2)) {
-                new ProcessBuilder(COMANDO_LINUX, pdfFile.getAbsolutePath()).start();
-
-                // Para Windows
-            } else if (OS_NAME.contains(OS_WINDOWS)) {
-                new ProcessBuilder(COMANDO_WINDOWS, "/c", "start", "", pdfFile.getAbsolutePath()).start();
-            }
-
+        try { GestorCertificado.abrirCertificado(RUTA_CERTIFICADO);
+     
         } catch (IOException e) {
             LogCamellos.error(String.format(LOG_APERTURA_CERTIFICADO_ERROR, e.getMessage()), e);
+
         }
     }
 
@@ -180,8 +152,7 @@ public class ControladorVista {
         this.nombreJugador1 = nombre1;
         this.nombreJugador2 = nombre2;
         Platform.runLater(() -> {
-            txtNombreCamello1.setText(nombre1); // ASI NO ME COGE EL EQUALS txtNombreCamello1.setText("Camello de " +
-                                                // nombre1);
+            txtNombreCamello1.setText(nombre1); 
             txtNombreCamello2.setText(nombre2);
         });
 

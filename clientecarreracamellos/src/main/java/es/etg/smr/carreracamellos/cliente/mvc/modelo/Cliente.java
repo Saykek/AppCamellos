@@ -16,6 +16,7 @@ import javafx.application.Platform;
 public class Cliente {
     private static final String HOST_POR_DEFECTO = "localhost";
     private static final int PUERTO_POR_DEFECTO = 3009;
+    private static final int VALOR_SUBSTRING = 10;
 
     private static final String MSG_PROGRESO = "PROGRESO:";
     private static final String MSG_JUGADORES = "JUGADORES:";
@@ -28,11 +29,11 @@ public class Cliente {
 
     private static final String CARPETA_CERTIFICADOS = "certificados_recibidos";
     private static final String NOMBRE_CERTIFICADO = "certificado.pdf";
-    private static final int VALOR_SUBSTRING = 10;
+   
 
     private String host;
     private int puerto;
-
+    
     private Socket socket;
     private BufferedReader entrada;
     private DataInputStream entradaDatos;

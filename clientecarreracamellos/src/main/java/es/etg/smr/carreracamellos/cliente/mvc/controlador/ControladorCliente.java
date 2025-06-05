@@ -14,6 +14,13 @@ import javafx.stage.Stage;
 
 public class ControladorCliente extends Application {
 
+    private final static String MJ_INICIO = "Iniciando interfaz de usuario...";
+    private final static String MJ_ERROR = "Error de conexión ";
+    private final static String FORMATO_CARGAR_VISTA = "Cargando vista: %s";
+    private final static String FORMATO_CONEXION_SERVIDOR = "Conectando al servidor como:  %s";
+    private final static String FORMATO_MJ_RECIBIDO = "Mensaje recibido tras conexión:  %s";
+    private final static String FORMATO_ERROR_CONEXION = "Error al conectar con el servidor:  %s";
+
     private final static String VISTA = "/es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml";
 
     private Scene scene;
@@ -23,22 +30,21 @@ public class ControladorCliente extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        LogCamellos.info("[CLIENTE] Iniciando interfaz de usuario...");
-        // Cargo la vista principal
-        stage.setScene(cargarVista(VISTA));
-        stage.show();
+        LogCamellos.info(MJ_INICIO);
 
+        stage.setScene(cargarVista(VISTA));// Cargo la vista principal
+        stage.show();
     }
 
     private Scene cargarVista(String ficheroView) throws IOException {
-        LogCamellos.info("[CLIENTE] Cargando vista: " + ficheroView);
+        LogCamellos.info(String.format(FORMATO_CARGAR_VISTA, ficheroView));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ficheroView));
         Parent root = (Parent) fxmlLoader.load();
 
         // Obtengo el controlador de la vista para pasarle una referencia al controlador
         controladorVista = fxmlLoader.<ControladorVista>getController();
         controladorVista.setControladorCliente(this);
-        // this.controladorVista = controladorVista;
+
         cliente.setControladorVista(controladorVista);
         scene = new Scene(root);
 
@@ -58,15 +64,15 @@ public class ControladorCliente extends Application {
     // conecto con el servidor y enviar el nombre del jugador
     public String conectarConServidor(String nombreJugador) {
         try {
-            LogCamellos.info("[CLIENTE] Conectando al servidor como: " + nombreJugador);
+            LogCamellos.info(String.format(FORMATO_CONEXION_SERVIDOR, nombreJugador));
             cliente.conectar(nombreJugador);
             cliente.enviarNombre(nombreJugador);
             String respuesta = cliente.recibirMensaje();
-            LogCamellos.info("[CLIENTE] Mensaje recibido tras conexión: " + respuesta);
+            LogCamellos.info(String.format(FORMATO_MJ_RECIBIDO, respuesta));
             return respuesta;
         } catch (IOException e) {
-            LogCamellos.error("[CLIENTE] Error al conectar con el servidor: " + e.getMessage(), e);
-            return "Error de conexión: " + e.getMessage();
+            LogCamellos.error(String.format(FORMATO_ERROR_CONEXION + e.getMessage()), e);
+            return MJ_ERROR + e.getMessage();
         }
     }
 

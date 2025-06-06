@@ -2630,3 +2630,353 @@ jun 05, 2025 10:45:26 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCa
 INFORMACIÓN: Certificado PDF recibido correctamente. Guardando en disco...
 jun 05, 2025 10:45:26 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
 INFORMACIÓN: Certificado PDF guardado en:  /Users/saramartinez/Desktop/NuevaCarrera/clientecarreracamellos/certificados_recibidos/certificado.pdf
+jun 06, 2025 10:15:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando interfaz de usuario...
+jun 06, 2025 10:15:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 06, 2025 10:15:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Conectando al servidor como:  Alba
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido tras conexión:  Bienvenido Alba. Esperando a que se unan más jugadores...
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: Alba
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: JUGADORES: Alba;cesar
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;2
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Servidor: Alba
+jun 06, 2025 10:15:37 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 2 puntos.
+jun 06, 2025 10:15:38 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;2
+jun 06, 2025 10:15:38 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 2 puntos.
+jun 06, 2025 10:15:38 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;3
+jun 06, 2025 10:15:38 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 3 puntos.
+jun 06, 2025 10:15:38 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;7
+jun 06, 2025 10:15:38 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 7 puntos.
+jun 06, 2025 10:15:39 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;7
+jun 06, 2025 10:15:39 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 7 puntos.
+jun 06, 2025 10:15:39 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;14
+jun 06, 2025 10:15:39 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 14 puntos.
+jun 06, 2025 10:15:39 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;8
+jun 06, 2025 10:15:39 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 8 puntos.
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;18
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 18 puntos.
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;17
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 17 puntos.
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;20
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 20 puntos.
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;21
+jun 06, 2025 10:15:40 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 21 puntos.
+jun 06, 2025 10:15:41 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;27
+jun 06, 2025 10:15:41 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 27 puntos.
+jun 06, 2025 10:15:41 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;31
+jun 06, 2025 10:15:41 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 31 puntos.
+jun 06, 2025 10:15:41 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;37
+jun 06, 2025 10:15:41 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 37 puntos.
+jun 06, 2025 10:15:42 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;33
+jun 06, 2025 10:15:42 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 33 puntos.
+jun 06, 2025 10:15:42 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;43
+jun 06, 2025 10:15:42 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 43 puntos.
+jun 06, 2025 10:15:42 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;34
+jun 06, 2025 10:15:42 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 34 puntos.
+jun 06, 2025 10:15:43 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;48
+jun 06, 2025 10:15:43 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 48 puntos.
+jun 06, 2025 10:15:43 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;43
+jun 06, 2025 10:15:43 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 43 puntos.
+jun 06, 2025 10:15:43 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;50
+jun 06, 2025 10:15:43 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 50 puntos.
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;52
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 52 puntos.
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;54
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 54 puntos.
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;53
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 53 puntos.
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;56
+jun 06, 2025 10:15:44 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 56 puntos.
+jun 06, 2025 10:15:45 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;59
+jun 06, 2025 10:15:45 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 59 puntos.
+jun 06, 2025 10:15:45 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;65
+jun 06, 2025 10:15:45 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 65 puntos.
+jun 06, 2025 10:15:45 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;62
+jun 06, 2025 10:15:45 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 62 puntos.
+jun 06, 2025 10:15:46 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;75
+jun 06, 2025 10:15:46 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 75 puntos.
+jun 06, 2025 10:15:46 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;71
+jun 06, 2025 10:15:46 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 71 puntos.
+jun 06, 2025 10:15:46 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;79
+jun 06, 2025 10:15:46 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 79 puntos.
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;78
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 78 puntos.
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;85
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 85 puntos.
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;82
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 82 puntos.
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;88
+jun 06, 2025 10:15:47 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 88 puntos.
+jun 06, 2025 10:15:48 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;84
+jun 06, 2025 10:15:48 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 84 puntos.
+jun 06, 2025 10:15:48 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;92
+jun 06, 2025 10:15:48 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 92 puntos.
+jun 06, 2025 10:15:48 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;93
+jun 06, 2025 10:15:48 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 93 puntos.
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: Alba;98
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  Alba con 98 puntos.
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: cesar;100
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: RESULTADO: El jugador cesar ha ganado la partida con 100 puntos.
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje de resultado recibido: RESULTADO: El jugador cesar ha ganado la partida con 100 puntos.
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Ganador es: cesar
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  cesar con 100 puntos.
+jun 06, 2025 10:15:49 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Servidor: El ganador es: cesar
+jun 06, 2025 10:17:52 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando interfaz de usuario...
+jun 06, 2025 10:17:52 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 06, 2025 10:17:52 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.
+jun 06, 2025 10:17:59 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Conectando al servidor como:  juancho
+jun 06, 2025 10:17:59 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: Bienvenido juancho. Esperando a que se unan más jugadores...
+jun 06, 2025 10:17:59 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido tras conexión:  juancho
+jun 06, 2025 10:17:59 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Servidor: Bienvenido juancho. Esperando a que se unan más jugadores...
+jun 06, 2025 10:18:06 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: JUGADORES: juancho;oscar
+jun 06, 2025 10:18:06 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;9
+jun 06, 2025 10:18:06 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 9 puntos.
+jun 06, 2025 10:18:06 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;7
+jun 06, 2025 10:18:06 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 7 puntos.
+jun 06, 2025 10:18:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;10
+jun 06, 2025 10:18:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 10 puntos.
+jun 06, 2025 10:18:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;12
+jun 06, 2025 10:18:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 12 puntos.
+jun 06, 2025 10:18:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;14
+jun 06, 2025 10:18:07 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 14 puntos.
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;14
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 14 puntos.
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;22
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 22 puntos.
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;24
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 24 puntos.
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;29
+jun 06, 2025 10:18:08 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 29 puntos.
+jun 06, 2025 10:18:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;32
+jun 06, 2025 10:18:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 32 puntos.
+jun 06, 2025 10:18:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;36
+jun 06, 2025 10:18:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 36 puntos.
+jun 06, 2025 10:18:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;41
+jun 06, 2025 10:18:09 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 41 puntos.
+jun 06, 2025 10:18:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;38
+jun 06, 2025 10:18:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 38 puntos.
+jun 06, 2025 10:18:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;45
+jun 06, 2025 10:18:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 45 puntos.
+jun 06, 2025 10:18:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;48
+jun 06, 2025 10:18:10 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 48 puntos.
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;46
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 46 puntos.
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;56
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 56 puntos.
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;49
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 49 puntos.
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;61
+jun 06, 2025 10:18:11 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 61 puntos.
+jun 06, 2025 10:18:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;50
+jun 06, 2025 10:18:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 50 puntos.
+jun 06, 2025 10:18:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;69
+jun 06, 2025 10:18:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 69 puntos.
+jun 06, 2025 10:18:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;57
+jun 06, 2025 10:18:12 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 57 puntos.
+jun 06, 2025 10:18:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;74
+jun 06, 2025 10:18:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 74 puntos.
+jun 06, 2025 10:18:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;60
+jun 06, 2025 10:18:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 60 puntos.
+jun 06, 2025 10:18:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;78
+jun 06, 2025 10:18:13 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 78 puntos.
+jun 06, 2025 10:18:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;69
+jun 06, 2025 10:18:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 69 puntos.
+jun 06, 2025 10:18:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;79
+jun 06, 2025 10:18:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 79 puntos.
+jun 06, 2025 10:18:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;71
+jun 06, 2025 10:18:14 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 71 puntos.
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;82
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 82 puntos.
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;75
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 75 puntos.
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;91
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 91 puntos.
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: oscar;79
+jun 06, 2025 10:18:15 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  oscar con 79 puntos.
+jun 06, 2025 10:18:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PROGRESO: juancho;100
+jun 06, 2025 10:18:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: RESULTADO: El jugador juancho ha ganado la partida con 100 puntos.
+jun 06, 2025 10:18:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje de resultado recibido: RESULTADO: El jugador juancho ha ganado la partida con 100 puntos.
+jun 06, 2025 10:18:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Ganador es: juancho
+jun 06, 2025 10:18:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Actualizando progreso de  juancho con 100 puntos.
+jun 06, 2025 10:18:16 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Servidor: ¡Felicidades juancho! Has ganado la carrera.
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: GANADOR: juancho100
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje de ganador recibido: GANADOR: juancho100
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Mensaje recibido del servidor: PDF
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Recibiendo certificado PDF del servidor...
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Longitud del certificado PDF: 53064
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Certificado PDF recibido correctamente. Guardando en disco...
+jun 06, 2025 10:18:17 A. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Certificado PDF guardado en:  /Users/saramartinez/Desktop/NuevaCarrera/clientecarreracamellos/certificados_recibidos/certificado.pdf

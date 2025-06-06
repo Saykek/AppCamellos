@@ -187,3 +187,5 @@ Fecha: 05/06/2025 22:36 |  Ganador: tressa (100 pts)  |  Perdedor: pequeña (97 
 Fecha: 05/06/2025 22:39 |  Ganador: pedro (100 pts)  |  Perdedor: indio (71 pts) 
 Fecha: 05/06/2025 22:43 |  Ganador: yeah (100 pts)  |  Perdedor: risto (78 pts) 
 Fecha: 05/06/2025 22:45 |  Ganador: sares (100 pts)  |  Perdedor: lombriz (85 pts) 
+Fecha: 06/06/2025 10:15 |  Ganador: cesar (100 pts)  |  Perdedor: Alba (98 pts) 
+Fecha: 06/06/2025 10:18 |  Ganador: juancho (100 pts)  |  Perdedor: oscar (79 pts) 

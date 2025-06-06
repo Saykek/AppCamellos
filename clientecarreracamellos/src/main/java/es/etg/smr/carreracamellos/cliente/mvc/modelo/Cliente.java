@@ -1,15 +1,11 @@
 package es.etg.smr.carreracamellos.cliente.mvc.modelo;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
 
 import es.etg.smr.carreracamellos.cliente.mvc.vista.ControladorVista;
+import es.etg.smr.carreracamellos.cliente.utilidades.ConexionServidor;
+import es.etg.smr.carreracamellos.cliente.utilidades.GestorCertificado;
 import es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos;
 import javafx.application.Platform;
 
@@ -23,7 +19,6 @@ public class Cliente {
     private static final int PARTES_MJ_PROGRESO = 0;
     private static final int PARTES_PUNTOS = 1;
     private static final int PARTES_MJ_PROGRESO_SUBSTRING = 9;
-    private static final String DIRECTORIO_ACTUAL = System.getProperty("user.dir");
 
     private static final String MJ_PROGRESO = "PROGRESO:";
     private static final String MJ_JUGADORES = "JUGADORES:";
@@ -32,21 +27,13 @@ public class Cliente {
     private static final String MJ_PDF = "PDF";
     private static final String MJ_PRE_GANADOR = "El ganador es: ";
     private static final String MJ_ERROR_DATOS = "Error al recibir datos del servidor.";
-    private static final String MJ_RECEPCION_CERTIFICADO = "Recibiendo certificado PDF del servidor...";
-    private static final String MJ_CERTIFICADO_OK = "Certificado PDF recibido correctamente. Guardando en disco...";
 
     private static final String FORMATO_MJ_RECIBIDO = "Mensaje recibido del servidor: %s";
     private static final String FORMATO_ACTUALIZAR_PROGRESO = "Actualizando progreso de %s con %d puntos.";
     private static final String FORMATO_MJ_GANADOR_RECIBIDO = "Mensaje de ganador recibido: %s";
     private static final String FORMATO_MJ_RESULTADO_RECIBIDO = "Mensaje de resultado recibido: %s";
     private static final String FORMATO_GANADOR = "Ganador es: %s";
-    private static final String FORMATO_TAMANIO_CERTIFICADO = "Longitud del certificado PDF: %s";
     private static final String FORMATO_MJ_GANADOR = "¡Felicidades %s! Has ganado la carrera.";
-    private static final String FORMATO_UBICACION_CERTIFICADO = "Certificado PDF guardado en:  %s";
-    private static final String FORMATO_ERROR_GUARDAR_CERTIFICADO = "Error al guardar el certificado PDF: %s";
-
-    private static final String CARPETA_CERTIFICADOS = "certificados_recibidos";
-    private static final String NOMBRE_CERTIFICADO = "certificado.pdf";
     private static final String PUNTO_COMA = ";";
     private static final String VACIO = " ";
 
@@ -54,10 +41,8 @@ public class Cliente {
     private int puerto;
 
     private Socket socket;
-    private BufferedReader entrada;
-    private DataInputStream entradaDatos;
-    private PrintWriter salida;
     private ControladorVista controladorVista;
+    private ConexionServidor conexion;
     private String nombreJugadorLocal;
 
     public Cliente() throws IOException {
@@ -77,15 +62,14 @@ public class Cliente {
     public void conectar(String nombreJugador) throws IOException {
         this.nombreJugadorLocal = nombreJugador;
         socket = new Socket(host, puerto);
-        entradaDatos = new DataInputStream(socket.getInputStream());
-        entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        salida = new PrintWriter(socket.getOutputStream(), true);
+
+        conexion = new ConexionServidor(socket.getInputStream(), socket.getOutputStream());
 
         // Enviar nombre al servidor
-        salida.println(nombreJugador);
+        conexion.getSalida().println(nombreJugador);
 
         Platform.runLater(() -> {
-            controladorVista.deshabilitarConectar(); 
+            controladorVista.deshabilitarConectar();
         });
 
         // Hilo para escuchar mensajes del servidor
@@ -93,7 +77,7 @@ public class Cliente {
             try {
                 String mensaje;
                 boolean pdfRecibido = false;
-                while ((mensaje = entrada.readLine()) != null) {
+                while ((mensaje = conexion.getEntrada().readLine()) != null) {
                     LogCamellos.info(String.format(FORMATO_MJ_RECIBIDO, mensaje));
 
                     final String finalMensaje = mensaje;
@@ -137,7 +121,7 @@ public class Cliente {
                         Platform.runLater(() -> controladorVista.habilitarConectar());
 
                     } else if (mensaje.equals(MJ_PDF)) {
-                        recibirCertificado();
+                        GestorCertificado.recibirCertificado(conexion);
                         pdfRecibido = true;
 
                         try {
@@ -148,7 +132,7 @@ public class Cliente {
 
                     } else {
                         Platform.runLater(() -> controladorVista.mostrarMensaje(finalMensaje));
-                        
+
                     }
                 }
 
@@ -163,11 +147,11 @@ public class Cliente {
     }
 
     public void enviarNombre(String nombre) {
-        salida.println(nombre);
+        conexion.getSalida().println(nombre);
     }
 
     public String recibirMensaje() throws IOException {
-        return entrada.readLine();
+        return conexion.getEntrada().readLine();
     }
 
     public void cerrar() throws IOException {
@@ -176,30 +160,4 @@ public class Cliente {
         }
     }
 
-    public void recibirCertificado() throws IOException {
-        LogCamellos.info(MJ_RECEPCION_CERTIFICADO);
-        int longitud = entradaDatos.readInt(); // LEO EL TAMAÑO
-        LogCamellos.info(String.format(FORMATO_TAMANIO_CERTIFICADO, longitud));
-
-        byte[] datosPdf = new byte[longitud]; // leo los bytes
-        entradaDatos.readFully(datosPdf); // leo los bytes
-
-        LogCamellos.info(MJ_CERTIFICADO_OK);
-
-        String rutaBase = DIRECTORIO_ACTUAL + File.separator + CARPETA_CERTIFICADOS; // Obtengo la ruta
-                                                                                     // base del proyecto
-        File carpeta = new File(rutaBase);
-        if (!carpeta.exists()) {
-            carpeta.mkdir(); // Creo la carpeta si no existe
-        }
-        File archivoPdf = new File(carpeta, NOMBRE_CERTIFICADO); // Nombre del archivo PDF
-
-        try (FileOutputStream flujo = new FileOutputStream(archivoPdf)) {
-            flujo.write(datosPdf); // Escribo los bytes en el archivo
-            LogCamellos.info(String.format(FORMATO_UBICACION_CERTIFICADO, archivoPdf.getAbsolutePath()));
-        } catch (IOException e) {
-            LogCamellos.error(String.format(FORMATO_ERROR_GUARDAR_CERTIFICADO + e.getMessage()), e);
-
-        }
-    }
 }

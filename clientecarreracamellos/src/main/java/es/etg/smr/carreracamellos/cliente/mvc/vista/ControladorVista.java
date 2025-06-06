@@ -147,6 +147,7 @@ public class ControladorVista {
     public void deshabilitarConectar() {
         btnConectar.setDisable(true);
     }
+
     public void habilitarConectar() {
         btnConectar.setDisable(false);
     }
@@ -180,7 +181,6 @@ public class ControladorVista {
 
         nombreJugador1 = txtNombreCliente.getText().trim();
         controladorCliente.conectarConServidor(nombreJugador1);
-        
 
     }
 

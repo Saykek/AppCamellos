@@ -27,6 +27,7 @@ public class Cliente {
     private static final String MJ_PDF = "PDF";
     private static final String MJ_PRE_GANADOR = "El ganador es: ";
     private static final String MJ_ERROR_DATOS = "Error al recibir datos del servidor.";
+    private static final String MJ_ERROR_DESCONEXION = "Error de desconexión del servidor.";
 
     private static final String FORMATO_MJ_RECIBIDO = "Mensaje recibido del servidor: %s";
     private static final String FORMATO_ACTUALIZAR_PROGRESO = "Actualizando progreso de %s con %d puntos.";
@@ -63,7 +64,7 @@ public class Cliente {
         this.nombreJugadorLocal = nombreJugador;
         socket = new Socket(host, puerto);
 
-        conexion = new ConexionServidor(socket.getInputStream(), socket.getOutputStream());
+        conexion = new ConexionServidor(socket, socket.getInputStream(), socket.getOutputStream());
 
         // Enviar nombre al servidor
         conexion.getSalida().println(nombreJugador);
@@ -125,9 +126,10 @@ public class Cliente {
                         pdfRecibido = true;
 
                         try {
-                            cerrar();
+                            conexion.cerrar();
 
-                        } catch (IOException e) {
+                        } catch (Exception e) {
+                            LogCamellos.error(MJ_ERROR_DESCONEXION + e.getMessage(), e);
                         }
 
                     } else {
@@ -152,12 +154,6 @@ public class Cliente {
 
     public String recibirMensaje() throws IOException {
         return conexion.getEntrada().readLine();
-    }
-
-    public void cerrar() throws IOException {
-        if (socket != null && !socket.isClosed()) {
-            socket.close();
-        }
     }
 
 }

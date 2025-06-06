@@ -15,7 +15,8 @@ public class ConexionServidor {
     private PrintWriter salida;
     private DataInputStream entradaDatos; // Para recibir PDF
 
-    public ConexionServidor(InputStream inputStream, OutputStream outputStream) {
+    public ConexionServidor(Socket socket, InputStream inputStream, OutputStream outputStream) {
+        this.socket = socket;
         this.entradaDatos = new DataInputStream(inputStream);
         this.entrada = new BufferedReader(new InputStreamReader(inputStream));
         this.salida = new PrintWriter(outputStream, true);
@@ -47,4 +48,5 @@ public class ConexionServidor {
             System.err.println("Error al cerrar la conexión: " + e.getMessage());
         }
     }
+
 }

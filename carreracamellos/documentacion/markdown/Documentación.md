@@ -133,77 +133,65 @@ Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos
 
 ![Prototipo pantalla](../disenio/prototipoPantalla.png)
 
+## Plan de Pruebas
 
-### Plan de Pruebas
-#### ***Pruebas Manuales***
-- He definido unas pruebas manuales para verificar que el juego funciona correctamente.
+---
 
-***Pruebas de funcionalidad***
+### Pruebas Manuales
 
-  *Prueba 1: Conexión*
-    •    Objetivo: Verificar que los dos clientes pueden conectarse correctamente al servidor.
-    •    Procedimiento: Iniciar el servidor, luego conectar cada cliente.
-    •    Resultado esperado: El servidor reconoce a los dos clientes y comienza la partida sin errores.
+#### 🔹 Pruebas de Funcionalidad
 
+| ID   | Nombre                   | Objetivo                                                         | Procedimiento                                          | Resultado Esperado                                                  | Evidencia |
+|------|--------------------------|------------------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------|-----------|
+| M1   | Conexión                 | Verificar que los dos clientes pueden conectarse correctamente   | Iniciar el servidor y conectar los dos clientes        | El servidor reconoce a los dos clientes y comienza la partida       | [Ver imagen](partida.png) |
+| M2   | Avance del juego         | Comprobar que el servidor actualiza el avance de cada camello    | Iniciar partida y dejarla avanzar automáticamente      | El progreso de los camellos se muestra correctamente en los clientes | [Ver imagen](pruebas/partida.png) |
+| M3   | Fin de partida y ganador | Verificar que se detecta el final de la partida y se genera PDF  | Jugar hasta que un camello gane                        | Se muestra el ganador y se genera el certificado PDF                | [Ver ganador](pruebas/partida.png), [Ver botón PDF](pruebas/boton_visible.png) |
 
-*Prueba 2 : Avance del juego*
-    •    Objetivo: Comprobar que el servidor actualiza correctamente el avance de cada camello.
-    •    Procedimiento: Iniciar una partida y dejar que avance automáticamente.
-    •    Resultado esperado: El progreso de los camellos se muestra correctamente en cada cliente.
+#### 🔹 Pruebas de Interfaz
 
-*Prueba 3 :  Fin de la partida y ganador*
-    •    Objetivo: Verificar que se detecta el final de la partida.
-    •    Procedimiento: Jugar hasta que uno de los camellos gane.
-    •    Resultado esperado: Se muestra el ganador y se genera el certificado PDF.
+| ID   | Nombre                      | Objetivo                                                             | Procedimiento                                 | Resultado Esperado                                              | Evidencia |
+|------|-----------------------------|----------------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------------|-----------|
+| I1   | Verificación de botones     | Asegurar que los botones funcionan como se espera                    | Pulsar cada botón en diferentes momentos       | Se ejecutan las acciones esperadas sin errores                  | -         |
+| I2   | Imágenes                    | Comprobar que las imágenes se cargan correctamente                   | Iniciar la aplicación                          | Todas las imágenes se muestran correctamente en los clientes    | [Ver imagen](./pruebas/imagenes_ok.png) |
+| I3   | Botón "Conectar" desactivado| Verificar que el botón "Conectar" se desactiva durante la partida    | Pulsar "Conectar" y luego intentar pulsarlo    | El botón se desactiva y no se puede volver a pulsar             | [Ver imagen](./pruebas/boton_desactivado.png) |
+| I4   | Botón "Conectar" activado   | Verificar que el botón "Conectar" se activa cuando la partida termina| Esperar fin de partida y pulsar "Conectar"     | El botón se activa y se puede volver a pulsar                   | [Ver imagen](./pruebas/boton_visible.png) |
 
-*Prueba 4 : Fin de la partida*
-Se deberá comprobar cuando un camello llega a la meta para mostrar quien es el ganador y generar el PDF.
+#### 🔹 Pruebas de Mal Funcionamiento
 
+| ID   | Nombre              | Objetivo                                                             | Procedimiento                                     | Resultado Esperado                                                              | Evidencia |
+|------|---------------------|----------------------------------------------------------------------|---------------------------------------------------|----------------------------------------------------------------------------------|-----------|
+| E1   | Conexión de 3º cliente | Verificar qué ocurre si se conecta un tercer cliente                  | Conectar un tercer cliente después de dos         | El servidor no permite la conexión en la misma partida y lo redirige a otra     | [Ver imagen](./pruebas/tercer_cliente.png) |
+| E2   | Cliente desconectado | Verificar cómo actúa el servidor ante una desconexión                 | Cerrar uno de los clientes en mitad de la partida | El servidor continúa hasta finalizar la partida                                 | -         |
 
-***Pruebas de la interfaz***
+---
 
-*Prueba 1: Verificación botones*
-    •    Objetivo: Asegurar que los botones funcionan como se espera.
-    •    Procedimiento: Pulsar cada botón disponible en la interfaz en diferentes momentos.
-    •    Resultado esperado: Se ejecutan las acciones esperadas sin errores.
+### Pruebas Automáticas (JUnit - Planeadas)
 
-*Prueba 2 : Imágenes*
-    •    Objetivo: Comprobar que las imágenes de los camellos y la interfaz se cargan correctamente.
-    •    Resultado esperado: Todas las imágenes se muestran bien en los clientes.
+| ID   | Nombre                    | Objetivo                                                      | Método Probado                              |
+|------|---------------------------|----------------------------------------------------------------|----------------------------------------------|
+| A1   | Avances de camellos       | Verificar que los camellos avanzan correctamente              | `Camello.avanzar(int puntos)`                |
+| A2   | Actualización de posición | Comprobar que se actualiza correctamente el progreso visual   | `ControladorVista.actualizarProgresoCamello()` |
+| A3   | Datos del jugador         | Verificar que se registra correctamente el nombre del jugador | `Cliente.conectar(String nombre)`            |
+| A4   | Generación de historial   | Verificar que se guarda correctamente el historial             | `GuardarHistorial.guardar()`                 |
 
+---
 
-***Pruebas de mal funcionamiento***
+### Registro de Ejecución de Pruebas
 
-*Prueba 1 : Más de 2 clientes*
-    •    Objetivo: Ver qué ocurre si se intenta conectar un tercer cliente.
-    •    Resultado esperado: El servidor no acepta más de 2 conexiones por partida y el tercero será dirigido a la siguiente partida.
-
-*Prueba 2 : Cliente desconectado*
-    •    Objetivo: Comprobar que el servidor detecta una desconexión.
-    •    Procedimiento: Cerrar uno de los clientes durante una partida.
-    •    Resultado esperado: El servidor informa de la desconexión y termina la partida.
-
-#### ***Pruebas Automáticas***
-
-- Se harán pruebas automáticas con JUnit para comprobar que funcionen bien la lógica de las clases, comprobando los métodos, que los errores se lancen cuando corresponde...
-  Para ello tenemos la carpeta src/test donde se guardarán. 
-
-*Prueba 1: Avances camellos*
-    •    Objetivo: Verificar que el camello avanza correctamente según los puntos asignados.
-    •    Método probado: .
-
-*Prueba 2: Posición camellos*
-    •    Objetivo: Comprobar que las posiciones se actualizan de forma coherente.
-    •    Método probado: .
-
-*Prueba 3: Datos del jugador*
-    •    Objetivo: Verificar que los datos como nombre del jugador se asignan correctamente.
-    •    Método probado: .
-
-*Prueba 4: Generación de historial*
-    •    Objetivo: Comprobar que al finalizar una partida se guarda correctamente el historial.
-    •    Método probado: .
-
-__________________
+| ID   | Resultado de la prueba | Observaciones                                               |
+|------|------------------------|--------------------------------------------------------------|
+| M1   | ✅ Correcto             | Ambos clientes conectan sin errores                         |
+| M2   | ✅ Correcto             | Progreso se actualiza fluidamente en ambos clientes         |
+| M3   | ✅ Correcto             | Ganador mostrado correctamente y PDF generado               |
+| I1   | ✅ Correcto             | Todos los botones funcionan como se espera                  |
+| I2   | ✅ Correcto             | Todas las imágenes visibles correctamente                   |
+| I3   | ✅ Correcto             | El botón "Conectar" se desactiva tras pulsarlo              |
+| I4   | ✅ Correcto             | El botón "Conectar" se activa tras terminar la partida      |
+| E1   | ✅ Correcto             | El servidor redirige al tercer cliente a otra partida       |
+| E2   | ✅ Correcto             | El servidor continúa la partida                              |
+| A1   | ✅ Correcto             | Método probado con distintos puntos                          |
+| A2   | ✅ Correcto             | Progreso actualizado según parámetros recibidos             |
+| A3   | ✅ Correcto             | Nombre del jugador registrado correctamente en conexión     |
+| A4   | ✅ Correcto             | Archivo de historial generado y contiene los datos esperados |
 
 

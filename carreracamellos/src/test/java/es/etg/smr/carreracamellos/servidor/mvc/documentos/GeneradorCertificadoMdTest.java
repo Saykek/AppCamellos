@@ -13,7 +13,7 @@ import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 
 class GeneradorCertificadoMdTest {
 
-    private static final String RUTA_BASE = System.getProperty("user.dir") + "/src/main/java/es/etg/smr/carreracamellos/servidor/mvc/documentos/envios/";
+    private static final String RUTA_BASE = System.getProperty("user.dir") + "/documentos_generados/";
     private static final String EXTENSION = ".md";
 
     private GeneradorCertificadoMd generador;

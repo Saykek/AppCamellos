@@ -3625,3 +3625,21 @@ java.net.SocketException: Connection reset
 	at es.etg.smr.carreracamellos.cliente.mvc.modelo.Cliente.lambda$1(Cliente.java:81)
 	at java.base/java.lang.Thread.run(Unknown Source)
 
+jun 06, 2025 5:30:45 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando interfaz de usuario...
+jun 06, 2025 5:30:45 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 06, 2025 5:30:45 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.
+jun 06, 2025 5:31:34 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando interfaz de usuario...
+jun 06, 2025 5:31:34 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 06, 2025 5:31:34 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.
+jun 06, 2025 5:32:24 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Iniciando interfaz de usuario...
+jun 06, 2025 5:32:24 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: Cargando vista: /es/etg/smr/carreracamellos/cliente/vista/pantallaPrincipal.fxml
+jun 06, 2025 5:32:24 P. M. es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos info
+INFORMACIÓN: TextField inicializado correctamente.

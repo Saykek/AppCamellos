@@ -18224,3 +18224,5 @@ jun 06, 2025 12:12:39 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.
 INFO: PDF generado correctamente para %s.
 jun 06, 2025 12:12:39 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
 INFO: PDF enviado correctamente a: PRUEBA2 (52916)
+jun 06, 2025 5:30:38 P. M. es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos info
+INFO: Servidor iniciado en el puerto  3009

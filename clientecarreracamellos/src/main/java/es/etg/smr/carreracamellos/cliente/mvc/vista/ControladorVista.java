@@ -8,6 +8,7 @@ import es.etg.smr.carreracamellos.cliente.utilidades.LogCamellos;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
@@ -25,6 +26,8 @@ public class ControladorVista {
     private static final String LOG_MENSAJE_RECIBIDO = "Servidor: %s";
 
     private static final String FORMATO_AVANCE = "%s avanza %d puntos.\n";
+    private static final String NOMBRE = "Nombre requerido";
+    private static final String NOMBRE_VALIDO = "Por favor, introduce tu nombre antes de continuar.";
     private static final String PUNTOS = " puntos";
     private final String RUTA_CERTIFICADO = "certificados_recibidos/certificado.pdf";
     private final int PUNTOS_MAXIMOS = 100;
@@ -180,6 +183,13 @@ public class ControladorVista {
     public void iniciarPartida(ActionEvent event) throws IOException {
 
         nombreJugador1 = txtNombreCliente.getText().trim();
+        if (nombreJugador1.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle(NOMBRE);
+            alert.setContentText(NOMBRE_VALIDO);
+            alert.showAndWait();
+            return;
+        }
         controladorCliente.conectarConServidor(nombreJugador1);
 
     }

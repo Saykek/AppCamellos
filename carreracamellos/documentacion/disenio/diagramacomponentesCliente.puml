@@ -1,0 +1,42 @@
+```plantuml
+
+@startuml
+skinparam componentStyle rectangle
+allowmixing
+
+
+
+
+' Componentes
+artifact "Vista" as Vista {
+   
+    class ControladorVista
+}
+
+artifact "Modelo" as Modelo {
+    class Cliente
+    
+   
+
+}
+artifact "Utilidades" as utilidades {
+    class ConexionServidor
+    class LogCamellos
+    class GestorCertificados
+}
+
+artifact "Controlador" as Controlador {
+    class ControladorCliente
+    
+}
+
+
+
+Controlador <--> Vista 
+Controlador <--> Modelo
+Controlador --> utilidades
+Vista --> utilidades
+Modelo --> utilidades
+
+
+@enduml

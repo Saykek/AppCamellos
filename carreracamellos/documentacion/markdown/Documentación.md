@@ -1,14 +1,14 @@
 # Carrera de Camellos de Sara Martínez
 ## Repositorio Github https://github.com/Saykek/AppCamellos.git
 
-## Hito 1 - Análisis y Prototipo
+## - Análisis y Prototipo
 
 ## - Análisis
 - ### Reglas del juego:
   En el juego Carrera de Camellos participan 2 jugadores, cada uno de ellos . Cada jugador deberá registrarse con un nombre y una vez registrados empezará la carrear.. El camello que llegue primero será el camello ganador.
   Para avanzar los camellos lo harán de forma aleatoria. El ganador podrá generar un certificado PDF. Se registrarán las partidas.
 
-- 
+  
   
 - ### Requisitos funcionales:
   - Permitir conexión.  
@@ -31,7 +31,7 @@
 - ### Actores:
 
   - Usuarios
-    - Se registrarán con su nombre, verán como avanzán tanto su camello como el del rival desde la interfaz gráfica y en caso de ganar podrá descargar el certificado.
+    - Se registrarán con su nombre, verán como avanzan tanto su camello como el del rival desde la interfaz gráfica y en caso de ganar podrá descargar el certificado.
 
 - ### Casos de uso:
   
@@ -46,8 +46,8 @@ _______________
 
 
 
-## Hito 2 - Arquitectura, diseño y plan de pruebas
- El sistema sigue una arquitectura cliente-servidor con el patron MVC, donde 2 clientes se conectan al servidor a través de sockets TCP para participar en la carrera de camellos.
+##  - Arquitectura, diseño y plan de pruebas
+ El sistema sigue una arquitectura cliente-servidor con el patrón MVC, donde 2 clientes se conectan al servidor a través de sockets TCP para participar en la carrera de camellos.
  Cada cliente mostrará su propia interfaz gráfica mediante JavaFX, donde se le permitirá registrarse con su nombre, seguir la carrera en tiempo real y en caso de ser ganador podrá descargar su certificado en PDF.
  En el servidor será donde se centralice toda la lógica del juego, incluyendo el registro de jugadores, los avances, el control del vencedor y  el almacenamiento de las partidas y  generación del certificado, que lo generará en markdown para después convertirlo a través de docker en PDF.
 
@@ -56,10 +56,13 @@ _______________
   
 ![Diagrama despliegue](../disenio/despliegue.png)
 
-- Diagrama de componentes:
+- Diagrama de componentes Cliente:
 
-![Diagrama componentes](componentesCliente.png)
-![Diagrama componentes](componentesServidor.png)
+![Diagrama componentes](../disenio/componentesCliente.png)
+
+- Diagrama de componentes Cliente:
+- 
+![Diagrama componentes](../disenio/componentes.png)
  
 - ### Diagrama de flujo:
  
@@ -70,14 +73,14 @@ flowchart TD
     C --> D[Asignar camellos a cada jugador]
     D --> E[Iniciar partida]
     E --> F[Turno de Jugador 1]
-    F --> G[Avance aleatorio + pregunta extra]
+    F --> G[Avance aleatorio]
     G --> H[Actualizar posición y enviar a jugadores]
     H --> I{¿Hay ganador?}
     I -- No --> J[Turno de Jugador 2]
     J --> G
     I -- Sí --> K[Mostrar resultado]
     K --> L{¿Ganador quiere PDF?}
-    L -- Sí --> M[Generar e imprimir certificado]
+    L -- Sí --> M[Imprimir certificado]
     L --> N[Guardar resultado en historial]
     M --> N
     N --> O[Fin]
@@ -88,11 +91,11 @@ flowchart TD
  - Se usarán hilos
  - El puerto será el 3009
  - Los mensajes serán tipo texto
- - Si un cliente pierde la conexión se anulará la partida.
-  - 
+ - Si un cliente pierde la conexión no pasa nada, la partida continúa.
+  
 - ### Protocolo de conexión
   
-  - Los clientes se conectarán al servidor, podrán conectarse hasta 2 personas. Se registrarán enviando su nombre y se les asignará un camello.
+  - Los clientes se conectarán al servidor, podrán conectarse hasta 2 personas(por partida). Se registrarán enviando su nombre y se les asignará un camello.
   - Una vez que estén registrados los dos jugadores el servidor hará una breve pausa e irá asignando aleatoriamente valores del 1 al 10 a cada jugador.  Cuando un jugador llegue a la meta ( en mi caso he puesto llegar a 100 puntos)se dará por finalizada la carrera y se le generará al jugador vencedor el certificado PDF. Ambos jugadores recibirán un mensaje final recibiendo la enhorabuena o diciéndoles quien gano."
   
 ![Protocolo conexión](../disenio/protocoloConexion.png)
@@ -102,12 +105,12 @@ flowchart TD
   - Comunicación: Se utilizarán socket TCP.
   - Programación: Se utilizará Java en Visual Studio Code.
   - Se utilizarán hilos para los jugadores y la lógica del juego.
-  - Para la persistencia se usará un archivo de texto. 
+  - Para la persistencia de los datos de las partidas se usará un archivo de texto. 
   - Para la conversión de markdown a PDF se usará Docker.
 
 - ### Desarrollo de la interfaz:
   
-  - Se desarrollará con Scene Builder, será una interfaz sencilla donde se vayan mostrando los avances de cada camello en una barra de progresión. Tendrá un espacio para mostrar los mensajes y donde se pondrá la puntuación obtenida en cada turno. Tendrá un botón para generar el certificado pero solo se mostrará al ganador.
+  - Se desarrollará con Scene Builder, será una interfaz sencilla donde se vayan mostrando los avances de cada camello en una barra de progresión, al lado de esta la suma total de los puntos en cada momento. Tendrá un espacio para mostrar los mensajes y donde se pondrá la puntuación obtenida en cada turno. Al ganador se le mostrará un botón para generar el certificado.También cuenta con un botón para conectar, el cual una vez empezada la partida se deshabilitará, y se volverá a habilitar a la finalización de esta.
   Se mostrará todo en una única pantalla.
 
 ### - Prototipo
@@ -118,24 +121,24 @@ En esta fase muestro como será la estructura del proyecto y un prototipo de la 
 
 El programa esta organizado en dos proyectos, por un lado tenemos el cliente y por otro el servidor. Dentro de cada proyecto se organiza en paquetes.
 Tanto en un proyecto como otro tenemos una estructura con MVC (aunque no disponemos de paquete vista en servidor), donde separamos responsabilidades.
-En el servidor ademas tendremos un paquete llamado documentos para guardar todas las clases relacionadas con la generación de documentos, y además, guardaremos los certificados obtenidos. También contamos con paquete utilidades que será desde donde controlemos todos los logs. Fuera de esto tenemos otro paquete llamado documentacion con los diseños de los diagramas y la documentación sobre los proyectos. También se encuentra el fichero donde se guardan los log, el fichero donde se guardan las partidas, y un paquete más con las pruebas oportunas para los proyectos.
-En el cliente mantenemos MVC, y este si que contiene los tres paquetes. Fuera tendremos la clase con la que pondremos en marcha el programa, un paquete llamado resources con los recursos utilizados y un paquete con todas las pruebas oportunas.
+En el servidor ademas tendremos un paquete llamado documentos para guardar todas las clases relacionadas con la generación de documentos. También contamos con paquete utilidades que será desde donde controlemos todos los logs. Fuera de esto tenemos otro paquete llamado documentación con los diseños de los diagramas y la documentación sobre los proyectos y también contamos con otro paquete donde guardaremos los certificados obtenidos. También se encuentra el fichero donde se guardan los log, el fichero donde se guardan las partidas, y un paquete más con las pruebas oportunas para los proyectos.
+En el cliente mantenemos MVC, y este si que contiene los tres paquetes.También contamos con un paquete de utilidades donde se gestionan los log, certificados y conexiones. Fuera tendremos la clase con la que pondremos en marcha el programa, un paquete llamado resources con los recursos utilizados y un paquete con todas las pruebas oportunas.
 
 
  
 
 ### Interfaz inicial (JavaFX)
 
-Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos el nombre del juego, debajo de esto permite que el jugador introduzca su nombre y se conecte al servidor, en la parte inferior a la derecha habrá un botón que sólo se mostrará en caso de resultar vencedor, donde podrá generar el certificado PDF, en el lado derecho de ésto hay una ventana donde se mostrarán los mensajes enviados por el servidor.
+Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos el nombre del juego, debajo de esto permite que el jugador introduzca su nombre y se conecte al servidor, en la parte inferior a la derecha habrá un botón que sólo se mostrará en caso de resultar vencedor, donde podrá generar el certificado PDF, en el lado izquierdo de ésto hay una ventana donde se mostrarán los mensajes enviados por el servidor.
 
   
 
 
 ![Prototipo pantalla](../disenio/prototipoPantalla.png)
 
+_____
 ## Plan de Pruebas
 
----
 
 ### Pruebas Manuales
 
@@ -143,24 +146,25 @@ Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos
 
 | ID   | Nombre                   | Objetivo                                                         | Procedimiento                                          | Resultado Esperado                                                  | Evidencia |
 |------|--------------------------|------------------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------------|-----------|
-| M1   | Conexión                 | Verificar que los dos clientes pueden conectarse correctamente   | Iniciar el servidor y conectar los dos clientes        | El servidor reconoce a los dos clientes y comienza la partida       | [Ver imagen](partida.png) |
-| M2   | Avance del juego         | Comprobar que el servidor actualiza el avance de cada camello    | Iniciar partida y dejarla avanzar automáticamente      | El progreso de los camellos se muestra correctamente en los clientes | [Ver imagen](pruebas/partida.png) |
-| M3   | Fin de partida y ganador | Verificar que se detecta el final de la partida y se genera PDF  | Jugar hasta que un camello gane                        | Se muestra el ganador y se genera el certificado PDF                | [Ver ganador](pruebas/partida.png), [Ver botón PDF](pruebas/boton_visible.png) |
+| M1   | Conexión                 | Verificar que los dos clientes pueden conectarse correctamente   | Iniciar el servidor y conectar los dos clientes        | El servidor reconoce a los dos clientes y comienza la partida       | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/M1_M2.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/M1_M2.png?raw=true)
+ |
+| M2   | Avance del juego         | Comprobar que el servidor actualiza el avance de cada camello    | Iniciar partida y dejarla avanzar automáticamente      | El progreso de los camellos se muestra correctamente en los clientes | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/M1_M2.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/M1_M2.png?raw=true) |
+| M3   | Fin de partida y ganador | Verificar que se detecta el final de la partida y se genera PDF  | Jugar hasta que un camello gane                        | Se muestra el ganador y se genera el certificado PDF                | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/M3.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/M3.png?raw=true), [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/M3_3.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/M3_3.png?raw=true) |
 
 #### 🔹 Pruebas de Interfaz
 
 | ID   | Nombre                      | Objetivo                                                             | Procedimiento                                 | Resultado Esperado                                              | Evidencia |
 |------|-----------------------------|----------------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------------|-----------|
 | I1   | Verificación de botones     | Asegurar que los botones funcionan como se espera                    | Pulsar cada botón en diferentes momentos       | Se ejecutan las acciones esperadas sin errores                  | -         |
-| I2   | Imágenes                    | Comprobar que las imágenes se cargan correctamente                   | Iniciar la aplicación                          | Todas las imágenes se muestran correctamente en los clientes    | [Ver imagen](./pruebas/imagenes_ok.png) |
-| I3   | Botón "Conectar" desactivado| Verificar que el botón "Conectar" se desactiva durante la partida    | Pulsar "Conectar" y luego intentar pulsarlo    | El botón se desactiva y no se puede volver a pulsar             | [Ver imagen](./pruebas/boton_desactivado.png) |
-| I4   | Botón "Conectar" activado   | Verificar que el botón "Conectar" se activa cuando la partida termina| Esperar fin de partida y pulsar "Conectar"     | El botón se activa y se puede volver a pulsar                   | [Ver imagen](./pruebas/boton_visible.png) |
+| I2   | Imágenes                    | Comprobar que las imágenes se cargan correctamente                   | Iniciar la aplicación                          | Todas las imágenes se muestran correctamente en los clientes    | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/I2.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/I2.png?raw=true) |
+| I3   | Botón "Conectar" desactivado| Verificar que el botón "Conectar" se desactiva durante la partida    | Pulsar "Conectar" y luego intentar pulsarlo    | El botón se desactiva y no se puede volver a pulsar             | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/I4.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/I4.png?raw=true) |
+| I4   | Botón "Conectar" activado   | Verificar que el botón "Conectar" se activa cuando la partida termina| Esperar fin de partida y pulsar "Conectar"     | El botón se activa y se puede volver a pulsar                   | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/I5.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/I5.png?raw=true) |
 
 #### 🔹 Pruebas de Mal Funcionamiento
 
 | ID   | Nombre              | Objetivo                                                             | Procedimiento                                     | Resultado Esperado                                                              | Evidencia |
 |------|---------------------|----------------------------------------------------------------------|---------------------------------------------------|----------------------------------------------------------------------------------|-----------|
-| E1   | Conexión de 3º cliente | Verificar qué ocurre si se conecta un tercer cliente                  | Conectar un tercer cliente después de dos         | El servidor no permite la conexión en la misma partida y lo redirige a otra     | [Ver imagen](./pruebas/tercer_cliente.png) |
+| E1   | Conexión de 3º cliente | Verificar qué ocurre si se conecta un tercer cliente                  | Conectar un tercer cliente después de dos         | El servidor no permite la conexión en la misma partida y lo redirige a otra     | [![Ver imagen](https://github.com/Saykek/imagenes_camellos/blob/main/E1.png?raw=true)](https://github.com/Saykek/imagenes_camellos/blob/main/E1.png?raw=true ) |
 | E2   | Cliente desconectado | Verificar cómo actúa el servidor ante una desconexión                 | Cerrar uno de los clientes en mitad de la partida | El servidor continúa hasta finalizar la partida                                 | -         |
 
 ---
@@ -173,6 +177,8 @@ Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos
 | A2   | Actualización de posición | Comprobar que se actualiza correctamente el progreso visual   | `ControladorVista.actualizarProgresoCamello()` |
 | A3   | Datos del jugador         | Verificar que se registra correctamente el nombre del jugador | `Cliente.conectar(String nombre)`            |
 | A4   | Generación de historial   | Verificar que se guarda correctamente el historial             | `GuardarHistorial.guardar()`                 |
+
+Evidencia de realización de pruebas automáticas : [Ver archivo](pruebas.txt)
 
 ---
 
@@ -193,5 +199,6 @@ Se ha diseñado un prototipo básico de la pantalla,arriba parte central tenemos
 | A2   | ✅ Correcto             | Progreso actualizado según parámetros recibidos             |
 | A3   | ✅ Correcto             | Nombre del jugador registrado correctamente en conexión     |
 | A4   | ✅ Correcto             | Archivo de historial generado y contiene los datos esperados |
+
 
 

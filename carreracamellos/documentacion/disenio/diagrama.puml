@@ -10,7 +10,6 @@ allowmixing
 ' Componentes
 artifact "Documentos" as Documentos {
     interface "GeneradorDocumento" as GeneradorDocumento
-    class GeneradorDocumentos
     class GeneradorCertificadoMd
     class GeneradorPDFDocker
     class GuardarHistorial
@@ -22,6 +21,7 @@ artifact "Modelo" as Modelo {
     class Jugador
     class Resultado
     class Servidor
+    interface "Jugable" as Jugable
 
 }
 artifact "Utilidades" as utilidades {
@@ -33,9 +33,9 @@ artifact "Controlador" as Controlador {
     class ControladorServidor
     
 }
-interface "Jugable" as Jugable
 
-' Relaciones de uso/implementación
+
+
 Modelo --> Jugable
 Modelo --> utilidades
 Modelo --> Documentos

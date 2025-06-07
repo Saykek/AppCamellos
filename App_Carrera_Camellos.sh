@@ -3,8 +3,8 @@
 # Ruta base del proyecto: directorio actual donde ejecutes el script
 BASE="$(pwd)"
 
-SERVIDOR="$BASE/carreracamellos"
-CLIENTE="$BASE/clientecarreracamellos"
+SERVIDOR="$BASE/servidorcamellos/target/classes"
+CLIENTE="$BASE/clientecamellos/target/classes"
 
 # Función para abrir una terminal y ejecutar comando según SO
 abrir_terminal() {

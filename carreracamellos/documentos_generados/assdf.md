@@ -1,6 +1,6 @@
       CERTIFICADO DE GANADOR
 
-     ¡Felicidades cambioRuta!
+     ¡Felicidades assdf!
 
 Has ganado la partida de la Carrera de Camellos.
 

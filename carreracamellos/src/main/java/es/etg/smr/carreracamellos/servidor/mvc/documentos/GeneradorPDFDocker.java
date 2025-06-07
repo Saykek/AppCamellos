@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
-public class GeneradorPDFDocker implements GeneradorDocumentos {
+public class GeneradorPDFDocker implements DocumentoGenerable {
 
     private static final String IMAGEN_DOCKER = "pandoc/latex";
     private static final String DIRECTORIO = ":/data";

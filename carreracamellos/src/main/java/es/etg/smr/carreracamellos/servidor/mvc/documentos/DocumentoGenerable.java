@@ -4,9 +4,7 @@ import java.io.IOException;
 
 import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 
-
-
-public interface GeneradorDocumentos {
-    public void generar(Resultado resultado)throws IOException;
+public interface DocumentoGenerable {
+    public void generar(Resultado resultado) throws IOException;
 
 }

@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
-public class GuardarHistorial implements GeneradorDocumentos {
+public class GuardarHistorial implements DocumentoGenerable {
 
     private static final String ARCHIVO = "partidas.txt";
     private static final String FORMATO_HISTORIAL = "Fecha: %s |  Ganador: %s (%d pts)  |  Perdedor: %s (%d pts) ";

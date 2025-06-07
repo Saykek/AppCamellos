@@ -9,7 +9,7 @@ allowmixing
 
 ' Componentes
 artifact "Documentos" as Documentos {
-    interface "GeneradorDocumento" as GeneradorDocumento
+    interface "DocumentoGenerable" as GeneradorDocumento
     class GeneradorCertificadoMd
     class GeneradorPDFDocker
     class GuardarHistorial

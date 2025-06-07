@@ -7,7 +7,7 @@ import java.io.IOException;
 import es.etg.smr.carreracamellos.servidor.mvc.modelo.Resultado;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.LogCamellos;
 
-public class GeneradorCertificadoMd implements GeneradorDocumentos {
+public class GeneradorCertificadoMd implements DocumentoGenerable {
 
     private static final String RUTA_DOCUMENTOS = System.getProperty("user.dir") + "/documentos_generados/";
     private static final String FORMATO_CERTIFICADO_OK = "Certificado generado correctamente para: %s";

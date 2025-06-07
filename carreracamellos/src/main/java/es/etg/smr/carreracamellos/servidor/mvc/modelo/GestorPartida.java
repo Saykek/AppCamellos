@@ -5,8 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import es.etg.smr.carreracamellos.servidor.mvc.documentos.DocumentoGenerable;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorCertificadoMd;
-import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorDocumentos;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GeneradorPDFDocker;
 import es.etg.smr.carreracamellos.servidor.mvc.documentos.GuardarHistorial;
 import es.etg.smr.carreracamellos.servidor.mvc.utilidades.ConexionCliente;
@@ -54,13 +54,13 @@ public class GestorPartida {
 
     private void guardar(Resultado resultado) {
         try {
-            GeneradorDocumentos historial = new GuardarHistorial();
+            DocumentoGenerable historial = new GuardarHistorial();
             historial.generar(resultado);
 
-            GeneradorDocumentos certificado = new GeneradorCertificadoMd();
+            DocumentoGenerable certificado = new GeneradorCertificadoMd();
             certificado.generar(resultado);
 
-            GeneradorDocumentos pdfDocker = new GeneradorPDFDocker();
+            DocumentoGenerable pdfDocker = new GeneradorPDFDocker();
             pdfDocker.generar(resultado);
 
         } catch (Exception e) {
